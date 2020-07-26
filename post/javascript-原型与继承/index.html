@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript 原型与继承 | 2zh</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/meta/favicon.ico">
+    <meta name="description" content="JavaScript 中函数原型是实现继承的基础。prototype、construct、原型链以及基于原型链的继承是面向对象的重要内容">
+    <link rel="preload" href="/assets/css/1.styles.d3ec323d.css" as="style"><link rel="preload" href="/assets/js/app.fd7a7532.js" as="script"><link rel="preload" href="/assets/js/24.d413882d.js" as="script"><link rel="prefetch" href="/assets/js/10.3437713f.js"><link rel="prefetch" href="/assets/js/11.0b601a9b.js"><link rel="prefetch" href="/assets/js/12.addb1aad.js"><link rel="prefetch" href="/assets/js/13.62ebef45.js"><link rel="prefetch" href="/assets/js/14.b01891a6.js"><link rel="prefetch" href="/assets/js/15.8e766f60.js"><link rel="prefetch" href="/assets/js/16.5d8466e8.js"><link rel="prefetch" href="/assets/js/17.2b20d349.js"><link rel="prefetch" href="/assets/js/18.e77d9440.js"><link rel="prefetch" href="/assets/js/19.53a94d35.js"><link rel="prefetch" href="/assets/js/2.1c57167a.js"><link rel="prefetch" href="/assets/js/20.5f9094df.js"><link rel="prefetch" href="/assets/js/21.802e07c4.js"><link rel="prefetch" href="/assets/js/22.d5c59e56.js"><link rel="prefetch" href="/assets/js/23.165de54c.js"><link rel="prefetch" href="/assets/js/25.858d186b.js"><link rel="prefetch" href="/assets/js/26.048a0d05.js"><link rel="prefetch" href="/assets/js/27.d2700d11.js"><link rel="prefetch" href="/assets/js/28.df670ddc.js"><link rel="prefetch" href="/assets/js/29.867f1afc.js"><link rel="prefetch" href="/assets/js/3.5f226e32.js"><link rel="prefetch" href="/assets/js/30.3ed7406e.js"><link rel="prefetch" href="/assets/js/31.3fabe941.js"><link rel="prefetch" href="/assets/js/32.69ed917f.js"><link rel="prefetch" href="/assets/js/33.9b8b575f.js"><link rel="prefetch" href="/assets/js/34.2b51b9e4.js"><link rel="prefetch" href="/assets/js/35.5b3a8dd7.js"><link rel="prefetch" href="/assets/js/36.7ca63043.js"><link rel="prefetch" href="/assets/js/37.67b508a0.js"><link rel="prefetch" href="/assets/js/38.68424ddb.js"><link rel="prefetch" href="/assets/js/39.389af64b.js"><link rel="prefetch" href="/assets/js/4.5dab8a0d.js"><link rel="prefetch" href="/assets/js/40.02efef0d.js"><link rel="prefetch" href="/assets/js/41.4383e044.js"><link rel="prefetch" href="/assets/js/42.954941ae.js"><link rel="prefetch" href="/assets/js/5.22f9ad56.js"><link rel="prefetch" href="/assets/js/6.4e5782fc.js"><link rel="prefetch" href="/assets/js/7.f514328a.js"><link rel="prefetch" href="/assets/js/8.385149fb.js"><link rel="prefetch" href="/assets/js/9.f80ac408.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.d3ec323d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+                            Index
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
+                            Search
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-info"></i>
+                            About
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-link"></i>
+                            Links
+                        </li></ul></div> <div class="el-col el-col-24 el-col-xs-24 el-col-sm-0"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" aria-haspopup="true" class="head-menu-sub el-submenu"><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">Menu<i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-s-home"></i>
+                                Index
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-search"></i>
+                                Search
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-info"></i>
+                                About
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-link"></i>
+                                Links
+                            </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">JavaScript 原型与继承</div> <div class="post-tag"><a href="/search/JavaScript"><i class="el-icon-paperclip"></i>
+            JavaScript
+        </a></div> <div class="post-desc">JavaScript 中函数原型是实现继承的基础。prototype、construct、原型链以及基于原型链的继承是面向对象的重要内容</div> <div class="markdown-content content__default"><h1 id="javascript-原型与继承"><a href="#javascript-原型与继承" class="header-anchor">#</a> JavaScript 原型与继承</h1> <h2 id="prototype"><a href="#prototype" class="header-anchor">#</a> prototype</h2> <ol><li><p>原型即 prototype，是函数的一个属性，是一个对象</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// object</span>
+<span class="token comment">// {...}</span>
+</code></pre></div></li> <li><p>所有被构造函数构造出的对象都能访问 prototype 上定义的属性和方法</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>brand <span class="token operator">=</span> <span class="token string">&quot;BMW&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token string">&quot;100 万&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car1<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car2<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 100 万</span>
+<span class="token comment">// 100 万</span>
+</code></pre></div></li> <li><p>构造函数内部和 prototype 定义了同名属性，实例对象会优先调用构造函数中的属性</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token string">&quot;10 万&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token string">&quot;100 万&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car1<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 10 万</span>
+</code></pre></div></li> <li><p>通过实例对象不能更改 prototype 上的属性</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token string">&quot;100 万&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+car1<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token string">&quot;10 万&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 100 万 </span>
+</code></pre></div></li></ol> <blockquote><p>一般将不变化的内容或方法放在 prototype 下，需要动态变化的放在构造方法内，通过参数配置</p></blockquote> <h2 id="constructor"><a href="#constructor" class="header-anchor">#</a> constructor</h2> <ol><li><p>constructor 指向构造函数本身</p> <p>实例对象的 constructor 属性指向构造函数</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Car<span class="token punctuation">)</span>
+<span class="token comment">// Car(){}</span>
+<span class="token comment">// Car(){}</span>
+</code></pre></div></li> <li><p>constructor 可以被更改</p> <p>constructor 可以被修改，但是并不会影响实例化对象</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Bike</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;bike&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Bike</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;Bike&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+	constructor<span class="token operator">:</span> Bike
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// {constructor: Bike(){}, ...} </span>
+<span class="token comment">// undefined</span>
+</code></pre></div></li></ol> <h2 id="proto"><a href="#proto" class="header-anchor">#</a> <code>__proto__</code></h2> <ol><li><p>构造函数在实例化时，将其 prototype 挂载到函数内 this 的 <code>__proto__</code> 下</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;Jett&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Car.prototype -&gt;</span>
+<span class="token comment">// {</span>
+<span class="token comment">//	name: &quot;Jett&quot;, </span>
+<span class="token comment">//	construct: Car(){}</span>
+<span class="token comment">//	_proto_: {...}</span>
+<span class="token comment">//	}</span>
+<span class="token comment">// car._proto_ -&gt;</span>
+<span class="token comment">// {</span>
+<span class="token comment">//	name: &quot;Jett&quot;,</span>
+<span class="token comment">//	construct: Car(){}</span>
+<span class="token comment">//	_proto_: {...}			</span>
+<span class="token comment">// }</span>
+<span class="token comment">// </span>
+</code></pre></div><p>可以看到，打印出的 Car.prototype 和 car.<code>__proto__</code> 内容一致。因为在实例化对象时，Car.prototype 被挂载到函数内的 this.<code>__proto__</code> 上，即实例对象的 <code>__proto__</code> 属性上</p> <p>prototype 是构造函数的属性，<code>__proto__</code> 属于每个实例对象的，是一个内部属性，它们指向相同的内容</p></li> <li><p>可以通过实例对象访问 <code>__proto__</code> 属性，并对其进行修改</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'BWM'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+car<span class="token punctuation">.</span>__proto__<span class="token operator">=</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span><span class="token string">&quot;Benz&quot;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// BWM</span>
+<span class="token comment">// Benz</span>
+</code></pre></div><p>也可以更改 prototype 的属性到达效果</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'BWM'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Benz'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// BWM</span>
+<span class="token comment">// Benz</span>
+</code></pre></div><p>但是，将 prototype 重新赋值并不能对之前实例化的对象造成影响</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'BWM'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Car</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> <span class="token string">&quot;Benz&quot;</span>
+<span class="token punctuation">}</span>	
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// BWM</span>
+<span class="token comment">// BWM</span>
+</code></pre></div><p>这是因为重新赋值相当于创建新对象，使 prototype 指向的新的对象，而实例对象的 <code>__proto__</code> 属性依然指向原来的内容，相当于一个对象的两个引用，其中一个不在指向该对象，而且指向了新对象</p> <p>这不能对已经实例化出的对象造成影响，但是后面再实例化对象则可以造成影响，因为实例化过程中将修改后的 prototype 挂载到了实例对象的 <code>__proto__</code> 属性下，二者指向同一对象</p></li></ol> <h2 id="原型链"><a href="#原型链" class="header-anchor">#</a> 原型链</h2> <ol><li><p>prototype 中的 <code>__proto__</code> 属性</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>当我们打印构造函数的 prototype 属性时,可以看到</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+	constructor<span class="token operator">:</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	__proto__<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>prototype 中也有 <code>__proto__</code> 属性，实例化过程 protorype 被挂载到实例对象的 <code>__proto__</code> 下，这就意味着实例对象的 <code>__proto__</code> 中也有一个 <code>__proto__</code> 属性</p> <p>因为这里的 prototype 是一个非空对象，是由 new Object() 或者其他自定义构造方法实例化出的，自然也有 <code>__proto__</code> 属性</p></li> <li><p>链式的 <code>__proto__</code></p> <p>原型链是由 <code>__proto__</code> 组成的链接，原型链的顶端是 Object.prototype</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> junior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> junior<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> senior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>senior<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>这里将 JuniorCoder() 的实例对象赋值给 SeniorCoder.prototype，打印出</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>SeniorCoder <span class="token punctuation">{</span>
+	advcedSkill<span class="token operator">:</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">,</span>
+	__proto__<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// senior.__proto__ ，即 SeniorCoder.protoype</span>
+		lowerSkill<span class="token operator">:</span> <span class="token string">&quot;javascript&quot;</span><span class="token punctuation">,</span>
+		__proto__<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// junior.__proto__ ，即 JuniorCoder.prototype</span>
+			basicSkill<span class="token operator">:</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">,</span>
+			__proto__<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// Object.prototype</span>
+				constructor<span class="token operator">:</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+				toString<span class="token operator">:</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+				<span class="token comment">// ...</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>可以看出，senior 的 <code>__proto__</code> 属性指向 JuniorCoder() 实例 junior，这是因为之前 将 junior 赋值给了 SeniorCoder.prototype</p> <p>此外，junior 的 <code>__proto__</code> 也指向了一个对象，这个对象就是 JuniorCoder.porotype，相当于 new Object() 得出的，所以 junior 的 <code>__proto__</code> 下的 <code>__proto__</code> 就是 Object.prototype，这就是原型链的顶端，在里面我们还可以看到 toString 方法等等</p></li> <li><p>访问原型链上属性</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+<span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token string">&quot;man&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> junior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> junior<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> senior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>senior<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>senior<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 22</span>
+<span class="token comment">// man</span>
+</code></pre></div><p>senior 可以访问 junior 本身的属性，也可以访问 JuniorCoder.prototype 上的属性，因为 junior 被挂载到了 SeniorCoder.prototype 上</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>years <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> junior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> junior<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> senior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+senior<span class="token punctuation">.</span>years<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token comment">// 等同于 senior.years = senior.years + 1;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>senior<span class="token punctuation">.</span>years<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>junior<span class="token punctuation">.</span>years<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 4</span>
+<span class="token comment">// 3</span>
+</code></pre></div><p>可以看到，通过 senior 试图改变 years 属性并不能真正影响 junior 的 years 属性，实际上只是在 senior 下创建了新的 years 属性，并将 junior.years 加一的结果赋值给它</p></li></ol> <h2 id="object-creat"><a href="#object-creat" class="header-anchor">#</a> Object.creat()</h2> <ol><li><p>Object 的 creat 方法用于创建对象，参数指定 prototype，可以为对象或 null</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> <span class="token string">&quot;obj&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__proto__ <span class="token operator">==</span> test<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// obj</span>
+<span class="token comment">// true</span>
+</code></pre></div></li> <li><p>Object.creat(null)</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// {}</span>
+<span class="token comment">// 报错</span>
+</code></pre></div><p>控制台显示 obj 是一个空对象，没有任何属性，包括 <code>__proto__</code>，如果使用 document.write(obj) 则会报错，因为 document.write 方法会把参数转成字符串再打印在页面，默认调用 toString() 方法，toString 方法需要从原型链上继承而来，而 obj 是一个完全的空对象，没有原型链，也没有 toString 方法，所以会报错</p></li></ol> <h2 id="基于原型的继承"><a href="#基于原型的继承" class="header-anchor">#</a> 基于原型的继承</h2> <ol><li><p>利用原型链实现继承</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> junior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> junior<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> senior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>senior 继承了 junior 的自身属性及原型链</p></li> <li><p>call/apply 实现继承</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token parameter">lowerSkill</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> lowerSkill<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token parameter">lowerSkill<span class="token punctuation">,</span> advancedSkill</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">JuniorCoder</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>lowerSkill<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> advancedSkill<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> senior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token string">&quot;javascript&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>继承了 JuniorCoder 实例的自身属性，不能继承原型链</p></li> <li><p>公共原型继承</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> senior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>senior 继承 JuniorCoder 实例的原型链，不继承自身属性，但是改动 SeniorCoder.prototype 会影响 JuniorCoder.prototype</p></li> <li><p>中间对象继承（圣杯模式）</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Buffer</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">Buffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;markdown&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// markdown</span>
+<span class="token comment">// html/css</span>
+</code></pre></div><p>继承原型链，不继承自身属性，prototype 不相互影响，这种继承方式更为实用</p> <p>进行封装以后，更适应企业级开发</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">inherit</span><span class="token punctuation">(</span>SeniorCoder<span class="token punctuation">,</span> JuniorCoder<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">SeniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;markdown&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">inherit</span><span class="token punctuation">(</span><span class="token parameter">Target<span class="token punctuation">,</span> Origin</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token class-name">Target</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Origin</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">Target</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Target<span class="token punctuation">;</span>
+	<span class="token class-name">Target</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>superClass <span class="token operator">=</span> Origin<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>使用 Object 的 creat 方法直接创建中间对象，将 construtor、superClass 属性设置好，便于分析和维护</p></li></ol> <h2 id="hasownproperty"><a href="#hasownproperty" class="header-anchor">#</a> hasOwnProperty()</h2> <p>判断属性是否是实例对象本身的，如果是则返回 true</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>brand <span class="token operator">=</span> <span class="token string">&quot;BMW&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">&quot;brand&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">&quot;color&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// false</span>
+<span class="token comment">// true</span>
+</code></pre></div><h2 id="instanceof"><a href="#instanceof" class="header-anchor">#</a> instanceOf</h2> <p>判断实例对象的原型链上是否有某个构造方法</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">JuniorCoder</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>basicSkill <span class="token operator">=</span> <span class="token string">&quot;html/css&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">JuniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lowerSkill <span class="token operator">=</span> <span class="token string">&quot;javascript&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>advancedSkill <span class="token operator">=</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">inherit</span><span class="token punctuation">(</span>SeniorCoder<span class="token punctuation">,</span> JuniorCoder<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">inherit</span><span class="token punctuation">(</span><span class="token parameter">Target<span class="token punctuation">,</span> Origin</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token class-name">Target</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Origin</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">Target</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Target<span class="token punctuation">;</span>
+	<span class="token class-name">Target</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>superClass <span class="token operator">=</span> Origin<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> senior <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>senior <span class="token keyword">instanceof</span> <span class="token class-name">SeniorCoder</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>senior <span class="token keyword">instanceof</span> <span class="token class-name">JuniorCoder</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>senior <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span>
+<span class="token comment">// true</span>
+<span class="token comment">// true</span>
+</code></pre></div></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://github.com/cadecode" target="_blank">
+            Github
+        </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
+            Email
+        </a><a href="https://www.cnblogs.com/pgjett" target="_blank">
+            Cnblogs
+        </a></div> <div class="foot-meta"><p>Copyright © 2020 </p> <p>
+            Theme
+            <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
+            powered by
+            <a href="https://www.vuepress.cn/" target="_blank">vuepress</a></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fd7a7532.js" defer></script><script src="/assets/js/24.d413882d.js" defer></script>
+  </body>
+</html>

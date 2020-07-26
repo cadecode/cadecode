@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript 错误处理 | 2zh</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/meta/favicon.ico">
+    <meta name="description" content="JavaSCript 错误类型、try catch 的是使用以及 ES5 严格模式">
+    <link rel="preload" href="/assets/css/1.styles.d3ec323d.css" as="style"><link rel="preload" href="/assets/js/app.fd7a7532.js" as="script"><link rel="preload" href="/assets/js/31.3fabe941.js" as="script"><link rel="prefetch" href="/assets/js/10.3437713f.js"><link rel="prefetch" href="/assets/js/11.0b601a9b.js"><link rel="prefetch" href="/assets/js/12.addb1aad.js"><link rel="prefetch" href="/assets/js/13.62ebef45.js"><link rel="prefetch" href="/assets/js/14.b01891a6.js"><link rel="prefetch" href="/assets/js/15.8e766f60.js"><link rel="prefetch" href="/assets/js/16.5d8466e8.js"><link rel="prefetch" href="/assets/js/17.2b20d349.js"><link rel="prefetch" href="/assets/js/18.e77d9440.js"><link rel="prefetch" href="/assets/js/19.53a94d35.js"><link rel="prefetch" href="/assets/js/2.1c57167a.js"><link rel="prefetch" href="/assets/js/20.5f9094df.js"><link rel="prefetch" href="/assets/js/21.802e07c4.js"><link rel="prefetch" href="/assets/js/22.d5c59e56.js"><link rel="prefetch" href="/assets/js/23.165de54c.js"><link rel="prefetch" href="/assets/js/24.d413882d.js"><link rel="prefetch" href="/assets/js/25.858d186b.js"><link rel="prefetch" href="/assets/js/26.048a0d05.js"><link rel="prefetch" href="/assets/js/27.d2700d11.js"><link rel="prefetch" href="/assets/js/28.df670ddc.js"><link rel="prefetch" href="/assets/js/29.867f1afc.js"><link rel="prefetch" href="/assets/js/3.5f226e32.js"><link rel="prefetch" href="/assets/js/30.3ed7406e.js"><link rel="prefetch" href="/assets/js/32.69ed917f.js"><link rel="prefetch" href="/assets/js/33.9b8b575f.js"><link rel="prefetch" href="/assets/js/34.2b51b9e4.js"><link rel="prefetch" href="/assets/js/35.5b3a8dd7.js"><link rel="prefetch" href="/assets/js/36.7ca63043.js"><link rel="prefetch" href="/assets/js/37.67b508a0.js"><link rel="prefetch" href="/assets/js/38.68424ddb.js"><link rel="prefetch" href="/assets/js/39.389af64b.js"><link rel="prefetch" href="/assets/js/4.5dab8a0d.js"><link rel="prefetch" href="/assets/js/40.02efef0d.js"><link rel="prefetch" href="/assets/js/41.4383e044.js"><link rel="prefetch" href="/assets/js/42.954941ae.js"><link rel="prefetch" href="/assets/js/5.22f9ad56.js"><link rel="prefetch" href="/assets/js/6.4e5782fc.js"><link rel="prefetch" href="/assets/js/7.f514328a.js"><link rel="prefetch" href="/assets/js/8.385149fb.js"><link rel="prefetch" href="/assets/js/9.f80ac408.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.d3ec323d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+                            Index
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
+                            Search
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-info"></i>
+                            About
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-link"></i>
+                            Links
+                        </li></ul></div> <div class="el-col el-col-24 el-col-xs-24 el-col-sm-0"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" aria-haspopup="true" class="head-menu-sub el-submenu"><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">Menu<i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-s-home"></i>
+                                Index
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-search"></i>
+                                Search
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-info"></i>
+                                About
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-link"></i>
+                                Links
+                            </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">JavaScript 错误处理</div> <div class="post-tag"><a href="/search/JavaScript"><i class="el-icon-paperclip"></i>
+            JavaScript
+        </a></div> <div class="post-desc">JavaSCript 错误类型、try catch 的是使用以及 ES5 严格模式</div> <div class="markdown-content content__default"><h1 id="javascript-错误处理"><a href="#javascript-错误处理" class="header-anchor">#</a> JavaScript 错误处理</h1> <h2 id="错误类型"><a href="#错误类型" class="header-anchor">#</a> 错误类型</h2> <ol><li><p>SyntaxError 语法错误</p> <ul><li>变量名不规范</li> <li>关键字赋值</li> <li>基本语法错误</li></ul></li> <li><p>ReferenceError 引用错误</p> <ul><li>变量或函数未被声明</li> <li>给无法被赋值的对象赋值</li></ul></li> <li><p>RangeError 范围错误</p> <ul><li>数组长度赋值为负</li> <li>对象方法参数超出可行范围</li></ul></li> <li><p>TypeError 类型错误</p> <ul><li>调用不存在的方法</li> <li>实例化一个非构造函数</li></ul></li> <li><p>URIError URI 错误</p> <ul><li>decodeURI 参数不符合</li></ul></li> <li><p>EvalError eval 函数执行错误</p></li></ol> <h2 id="处理错误"><a href="#处理错误" class="header-anchor">#</a> 处理错误</h2> <ol><li><p>try...catch</p> <p>try 块中出错，catch 块中获取错误信息</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">try</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>finally</p> <p>finally 包含一定要执行的语句</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">try</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'over'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>throw</p> <p>抛出一个可以捕获的错误，可指定错误信息和错误类型</p> <ul><li>throw new Error('一个错误被抛出')</li> <li>throw '一个错误被抛出'</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token string">'一个错误被抛出'</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'over'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ol> <h2 id="es5-严格模式"><a href="#es5-严格模式" class="header-anchor">#</a> ES5 严格模式</h2> <ol><li><p>ES3.0 存在以下问题</p> <ul><li>语法严谨和合理性</li> <li>语法怪异行为</li> <li>安全性效率</li></ul></li> <li><p>3.0 基础上推出严格模式，IE9 及以下不支持严格模式</p></li> <li><p>使用严格模式</p> <p>可以全局使用严格模式，也可以在单独作用域中使用</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token string">'use strict'</span>
+
+    <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token string">'use strict'</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token string">'use strict'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></li> <li><p>严格模式不能使用 with 方法，语法错误</p> <p>with 方法用于改变作用域</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    a <span class="token operator">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span>
+    <span class="token keyword">with</span> <span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>严格模式下不能使用 arguments 的callee 和 caller 属性，类型错误</p></li> <li><p>严格模式下，不允许不声明直接赋值</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 严格模式下报引用错误</span>
+a <span class="token operator">=</span> <span class="token number">1</span> 
+<span class="token keyword">var</span> b <span class="token operator">=</span> c <span class="token operator">=</span> <span class="token number">2</span>
+</code></pre></div></li> <li><p>严格模式下函数内部 this 为 undefined</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// undefined</span>
+<span class="token keyword">var</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// {}</span>
+<span class="token function">test</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// 1</span>
+</code></pre></div></li> <li><p>严格模式下不允许函数参数重复，报语法错误</p></li> <li><p>严格模式拒绝使用重复的对象属性名，但不报错</p></li> <li><p>严格模式下 eval 函数问题</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">'var a = 1'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> 
+<span class="token comment">// 非严格模式下，a 挂在 window 上，打印出 1，</span>
+<span class="token comment">// 严格模式下，eval 有自己的作用域，在 window 下打印 a 报引用错误</span>
+</code></pre></div></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://github.com/cadecode" target="_blank">
+            Github
+        </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
+            Email
+        </a><a href="https://www.cnblogs.com/pgjett" target="_blank">
+            Cnblogs
+        </a></div> <div class="foot-meta"><p>Copyright © 2020 </p> <p>
+            Theme
+            <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
+            powered by
+            <a href="https://www.vuepress.cn/" target="_blank">vuepress</a></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.fd7a7532.js" defer></script><script src="/assets/js/31.3fabe941.js" defer></script>
+  </body>
+</html>
