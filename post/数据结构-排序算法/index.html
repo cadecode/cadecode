@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据结构-排序算法 | CadeCode</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/meta/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="https://cadecode.github.io/ /rss.xml" title=" RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://cadecode.github.io/ /feed.atom" title=" Atom Feed">
+    <link rel="alternate" type="application/json" href="https://cadecode.github.io/ /feed.json" title=" JSON Feed">
+    <meta name="description" content="数据结构中排序是重要内容，其中主要的几大算法有基于比较的冒泡、快排、简单选择、堆排、直接插入、希尔、归并以及不基于比较的计数、基数、桶排">
+    <link rel="preload" href="/assets/css/1.styles.497d8624.css" as="style"><link rel="preload" href="/assets/js/app.125161a1.js" as="script"><link rel="preload" href="/assets/js/8.aa885eb5.js" as="script"><link rel="prefetch" href="/assets/js/10.673093a9.js"><link rel="prefetch" href="/assets/js/11.84881b6a.js"><link rel="prefetch" href="/assets/js/12.01b6ac60.js"><link rel="prefetch" href="/assets/js/13.4aa473b6.js"><link rel="prefetch" href="/assets/js/14.163318de.js"><link rel="prefetch" href="/assets/js/15.3bd8c3c6.js"><link rel="prefetch" href="/assets/js/16.08a22ec5.js"><link rel="prefetch" href="/assets/js/17.8c2f598e.js"><link rel="prefetch" href="/assets/js/18.cb6d94e6.js"><link rel="prefetch" href="/assets/js/19.758eaae0.js"><link rel="prefetch" href="/assets/js/2.92ec88aa.js"><link rel="prefetch" href="/assets/js/20.5c29ef58.js"><link rel="prefetch" href="/assets/js/21.1af3bd77.js"><link rel="prefetch" href="/assets/js/22.43367170.js"><link rel="prefetch" href="/assets/js/23.0e355e80.js"><link rel="prefetch" href="/assets/js/24.b8b41340.js"><link rel="prefetch" href="/assets/js/25.da4bae33.js"><link rel="prefetch" href="/assets/js/26.65fd39fb.js"><link rel="prefetch" href="/assets/js/27.aafb376a.js"><link rel="prefetch" href="/assets/js/28.ef23962a.js"><link rel="prefetch" href="/assets/js/29.e3896584.js"><link rel="prefetch" href="/assets/js/3.c1d29a77.js"><link rel="prefetch" href="/assets/js/30.f0419815.js"><link rel="prefetch" href="/assets/js/31.f32ac754.js"><link rel="prefetch" href="/assets/js/32.e7fcb0a4.js"><link rel="prefetch" href="/assets/js/33.d9fe126c.js"><link rel="prefetch" href="/assets/js/34.7a451f6d.js"><link rel="prefetch" href="/assets/js/35.ac265f5a.js"><link rel="prefetch" href="/assets/js/36.0ac50a18.js"><link rel="prefetch" href="/assets/js/37.d769bb9e.js"><link rel="prefetch" href="/assets/js/38.b95aaeed.js"><link rel="prefetch" href="/assets/js/39.96556087.js"><link rel="prefetch" href="/assets/js/4.ac885d4b.js"><link rel="prefetch" href="/assets/js/40.f4fcb4e5.js"><link rel="prefetch" href="/assets/js/41.cd9d911d.js"><link rel="prefetch" href="/assets/js/42.885d5334.js"><link rel="prefetch" href="/assets/js/43.e1af3a2a.js"><link rel="prefetch" href="/assets/js/44.da36c39c.js"><link rel="prefetch" href="/assets/js/45.765e4e34.js"><link rel="prefetch" href="/assets/js/5.9c42f2e5.js"><link rel="prefetch" href="/assets/js/6.ba44edfc.js"><link rel="prefetch" href="/assets/js/7.65fbc8f5.js"><link rel="prefetch" href="/assets/js/9.118a3dd8.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.497d8624.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+                            Index
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
+                            Search
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-info"></i>
+                            About
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-link"></i>
+                            Links
+                        </li></ul></div> <div class="el-col el-col-24 el-col-xs-24 el-col-sm-0"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" aria-haspopup="true" class="head-menu-sub el-submenu"><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">Menu<i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-s-home"></i>
+                                Index
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-search"></i>
+                                Search
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-info"></i>
+                                About
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-link"></i>
+                                Links
+                            </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">数据结构-排序算法</div> <div class="post-tag"></div> <div class="post-desc">数据结构中排序是重要内容，其中主要的几大算法有基于比较的冒泡、快排、简单选择、堆排、直接插入、希尔、归并以及不基于比较的计数、基数、桶排</div> <div class="markdown-content content__default"><h1 id="数据结构-排序算法"><a href="#数据结构-排序算法" class="header-anchor">#</a> 数据结构-排序算法</h1> <h2 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h2> <ol><li><p>稳定排序</p> <p>假设在数列中存在a[i]=a[j]，若在排序之前，a[i]在a[j]前面；并且排序之后，a[i]仍然在a[j]前面，则这个排序算法是稳定的</p></li> <li><p>原地排序</p> <p>空间复杂度为 $O(1)$ 的排序算法</p></li></ol> <h2 id="比较类排序"><a href="#比较类排序" class="header-anchor">#</a> 比较类排序</h2> <h3 id="交换排序"><a href="#交换排序" class="header-anchor">#</a> 交换排序</h3> <ol><li><p>冒泡排序</p> <p>冒泡排序只会操作相邻的两个数据。每次冒泡操作都会对相邻的两个元素进行比较，看是否满足大小关系要求。如果不满足就让它俩互换。一次冒泡会让至少一个元素移动到它应该在的位置，重复 n 次，就完成了 n 个数据的排序工作</p> <p>时间复杂度：$O(n^2)$</p> <p>空间复杂度：$O(1)$</p> <p>稳定性：相邻元素相等时不交换，则为稳定排序</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code></code></pre></div></li></ol> <p>function bubbleSort(nums) {
+let temp
+let flag = false // 使用标记位进行优化，没有数据可交换时停止循环
+for (let i = 0; i &lt; nums.length; i++) {
+flag = false
+for (let j = 0; j &lt; nums.length - 1 - i; j++) {
+if (nums[j] &gt; nums[j + 1]) {
+temp = nums[j]
+nums[j] = nums[j + 1]
+nums[j + 1] = temp
+flag = true
+}
+}
+if (flag) {
+break
+}
+}
+}</p> <div class="language- extra-class"><pre class="language-text"><code>
+
+
+2. 快速排序
+
+如果要排序数组中下标 l 到 r 之间的数据，先选择 l 与 r 之间任意一个数据作为分区点 x，遍历 l 到 r 之间的数据，将大于 x 的放右边，小于 x 的放左边，再递归排序两部分，直到区间缩小位 1，则所有数据都完成排序
+
+时间复杂度：$O(nlogn)$
+
+空间复杂度：$O(logn)$，$log_2n$ 次递归
+
+稳定性：不稳定
+
+```javascript
+function quickSort(nums, l, r) {
+    if (l &gt;= r) {
+        return
+    }
+    let i = l
+    let j = r
+    let x = nums[i]
+    while (i &lt; j) {
+        while (i &lt; j &amp;&amp; x &lt; nums[j]) {
+            j--
+        }
+        nums[i] = nums[j]
+        while (i &lt; j &amp;&amp; x &gt; nums[i]) {
+            i++
+        }
+        nums[j] = nums[i]
+    }
+    nums[i] = x
+    quickSort(nums, l, i - 1)
+    quickSort(nums, i + 1, r)
+}
+</code></pre></div><h3 id="插入排序"><a href="#插入排序" class="header-anchor">#</a> 插入排序</h3> <ol><li><p>直接插入排序</p> <p>将数组中的数据分为两个区间，已排序区间和未排序区间。初始已排序区间只有一个元素，就是数组的第一个元素。插入算法的核心思想是取未排序区间中的元素，在已排序区间中找到合适的插入位置将其插入，并保证已排序区间数据一直有序。重复这个过程，直到未排序区 间中元素为空，算法结束</p> <p>时间复杂度：$O(n^2)$</p> <p>空间复杂度：$O(1)$</p> <p>稳定性：将后面的数据放到相等数据的后面，则为稳定排序</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">insertSort</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> temp
+    <span class="token keyword">let</span> j
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        temp <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> temp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            nums<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+            j<span class="token operator">--</span>
+        <span class="token punctuation">}</span>
+        nums<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>希尔排序</p></li></ol> <h3 id="选择排序"><a href="#选择排序" class="header-anchor">#</a> 选择排序</h3> <ol><li><p>简单选择排序</p></li> <li><p>堆排序</p></li></ol> <h3 id="归并排序"><a href="#归并排序" class="header-anchor">#</a> 归并排序</h3> <h2 id="非比较排序"><a href="#非比较排序" class="header-anchor">#</a> 非比较排序</h2> <h3 id="计数排序"><a href="#计数排序" class="header-anchor">#</a> 计数排序</h3> <h3 id="基数排序"><a href="#基数排序" class="header-anchor">#</a> 基数排序</h3> <h3 id="桶排序"><a href="#桶排序" class="header-anchor">#</a> 桶排序</h3></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.github.io/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
+            Github
+        </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
+            Email
+        </a><a href="https://www.cnblogs.com/pgjett" target="_blank">
+            Cnblogs
+        </a></div> <div class="foot-meta"><p>Copyright © 2020 CadeCode</p> <p>
+            Theme
+            <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
+            powered by
+            <a href="https://www.vuepress.cn/" target="_blank">vuepress</a></p> <p><a href="https://cadecode.github.io/sitemap.xml" target="_blank">Sitemap</a></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.125161a1.js" defer></script><script src="/assets/js/8.aa885eb5.js" defer></script>
+  </body>
+</html>
