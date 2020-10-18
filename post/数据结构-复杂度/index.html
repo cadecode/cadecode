@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>数据结构-复杂度 | CadeCode</title>
     <meta name="generator" content="VuePress 1.5.3">
     <link rel="icon" href="/meta/favicon.ico">
-    <link rel="alternate" type="application/rss+xml" href="https://cadecode.github.io/ /rss.xml" title=" RSS Feed">
-    <link rel="alternate" type="application/atom+xml" href="https://cadecode.github.io/ /feed.atom" title=" Atom Feed">
-    <link rel="alternate" type="application/json" href="https://cadecode.github.io/ /feed.json" title=" JSON Feed">
+    <link rel="alternate" type="application/rss+xml" href="https://cadecode.info/ /rss.xml" title=" RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://cadecode.info/ /feed.atom" title=" Atom Feed">
+    <link rel="alternate" type="application/json" href="https://cadecode.info/ /feed.json" title=" JSON Feed">
     <meta name="description" content="数据结构复杂度相关概念及分析方法">
-    <link rel="preload" href="/assets/css/1.styles.497d8624.css" as="style"><link rel="preload" href="/assets/js/app.125161a1.js" as="script"><link rel="preload" href="/assets/js/7.65fbc8f5.js" as="script"><link rel="prefetch" href="/assets/js/10.673093a9.js"><link rel="prefetch" href="/assets/js/11.84881b6a.js"><link rel="prefetch" href="/assets/js/12.01b6ac60.js"><link rel="prefetch" href="/assets/js/13.4aa473b6.js"><link rel="prefetch" href="/assets/js/14.163318de.js"><link rel="prefetch" href="/assets/js/15.3bd8c3c6.js"><link rel="prefetch" href="/assets/js/16.08a22ec5.js"><link rel="prefetch" href="/assets/js/17.8c2f598e.js"><link rel="prefetch" href="/assets/js/18.cb6d94e6.js"><link rel="prefetch" href="/assets/js/19.758eaae0.js"><link rel="prefetch" href="/assets/js/2.92ec88aa.js"><link rel="prefetch" href="/assets/js/20.5c29ef58.js"><link rel="prefetch" href="/assets/js/21.1af3bd77.js"><link rel="prefetch" href="/assets/js/22.43367170.js"><link rel="prefetch" href="/assets/js/23.0e355e80.js"><link rel="prefetch" href="/assets/js/24.b8b41340.js"><link rel="prefetch" href="/assets/js/25.da4bae33.js"><link rel="prefetch" href="/assets/js/26.65fd39fb.js"><link rel="prefetch" href="/assets/js/27.aafb376a.js"><link rel="prefetch" href="/assets/js/28.ef23962a.js"><link rel="prefetch" href="/assets/js/29.e3896584.js"><link rel="prefetch" href="/assets/js/3.c1d29a77.js"><link rel="prefetch" href="/assets/js/30.f0419815.js"><link rel="prefetch" href="/assets/js/31.f32ac754.js"><link rel="prefetch" href="/assets/js/32.e7fcb0a4.js"><link rel="prefetch" href="/assets/js/33.d9fe126c.js"><link rel="prefetch" href="/assets/js/34.7a451f6d.js"><link rel="prefetch" href="/assets/js/35.ac265f5a.js"><link rel="prefetch" href="/assets/js/36.0ac50a18.js"><link rel="prefetch" href="/assets/js/37.d769bb9e.js"><link rel="prefetch" href="/assets/js/38.b95aaeed.js"><link rel="prefetch" href="/assets/js/39.96556087.js"><link rel="prefetch" href="/assets/js/4.ac885d4b.js"><link rel="prefetch" href="/assets/js/40.f4fcb4e5.js"><link rel="prefetch" href="/assets/js/41.cd9d911d.js"><link rel="prefetch" href="/assets/js/42.885d5334.js"><link rel="prefetch" href="/assets/js/43.e1af3a2a.js"><link rel="prefetch" href="/assets/js/44.da36c39c.js"><link rel="prefetch" href="/assets/js/45.765e4e34.js"><link rel="prefetch" href="/assets/js/5.9c42f2e5.js"><link rel="prefetch" href="/assets/js/6.ba44edfc.js"><link rel="prefetch" href="/assets/js/8.aa885eb5.js"><link rel="prefetch" href="/assets/js/9.118a3dd8.js">
-    <link rel="stylesheet" href="/assets/css/1.styles.497d8624.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+    <link rel="preload" href="/assets/css/1.styles.c1877158.css" as="style"><link rel="preload" href="/assets/js/app.74b741a4.js" as="script"><link rel="preload" href="/assets/js/37.ac6f5933.js" as="script"><link rel="prefetch" href="/assets/js/10.9fc34fcb.js"><link rel="prefetch" href="/assets/js/11.fb037213.js"><link rel="prefetch" href="/assets/js/12.19325567.js"><link rel="prefetch" href="/assets/js/13.7c96bef1.js"><link rel="prefetch" href="/assets/js/14.434fed86.js"><link rel="prefetch" href="/assets/js/15.89ca750e.js"><link rel="prefetch" href="/assets/js/16.4d0111a3.js"><link rel="prefetch" href="/assets/js/17.5815550b.js"><link rel="prefetch" href="/assets/js/18.a4f05972.js"><link rel="prefetch" href="/assets/js/19.80c33009.js"><link rel="prefetch" href="/assets/js/2.8ec9795a.js"><link rel="prefetch" href="/assets/js/20.e2cc0397.js"><link rel="prefetch" href="/assets/js/21.45508fdc.js"><link rel="prefetch" href="/assets/js/22.cb73a85b.js"><link rel="prefetch" href="/assets/js/23.9e495726.js"><link rel="prefetch" href="/assets/js/24.ec3b9466.js"><link rel="prefetch" href="/assets/js/25.e2de57ac.js"><link rel="prefetch" href="/assets/js/26.46a4aa19.js"><link rel="prefetch" href="/assets/js/27.e4227d03.js"><link rel="prefetch" href="/assets/js/28.e856b477.js"><link rel="prefetch" href="/assets/js/29.1094e755.js"><link rel="prefetch" href="/assets/js/3.b9ee5ebf.js"><link rel="prefetch" href="/assets/js/30.9b862a33.js"><link rel="prefetch" href="/assets/js/31.1258a888.js"><link rel="prefetch" href="/assets/js/32.5337e7a9.js"><link rel="prefetch" href="/assets/js/33.7666ea92.js"><link rel="prefetch" href="/assets/js/34.03bbcc58.js"><link rel="prefetch" href="/assets/js/35.62bf0f7d.js"><link rel="prefetch" href="/assets/js/36.be18b619.js"><link rel="prefetch" href="/assets/js/38.c5d3e807.js"><link rel="prefetch" href="/assets/js/39.79b9f47e.js"><link rel="prefetch" href="/assets/js/4.60c29be5.js"><link rel="prefetch" href="/assets/js/40.c3b87706.js"><link rel="prefetch" href="/assets/js/41.4e4b2899.js"><link rel="prefetch" href="/assets/js/5.0cca39c6.js"><link rel="prefetch" href="/assets/js/6.d1950ba3.js"><link rel="prefetch" href="/assets/js/7.1322167a.js"><link rel="prefetch" href="/assets/js/8.40fdd282.js"><link rel="prefetch" href="/assets/js/9.17bbbd92.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.c1877158.css">
+    <!--webpack externals css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container head-hide"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
                             Index
                         </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
                             Search
@@ -32,7 +35,7 @@
                                 Links
                             </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">数据结构-复杂度</div> <div class="post-tag"><a href="/search/DataStructure"><i class="el-icon-paperclip"></i>
             DataStructure
-        </a></div> <div class="post-desc">数据结构复杂度相关概念及分析方法</div> <div class="markdown-content content__default"><h1 id="数据结构-复杂度"><a href="#数据结构-复杂度" class="header-anchor">#</a> 数据结构-复杂度</h1> <h2 id="复杂度分析"><a href="#复杂度分析" class="header-anchor">#</a> 复杂度分析</h2> <ol><li>数据结构和算法的目标：快、省，即执行效率和资源消耗</li> <li>“事后统计法”具有很大局限性，提前预估效率很重要</li> <li>复杂度分析是学习算法的精髓和分析算法的利器</li></ol> <h2 id="时间复杂度"><a href="#时间复杂度" class="header-anchor">#</a> 时间复杂度</h2> <ol><li>假设每行代码执行时间意义，所有代码的执行时间 <code>T(n)</code> 和每行代码的执行次数 <code>n</code> 成正比。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>T(n) = O (f(n))
+        </a></div> <div class="post-desc">数据结构复杂度相关概念及分析方法</div> <div class="markdown-content J_markdownContent content__default"><h1 id="数据结构-复杂度"><a href="#数据结构-复杂度" class="header-anchor">#</a> 数据结构-复杂度</h1> <h2 id="复杂度分析"><a href="#复杂度分析" class="header-anchor">#</a> 复杂度分析</h2> <ol><li>数据结构和算法的目标：快、省，即执行效率和资源消耗</li> <li>“事后统计法”具有很大局限性，提前预估效率很重要</li> <li>复杂度分析是学习算法的精髓和分析算法的利器</li></ol> <h2 id="时间复杂度"><a href="#时间复杂度" class="header-anchor">#</a> 时间复杂度</h2> <ol><li>假设每行代码执行时间意义，所有代码的执行时间 <code>T(n)</code> 和每行代码的执行次数 <code>n</code> 成正比。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>T(n) = O (f(n))
 </code></pre></div><ol start="2"><li>大O时间复杂度表示代码执行效率随数据规模增长的变化趋势，也叫<strong>渐进时间复杂度</strong>。</li> <li>当n很大时，低阶、常量、系数并不左右增长趋势，可以省略，只需要记录最大量级。</li></ol> <blockquote><ol><li>只关注循环次数最多的一段代码.</li> <li>加法法则：总复杂度等于量级最大的那一段代码。</li> <li>乘法法则：嵌套代码的复杂度等于内外代码复杂度之积。</li></ol></blockquote> <ol start="4"><li>常见复杂度量级
 <ol><li>非多项式量级：$O(2^n),O(n!)$,称为NP算法，效率较低。</li> <li>多项式量级：$O(1),O(logn),O(n),O(nlogn),O(n^k)$。</li></ol></li></ol> <p>$O(1)$</p> <div class="language- extra-class"><pre class="language-text"><code>int i = 1 ;
 int j = 2 ;
@@ -97,7 +100,9 @@ $$
 <span class="token punctuation">}</span>
 </code></pre></div><p>这段代码实现了一个往数组中插入数据的功能。当数组满了之后，即 count == array.length 时，用 for 循环遍历数组求和，将求和之后的 sum 值放到数组的第一个位置，然后从第二个 位置开始插入数据。如果数组一开始就有空闲空间，则直接将数据插入数组</p> <p>分析以上代码，得出：</p> <ol><li>最好情况时间复杂度：有空闲位置，直接插入下标为 count 的位置，复杂度为 O(1)</li> <li>最坏情况时间复杂度：遍历数组，复杂度为 O(n)</li> <li>加权平均时间复杂度：有空闲位置 n 种情况，不空闲 1 种，概率都为$\frac{1}{n+1}$，加权平均时间复杂度为 O(1)</li></ol> <p>$$
 1*\frac{1}{n+1}+1*\frac{1}{n+1}+...+n*\frac{1}{n+1}=&gt;O(1)
-$$</p> <ol start="4"><li><p>均摊时间复杂度是用摊还分析法得出的：</p> <p>例如上述代码中，每一次 O(n) 的插入操作，都会紧跟 n-1 个 O(1) 的插入操作，把耗时多的操作均摊到接下来 O(1) 的操作上，那么这一组操作的均摊时间复杂度就是 O(1)</p> <blockquote><p>对一个数据结构进行一组连续操作中，大部分情况下时间复杂度都很低，只有个别情况下时间复杂度比较高，而且这些操作之间存在前后连贯的时序关系，这个时候，我们可以将这一组操作放在一起分析，看是否能将较高时间复杂度那次操作的耗时，平摊到其他那些时间复杂度比较低的操作上。</p> <p>在能够应用均摊时间复杂度分析的场合，<strong>一般均摊时间复杂度就等于最好情况时间复杂度</strong></p></blockquote></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.github.io/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
+$$</p> <ol start="4"><li><p>均摊时间复杂度是用摊还分析法得出的：</p> <p>例如上述代码中，每一次 O(n) 的插入操作，都会紧跟 n-1 个 O(1) 的插入操作，把耗时多的操作均摊到接下来 O(1) 的操作上，那么这一组操作的均摊时间复杂度就是 O(1)</p> <blockquote><p>对一个数据结构进行一组连续操作中，大部分情况下时间复杂度都很低，只有个别情况下时间复杂度比较高，而且这些操作之间存在前后连贯的时序关系，这个时候，我们可以将这一组操作放在一起分析，看是否能将较高时间复杂度那次操作的耗时，平摊到其他那些时间复杂度比较低的操作上。</p> <p>在能够应用均摊时间复杂度分析的场合，<strong>一般均摊时间复杂度就等于最好情况时间复杂度</strong></p></blockquote></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div> <div class="comment-container"><div class="comment-title"><i class="el-icon-s-comment"></i>
+        Comment here, be cool~
+    </div> <div class="J_comment"></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.info/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
             Github
         </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
             Email
@@ -107,7 +112,14 @@ $$</p> <ol start="4"><li><p>均摊时间复杂度是用摊还分析法得出的�
             Theme
             <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
             powered by
-            <a href="https://www.vuepress.cn/" target="_blank">vuepress</a></p> <p><a href="https://cadecode.github.io/sitemap.xml" target="_blank">Sitemap</a></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.125161a1.js" defer></script><script src="/assets/js/7.65fbc8f5.js" defer></script>
-  </body>
+            <a href="https://www.vuepress.cn/" target="_blank">VuePress</a></p> <p id="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A4%8D%E6%9D%82%E5%BA%A6/" data-flag-title="数据结构-复杂度" class="leancloud_visitors">
+            本页访问次数 <i class="leancloud-visitors-count">0</i></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div> <div class="loading-container"><div class="loading-box"><span>Loading</span></div></div></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.74b741a4.js" defer></script><script src="/assets/js/37.ac6f5933.js" defer></script>
+<!--webpack externals-->
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+</body>
 </html>
