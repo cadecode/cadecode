@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>JavaScript DOM 样式操作 | CadeCode</title>
     <meta name="generator" content="VuePress 1.5.3">
     <link rel="icon" href="/meta/favicon.ico">
-    <link rel="alternate" type="application/rss+xml" href="https://cadecode.github.io/ /rss.xml" title=" RSS Feed">
-    <link rel="alternate" type="application/atom+xml" href="https://cadecode.github.io/ /feed.atom" title=" Atom Feed">
-    <link rel="alternate" type="application/json" href="https://cadecode.github.io/ /feed.json" title=" JSON Feed">
+    <link rel="alternate" type="application/rss+xml" href="https://cadecode.info/ /rss.xml" title=" RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://cadecode.info/ /feed.atom" title=" Atom Feed">
+    <link rel="alternate" type="application/json" href="https://cadecode.info/ /feed.json" title=" JSON Feed">
     <meta name="description" content="JavaScript 样式操作包括：通过 style 属性控制元素内联样式，通过 getComputedStyle 方法获取元素生效的样式，通过改变元素类名改变伪元素样式以通过计时器实现样式动画">
-    <link rel="preload" href="/assets/css/1.styles.497d8624.css" as="style"><link rel="preload" href="/assets/js/app.125161a1.js" as="script"><link rel="preload" href="/assets/js/29.e3896584.js" as="script"><link rel="prefetch" href="/assets/js/10.673093a9.js"><link rel="prefetch" href="/assets/js/11.84881b6a.js"><link rel="prefetch" href="/assets/js/12.01b6ac60.js"><link rel="prefetch" href="/assets/js/13.4aa473b6.js"><link rel="prefetch" href="/assets/js/14.163318de.js"><link rel="prefetch" href="/assets/js/15.3bd8c3c6.js"><link rel="prefetch" href="/assets/js/16.08a22ec5.js"><link rel="prefetch" href="/assets/js/17.8c2f598e.js"><link rel="prefetch" href="/assets/js/18.cb6d94e6.js"><link rel="prefetch" href="/assets/js/19.758eaae0.js"><link rel="prefetch" href="/assets/js/2.92ec88aa.js"><link rel="prefetch" href="/assets/js/20.5c29ef58.js"><link rel="prefetch" href="/assets/js/21.1af3bd77.js"><link rel="prefetch" href="/assets/js/22.43367170.js"><link rel="prefetch" href="/assets/js/23.0e355e80.js"><link rel="prefetch" href="/assets/js/24.b8b41340.js"><link rel="prefetch" href="/assets/js/25.da4bae33.js"><link rel="prefetch" href="/assets/js/26.65fd39fb.js"><link rel="prefetch" href="/assets/js/27.aafb376a.js"><link rel="prefetch" href="/assets/js/28.ef23962a.js"><link rel="prefetch" href="/assets/js/3.c1d29a77.js"><link rel="prefetch" href="/assets/js/30.f0419815.js"><link rel="prefetch" href="/assets/js/31.f32ac754.js"><link rel="prefetch" href="/assets/js/32.e7fcb0a4.js"><link rel="prefetch" href="/assets/js/33.d9fe126c.js"><link rel="prefetch" href="/assets/js/34.7a451f6d.js"><link rel="prefetch" href="/assets/js/35.ac265f5a.js"><link rel="prefetch" href="/assets/js/36.0ac50a18.js"><link rel="prefetch" href="/assets/js/37.d769bb9e.js"><link rel="prefetch" href="/assets/js/38.b95aaeed.js"><link rel="prefetch" href="/assets/js/39.96556087.js"><link rel="prefetch" href="/assets/js/4.ac885d4b.js"><link rel="prefetch" href="/assets/js/40.f4fcb4e5.js"><link rel="prefetch" href="/assets/js/41.cd9d911d.js"><link rel="prefetch" href="/assets/js/42.885d5334.js"><link rel="prefetch" href="/assets/js/43.e1af3a2a.js"><link rel="prefetch" href="/assets/js/44.da36c39c.js"><link rel="prefetch" href="/assets/js/45.765e4e34.js"><link rel="prefetch" href="/assets/js/5.9c42f2e5.js"><link rel="prefetch" href="/assets/js/6.ba44edfc.js"><link rel="prefetch" href="/assets/js/7.65fbc8f5.js"><link rel="prefetch" href="/assets/js/8.aa885eb5.js"><link rel="prefetch" href="/assets/js/9.118a3dd8.js">
-    <link rel="stylesheet" href="/assets/css/1.styles.497d8624.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+    <link rel="preload" href="/assets/css/1.styles.c1877158.css" as="style"><link rel="preload" href="/assets/js/app.74b741a4.js" as="script"><link rel="preload" href="/assets/js/21.45508fdc.js" as="script"><link rel="prefetch" href="/assets/js/10.9fc34fcb.js"><link rel="prefetch" href="/assets/js/11.fb037213.js"><link rel="prefetch" href="/assets/js/12.19325567.js"><link rel="prefetch" href="/assets/js/13.7c96bef1.js"><link rel="prefetch" href="/assets/js/14.434fed86.js"><link rel="prefetch" href="/assets/js/15.89ca750e.js"><link rel="prefetch" href="/assets/js/16.4d0111a3.js"><link rel="prefetch" href="/assets/js/17.5815550b.js"><link rel="prefetch" href="/assets/js/18.a4f05972.js"><link rel="prefetch" href="/assets/js/19.80c33009.js"><link rel="prefetch" href="/assets/js/2.8ec9795a.js"><link rel="prefetch" href="/assets/js/20.e2cc0397.js"><link rel="prefetch" href="/assets/js/22.cb73a85b.js"><link rel="prefetch" href="/assets/js/23.9e495726.js"><link rel="prefetch" href="/assets/js/24.ec3b9466.js"><link rel="prefetch" href="/assets/js/25.e2de57ac.js"><link rel="prefetch" href="/assets/js/26.46a4aa19.js"><link rel="prefetch" href="/assets/js/27.e4227d03.js"><link rel="prefetch" href="/assets/js/28.e856b477.js"><link rel="prefetch" href="/assets/js/29.1094e755.js"><link rel="prefetch" href="/assets/js/3.b9ee5ebf.js"><link rel="prefetch" href="/assets/js/30.9b862a33.js"><link rel="prefetch" href="/assets/js/31.1258a888.js"><link rel="prefetch" href="/assets/js/32.5337e7a9.js"><link rel="prefetch" href="/assets/js/33.7666ea92.js"><link rel="prefetch" href="/assets/js/34.03bbcc58.js"><link rel="prefetch" href="/assets/js/35.62bf0f7d.js"><link rel="prefetch" href="/assets/js/36.be18b619.js"><link rel="prefetch" href="/assets/js/37.ac6f5933.js"><link rel="prefetch" href="/assets/js/38.c5d3e807.js"><link rel="prefetch" href="/assets/js/39.79b9f47e.js"><link rel="prefetch" href="/assets/js/4.60c29be5.js"><link rel="prefetch" href="/assets/js/40.c3b87706.js"><link rel="prefetch" href="/assets/js/41.4e4b2899.js"><link rel="prefetch" href="/assets/js/5.0cca39c6.js"><link rel="prefetch" href="/assets/js/6.d1950ba3.js"><link rel="prefetch" href="/assets/js/7.1322167a.js"><link rel="prefetch" href="/assets/js/8.40fdd282.js"><link rel="prefetch" href="/assets/js/9.17bbbd92.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.c1877158.css">
+    <!--webpack externals css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container head-hide"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
                             Index
                         </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
                             Search
@@ -32,7 +35,7 @@
                                 Links
                             </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">JavaScript DOM 样式操作</div> <div class="post-tag"><a href="/search/JavaScript"><i class="el-icon-paperclip"></i>
             JavaScript
-        </a></div> <div class="post-desc">JavaScript 样式操作包括：通过 style 属性控制元素内联样式，通过 getComputedStyle 方法获取元素生效的样式，通过改变元素类名改变伪元素样式以通过计时器实现样式动画</div> <div class="markdown-content content__default"><h1 id="javascript-dom-样式操作"><a href="#javascript-dom-样式操作" class="header-anchor">#</a> JavaScript DOM 样式操作</h1> <h2 id="style-属性"><a href="#style-属性" class="header-anchor">#</a> style 属性</h2> <ol><li><p>DOM 不能直接操作 CSS 文件，通过操作元素的 style 属性间接操作样式</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> oDiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        </a></div> <div class="post-desc">JavaScript 样式操作包括：通过 style 属性控制元素内联样式，通过 getComputedStyle 方法获取元素生效的样式，通过改变元素类名改变伪元素样式以通过计时器实现样式动画</div> <div class="markdown-content J_markdownContent content__default"><h1 id="javascript-dom-样式操作"><a href="#javascript-dom-样式操作" class="header-anchor">#</a> JavaScript DOM 样式操作</h1> <h2 id="style-属性"><a href="#style-属性" class="header-anchor">#</a> style 属性</h2> <ol><li><p>DOM 不能直接操作 CSS 文件，通过操作元素的 style 属性间接操作样式</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> oDiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 oDiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token string">'100px'</span><span class="token punctuation">;</span>
 oDiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span>
 <span class="token comment">// style 属性即内联样式，不能得出 CSS 文件定义的内容</span>
@@ -142,7 +145,9 @@ oDiv<span class="token punctuation">.</span>className <span class="token operato
             <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     &lt;/style&gt;
-</code></pre></div></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.github.io/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
+</code></pre></div></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div> <div class="comment-container"><div class="comment-title"><i class="el-icon-s-comment"></i>
+        Comment here, be cool~
+    </div> <div class="J_comment"></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.info/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
             Github
         </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
             Email
@@ -152,7 +157,14 @@ oDiv<span class="token punctuation">.</span>className <span class="token operato
             Theme
             <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
             powered by
-            <a href="https://www.vuepress.cn/" target="_blank">vuepress</a></p> <p><a href="https://cadecode.github.io/sitemap.xml" target="_blank">Sitemap</a></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.125161a1.js" defer></script><script src="/assets/js/29.e3896584.js" defer></script>
-  </body>
+            <a href="https://www.vuepress.cn/" target="_blank">VuePress</a></p> <p id="/post/javascript-dom-%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C/" data-flag-title="JavaScript DOM 样式操作" class="leancloud_visitors">
+            本页访问次数 <i class="leancloud-visitors-count">0</i></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div> <div class="loading-container"><div class="loading-box"><span>Loading</span></div></div></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.74b741a4.js" defer></script><script src="/assets/js/21.45508fdc.js" defer></script>
+<!--webpack externals-->
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+</body>
 </html>
