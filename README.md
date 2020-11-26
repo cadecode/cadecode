@@ -26,7 +26,7 @@ const me = {
 }
 ```
 
-![Github Stats](https://github-readme-stats.vercel.app/api?username=cadecode&show_icons=true)
+![Github Stats](https://github-readme-stats.vercel.app/api?username=cadecode&show_icons=true&hide=prs,contribs)
 
 
 #### ⚡ [Cade Li's GitHub Pages](https://cadecode.info/)  
