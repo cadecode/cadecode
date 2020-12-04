@@ -1,5 +1,4 @@
-
-![Github Stats](https://github-readme-stats.vercel.app/api?username=cadecode&show_icons=true)
+<img src="https://github-readme-stats.vercel.app/api?username=cadecode&show_icons=true" align="right"/>
 
 ### Hi there 👋
 
