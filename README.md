@@ -1,4 +1,4 @@
-<img src="https://github-readme-stats.vercel.app/api?username=cadecode&show_icons=true" align="right"/>
+<img src="https://github-readme-stats.vercel.app/api?username=cadecode&show_icons=true&hide_title=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff" align="right"/>
 
 ### Hi there 👋
 
