@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>ES6 Promise | CadeCode</title>
-    <meta name="generator" content="VuePress 1.5.3">
+    <meta name="generator" content="VuePress 1.5.4">
     <link rel="icon" href="/meta/favicon.ico">
-    <link rel="alternate" type="application/rss+xml" href="https://cadecode.info/ /rss.xml" title=" RSS Feed">
-    <link rel="alternate" type="application/atom+xml" href="https://cadecode.info/ /feed.atom" title=" Atom Feed">
-    <link rel="alternate" type="application/json" href="https://cadecode.info/ /feed.json" title=" JSON Feed">
+    <link rel="alternate" type="application/rss+xml" href="https://cadecode.github.io/ /rss.xml" title=" RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://cadecode.github.io/ /feed.atom" title=" Atom Feed">
+    <link rel="alternate" type="application/json" href="https://cadecode.github.io/ /feed.json" title=" JSON Feed">
     <meta name="description" content="ES6 Promise Api、Promise.all、Promise、race 以及 async/await 的使用">
-    <link rel="preload" href="/assets/css/1.styles.9b3f04ec.css" as="style"><link rel="preload" href="/assets/js/app.f4ab58f6.js" as="script"><link rel="preload" href="/assets/js/19.e24f1266.js" as="script"><link rel="prefetch" href="/assets/js/10.c1ae2c49.js"><link rel="prefetch" href="/assets/js/11.9575ee42.js"><link rel="prefetch" href="/assets/js/12.61e0de30.js"><link rel="prefetch" href="/assets/js/13.3c6c03a9.js"><link rel="prefetch" href="/assets/js/14.f49a4da9.js"><link rel="prefetch" href="/assets/js/15.ee64f96d.js"><link rel="prefetch" href="/assets/js/16.30f2094c.js"><link rel="prefetch" href="/assets/js/17.ab555707.js"><link rel="prefetch" href="/assets/js/18.bbc07aa0.js"><link rel="prefetch" href="/assets/js/2.8ec9795a.js"><link rel="prefetch" href="/assets/js/20.46be83af.js"><link rel="prefetch" href="/assets/js/21.40bf79e0.js"><link rel="prefetch" href="/assets/js/22.14ac3424.js"><link rel="prefetch" href="/assets/js/23.e184be86.js"><link rel="prefetch" href="/assets/js/24.a381cb72.js"><link rel="prefetch" href="/assets/js/25.9013b43a.js"><link rel="prefetch" href="/assets/js/26.b60aae56.js"><link rel="prefetch" href="/assets/js/27.04c6856b.js"><link rel="prefetch" href="/assets/js/28.3de0b9b9.js"><link rel="prefetch" href="/assets/js/29.bdfbed6e.js"><link rel="prefetch" href="/assets/js/3.87d06ba9.js"><link rel="prefetch" href="/assets/js/30.caf07786.js"><link rel="prefetch" href="/assets/js/31.cbe1575d.js"><link rel="prefetch" href="/assets/js/32.fe52d239.js"><link rel="prefetch" href="/assets/js/33.010150c0.js"><link rel="prefetch" href="/assets/js/34.f229e166.js"><link rel="prefetch" href="/assets/js/35.d22472e6.js"><link rel="prefetch" href="/assets/js/36.bfcf0b1e.js"><link rel="prefetch" href="/assets/js/37.eb3cd28b.js"><link rel="prefetch" href="/assets/js/38.15a52a2a.js"><link rel="prefetch" href="/assets/js/39.66443117.js"><link rel="prefetch" href="/assets/js/4.2b8213a8.js"><link rel="prefetch" href="/assets/js/40.beea64fe.js"><link rel="prefetch" href="/assets/js/41.9897ba3c.js"><link rel="prefetch" href="/assets/js/42.f1240393.js"><link rel="prefetch" href="/assets/js/43.02eb515b.js"><link rel="prefetch" href="/assets/js/44.84661da8.js"><link rel="prefetch" href="/assets/js/45.4cb7ffc5.js"><link rel="prefetch" href="/assets/js/46.86f317c4.js"><link rel="prefetch" href="/assets/js/5.fac44ddd.js"><link rel="prefetch" href="/assets/js/6.bc076c8c.js"><link rel="prefetch" href="/assets/js/7.23cd3f44.js"><link rel="prefetch" href="/assets/js/8.b60442df.js"><link rel="prefetch" href="/assets/js/9.d96d6f65.js">
-    <link rel="stylesheet" href="/assets/css/1.styles.9b3f04ec.css">
-    <!--webpack externals css-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-</head>
-<body>
-<div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container head-hide"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+    <link rel="preload" href="/assets/css/1.styles.04475bed.css" as="style"><link rel="preload" href="/assets/js/app.83815f49.js" as="script"><link rel="preload" href="/assets/js/20.84c9b0c7.js" as="script"><link rel="prefetch" href="/assets/js/10.a3a5c1d7.js"><link rel="prefetch" href="/assets/js/11.aeaf7013.js"><link rel="prefetch" href="/assets/js/12.cdc8d9be.js"><link rel="prefetch" href="/assets/js/13.0f09caf0.js"><link rel="prefetch" href="/assets/js/14.732a1c62.js"><link rel="prefetch" href="/assets/js/15.3b89d94c.js"><link rel="prefetch" href="/assets/js/16.9f10b699.js"><link rel="prefetch" href="/assets/js/17.f468530e.js"><link rel="prefetch" href="/assets/js/18.4b912814.js"><link rel="prefetch" href="/assets/js/19.52b079c0.js"><link rel="prefetch" href="/assets/js/2.ee181f94.js"><link rel="prefetch" href="/assets/js/21.5fad489d.js"><link rel="prefetch" href="/assets/js/22.de43f521.js"><link rel="prefetch" href="/assets/js/23.c3717cdb.js"><link rel="prefetch" href="/assets/js/24.d5345f72.js"><link rel="prefetch" href="/assets/js/25.ff5e25ab.js"><link rel="prefetch" href="/assets/js/26.f8dea1a0.js"><link rel="prefetch" href="/assets/js/27.3f90b506.js"><link rel="prefetch" href="/assets/js/28.2843b681.js"><link rel="prefetch" href="/assets/js/29.ca0f0ab9.js"><link rel="prefetch" href="/assets/js/3.14b66714.js"><link rel="prefetch" href="/assets/js/30.80362959.js"><link rel="prefetch" href="/assets/js/31.9114c3e4.js"><link rel="prefetch" href="/assets/js/32.4269d403.js"><link rel="prefetch" href="/assets/js/33.f60a878f.js"><link rel="prefetch" href="/assets/js/34.03dbf434.js"><link rel="prefetch" href="/assets/js/35.a0bf3f98.js"><link rel="prefetch" href="/assets/js/36.20fbc925.js"><link rel="prefetch" href="/assets/js/37.dfcb01f9.js"><link rel="prefetch" href="/assets/js/38.47f886ad.js"><link rel="prefetch" href="/assets/js/39.a0135768.js"><link rel="prefetch" href="/assets/js/4.558a6ab3.js"><link rel="prefetch" href="/assets/js/40.d6779125.js"><link rel="prefetch" href="/assets/js/41.f5bf91eb.js"><link rel="prefetch" href="/assets/js/42.01d1dc97.js"><link rel="prefetch" href="/assets/js/43.1149a03b.js"><link rel="prefetch" href="/assets/js/44.6361d918.js"><link rel="prefetch" href="/assets/js/45.e2f94adf.js"><link rel="prefetch" href="/assets/js/46.514cf6ad.js"><link rel="prefetch" href="/assets/js/47.4a8c0b8b.js"><link rel="prefetch" href="/assets/js/48.4a22315c.js"><link rel="prefetch" href="/assets/js/49.88e3c33e.js"><link rel="prefetch" href="/assets/js/5.0698c0f4.js"><link rel="prefetch" href="/assets/js/50.cb4d3fca.js"><link rel="prefetch" href="/assets/js/6.087d968b.js"><link rel="prefetch" href="/assets/js/7.7f5d2457.js"><link rel="prefetch" href="/assets/js/8.102a15c5.js"><link rel="prefetch" href="/assets/js/9.3f27ec90.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.04475bed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
                             Index
                         </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
                             Search
@@ -37,7 +34,7 @@
             ES6
         </a><a href="/search/JavaScript"><i class="el-icon-paperclip"></i>
             JavaScript
-        </a></div> <div class="post-desc">ES6 Promise Api、Promise.all、Promise、race 以及 async/await 的使用</div> <div class="markdown-content J_markdownContent content__default"><h1 id="es6-promise"><a href="#es6-promise" class="header-anchor">#</a> ES6 Promise</h1> <h2 id="new-promise"><a href="#new-promise" class="header-anchor">#</a> new Promise</h2> <ol><li><p>Promise API 用于创建一个异步的任务——承诺</p> <p>承诺有三种状态：pending、fulfilled、rejected，即等待、实现、拒绝</p></li> <li><p>new Promise 接受一个 excutor 函数作为参数，创建承诺（pending 状态）</p></li> <li><p>excutor 函数接受 resolve，reject 函数作为参数，任务的执行器</p></li> <li><p>resolve 函数执行意味着承诺实现（fulfilled），传入承诺实现后的信息 value</p> <p>reject 函数执行意味着承诺拒绝（rejected），传入函数拒绝后的原因 reason</p></li> <li><p>excutor 函数内部代码在创建 Promise 实例时同步执行</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>executor<span class="token punctuation">)</span>
+        </a></div> <div class="post-desc">ES6 Promise Api、Promise.all、Promise、race 以及 async/await 的使用</div> <div class="markdown-content content__default"><h1 id="es6-promise"><a href="#es6-promise" class="header-anchor">#</a> ES6 Promise</h1> <h2 id="new-promise"><a href="#new-promise" class="header-anchor">#</a> new Promise</h2> <ol><li><p>Promise API 用于创建一个异步的任务——承诺</p> <p>承诺有三种状态：pending、fulfilled、rejected，即等待、实现、拒绝</p></li> <li><p>new Promise 接受一个 excutor 函数作为参数，创建承诺（pending 状态）</p></li> <li><p>excutor 函数接受 resolve，reject 函数作为参数，任务的执行器</p></li> <li><p>resolve 函数执行意味着承诺实现（fulfilled），传入承诺实现后的信息 value</p> <p>reject 函数执行意味着承诺拒绝（rejected），传入函数拒绝后的原因 reason</p></li> <li><p>excutor 函数内部代码在创建 Promise 实例时同步执行</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>executor<span class="token punctuation">)</span>
 
 <span class="token keyword">function</span> <span class="token function">executor</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// 同步执行</span>
@@ -189,9 +186,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// async 返回值类型：[object Promise]</span>
 <span class="token comment">// 2333</span>
 <span class="token comment">// Val: resolve</span>
-</code></pre></div></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div> <div class="comment-container"><div class="comment-title"><i class="el-icon-s-comment"></i>
-        Comment here, be cool~
-    </div> <div class="J_comment"></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.info/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
+</code></pre></div></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.github.io/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
             Github
         </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
             Email
@@ -201,14 +196,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             Theme
             <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
             powered by
-            <a href="https://www.vuepress.cn/" target="_blank">VuePress</a></p> <p id="/post/es6-promise/" data-flag-title="ES6 Promise" class="leancloud_visitors">
-            本页访问次数 <i class="leancloud-visitors-count">0</i></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div> <div class="loading-container"><div class="loading-box"><span>Loading</span></div></div></div><div class="global-ui"></div></div>
-<script src="/assets/js/app.f4ab58f6.js" defer></script><script src="/assets/js/19.e24f1266.js" defer></script>
-<!--webpack externals-->
-<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-</body>
+            <a href="https://www.vuepress.cn/" target="_blank">vuepress</a></p> <p><a href="https://cadecode.github.io/sitemap.xml" target="_blank">Sitemap</a></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.83815f49.js" defer></script><script src="/assets/js/20.84c9b0c7.js" defer></script>
+  </body>
 </html>
