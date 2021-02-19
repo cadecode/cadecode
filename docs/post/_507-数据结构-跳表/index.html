@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据结构-跳表 | CadeCode</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/meta/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="https://cadecode.info/ /rss.xml" title=" RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://cadecode.info/ /feed.atom" title=" Atom Feed">
+    <link rel="alternate" type="application/json" href="https://cadecode.info/ /feed.json" title=" JSON Feed">
+    <meta name="description" content="跳表是一种基于链表实现的类似二分查找的数据结构，本文介绍跳表的结构性能、复杂度分析及索引的更新方式等">
+    <link rel="preload" href="/assets/css/1.styles.fc2ef69e.css" as="style"><link rel="preload" href="/assets/js/app.f090c6fa.js" as="script"><link rel="preload" href="/assets/js/50.10e9b605.js" as="script"><link rel="prefetch" href="/assets/js/10.89af0a9b.js"><link rel="prefetch" href="/assets/js/11.02f9083c.js"><link rel="prefetch" href="/assets/js/12.251fc3f9.js"><link rel="prefetch" href="/assets/js/13.42bb7c81.js"><link rel="prefetch" href="/assets/js/14.62d5be11.js"><link rel="prefetch" href="/assets/js/15.892c92c8.js"><link rel="prefetch" href="/assets/js/16.3a0188a2.js"><link rel="prefetch" href="/assets/js/17.2efe4132.js"><link rel="prefetch" href="/assets/js/18.173c115d.js"><link rel="prefetch" href="/assets/js/19.03dfd8f7.js"><link rel="prefetch" href="/assets/js/2.97208efe.js"><link rel="prefetch" href="/assets/js/20.030c5a59.js"><link rel="prefetch" href="/assets/js/21.07694793.js"><link rel="prefetch" href="/assets/js/22.e01966c1.js"><link rel="prefetch" href="/assets/js/23.34ac6a36.js"><link rel="prefetch" href="/assets/js/24.0d2ebfdf.js"><link rel="prefetch" href="/assets/js/25.b1e440c5.js"><link rel="prefetch" href="/assets/js/26.f1cdc267.js"><link rel="prefetch" href="/assets/js/27.30083c19.js"><link rel="prefetch" href="/assets/js/28.7a0b71b0.js"><link rel="prefetch" href="/assets/js/29.5466f138.js"><link rel="prefetch" href="/assets/js/3.20b74c66.js"><link rel="prefetch" href="/assets/js/30.a454ad56.js"><link rel="prefetch" href="/assets/js/31.0b525909.js"><link rel="prefetch" href="/assets/js/32.da70c8fe.js"><link rel="prefetch" href="/assets/js/33.a14d6197.js"><link rel="prefetch" href="/assets/js/34.06f01f08.js"><link rel="prefetch" href="/assets/js/35.08cf558b.js"><link rel="prefetch" href="/assets/js/36.7a188bb2.js"><link rel="prefetch" href="/assets/js/37.c7701102.js"><link rel="prefetch" href="/assets/js/38.01151a84.js"><link rel="prefetch" href="/assets/js/39.a634b0f7.js"><link rel="prefetch" href="/assets/js/4.3ae04e58.js"><link rel="prefetch" href="/assets/js/40.5daa7f23.js"><link rel="prefetch" href="/assets/js/41.c1864f3f.js"><link rel="prefetch" href="/assets/js/42.a397be76.js"><link rel="prefetch" href="/assets/js/43.a8655a0e.js"><link rel="prefetch" href="/assets/js/44.8b390ee4.js"><link rel="prefetch" href="/assets/js/45.de78e5e5.js"><link rel="prefetch" href="/assets/js/46.53c93afb.js"><link rel="prefetch" href="/assets/js/47.9b24f7b3.js"><link rel="prefetch" href="/assets/js/48.03927eb8.js"><link rel="prefetch" href="/assets/js/49.e08edab2.js"><link rel="prefetch" href="/assets/js/5.8478d9c8.js"><link rel="prefetch" href="/assets/js/6.1f9cc124.js"><link rel="prefetch" href="/assets/js/7.9925e482.js"><link rel="prefetch" href="/assets/js/8.4b4198a3.js"><link rel="prefetch" href="/assets/js/9.7e095b0d.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.fc2ef69e.css">
+    <!--webpack externals css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container head-hide"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+                            Index
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
+                            Search
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-info"></i>
+                            About
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-link"></i>
+                            Links
+                        </li></ul></div> <div class="el-col el-col-24 el-col-xs-24 el-col-sm-0"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" aria-haspopup="true" class="head-menu-sub el-submenu"><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">Menu<i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-s-home"></i>
+                                Index
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-search"></i>
+                                Search
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-info"></i>
+                                About
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-link"></i>
+                                Links
+                            </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">数据结构-跳表</div> <div class="post-tag"><a href="/search/Data Structure"><i class="el-icon-paperclip"></i>
+            Data Structure
+        </a></div> <div class="post-desc">跳表是一种基于链表实现的类似二分查找的数据结构，本文介绍跳表的结构性能、复杂度分析及索引的更新方式等</div> <div class="markdown-content J_markdownContent content__default"><h1 id="数据结构-跳表"><a href="#数据结构-跳表" class="header-anchor">#</a> 数据结构-跳表</h1> <h2 id="跳表概念"><a href="#跳表概念" class="header-anchor">#</a> 跳表概念</h2> <ol><li><p>二分查找法依赖于数组的随机访问特性，只能用数组实现</p> <p>跳表是基于链表实现类似于二分查找的算法</p></li> <li><p>查找、插入、删除各方面性能都不错的动态数据结构，甚至可以替代红黑树</p></li> <li><p>Redis 中的有序集合（Sorted Set）就是用跳表来实现的</p></li></ol> <h2 id="跳表结构"><a href="#跳表结构" class="header-anchor">#</a> 跳表结构</h2> <ol><li>对于一个有序的单链表，想在其中查找某个数据，只能从头到尾遍历链表。效率很低</li> <li>对链表建立一级索引，每两个结点提取一个结点到上一级，抽出来的一级称为索引层</li> <li>索引层结点有指针指向下一级结点</li> <li>在查找结点时，先在索引层遍历，再下降到原始链表，就能减少遍历次数</li> <li>当链表很长，使用多级索引结构可以大大提高查找效率</li></ol> <h2 id="跳表性能"><a href="#跳表性能" class="header-anchor">#</a> 跳表性能</h2> <h3 id="跳表的高度"><a href="#跳表的高度" class="header-anchor">#</a> 跳表的高度</h3> <ol><li>第 k 级索引的结点个数是第 k-1 级索引的结点个数的 $\frac{1}{2}$，那么第 k 级索引 结点的个数就是 $\frac{n}{2^k}$</li> <li>假设索引有 h 级，最高级的索引有 2 个结点。通过上面的公式，可以得到求得 $h=log_2n-1$</li> <li>如果包含原始链表这一层，整个跳表的高度就是 $log_2n$</li></ol> <h3 id="查找时间复杂度"><a href="#查找时间复杂度" class="header-anchor">#</a> 查找时间复杂度</h3> <ol start="2"><li><p>上级索引通过指针下降到下级索引</p></li> <li><p>当每级索引都是两个结点抽出一个结点作为上一级索引的结点时，每一层最多遍历3个结点</p> <p>时间复杂度为  $O(2*logn)$，即 $O(logn)$</p></li> <li><p>如果每一层最多要遍历 m 个结点，那么时间复杂度为 $O(m*logn)$</p></li></ol> <h3 id="插入时间复杂度"><a href="#插入时间复杂度" class="header-anchor">#</a> 插入时间复杂度</h3> <ol><li><p>在单链表中，如果知道要插入的位置，插入结点的时间复杂度是 $O(1)$</p> <p>为了保证原始链表中数据的有序性，需要先找到要插入的位置，这个查找操作比较耗时</p></li> <li><p>查找某个结点的的时间复杂度是 $O(logn)$，查找某个数据应该插入的位置，时间复杂度也是 $O(logn)$</p></li></ol> <h3 id="删除时间复杂度"><a href="#删除时间复杂度" class="header-anchor">#</a> 删除时间复杂度</h3> <ol><li>如果这个结点在索引中也有出现，我们除了要删除原始链表中的结点，还要删除索引中的结点</li> <li>删除一个结点要找到其前驱结点，如果是双向链表则可以通过指针获得</li> <li>时间复杂度为 $O(logn)$</li></ol> <h2 id="内存消耗"><a href="#内存消耗" class="header-anchor">#</a> 内存消耗</h2> <ol><li><p>比起单链表，跳表需要存储多级索引，要消耗更多的存储空间</p></li> <li><p>如果将包含 n 个结点的单链表构造成跳表，需要额外再用接近 n 个结点的存储空间</p></li> <li><p>每隔三个结点抽出一个结点比每隔两个会节省索引存储空间，但性能会下降</p></li> <li><p>在实际的软件开发中，原始链表中存储的可能是很大的对象</p> <p>而索引结点只需要存储关键值和几个指针，并不需要存储对象</p> <p>所以当对象比索引结点大很多时，索引占用的额外空间可以忽略</p></li></ol> <h2 id="索引动态更新"><a href="#索引动态更新" class="header-anchor">#</a> 索引动态更新</h2> <ol><li><p>跳表中插入数据，如果不更新索引，某 2 个索引结点之间数据过多，性能退化</p></li> <li><p>跳表是通过随机函数来维护索引与原始链表大小之间的平衡</p></li> <li><p>通过随机函数，来决定将这个结点插入到哪几级索引中</p></li></ol> <p>比如随机函数生成了值 K，就将这个结点添加到第一级到第 K 级索引中</p> <p>随机函数的选取很重要，从概率上来讲，能够保证跳表的索引大小和数据大小平衡性，避免性能过度退化</p></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div> <div class="comment-container"><div class="comment-title"><i class="el-icon-s-comment"></i>
+        Comment here, be cool~
+    </div> <div class="J_comment"></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.info/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
+            Github
+        </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
+            Email
+        </a><a href="https://www.cnblogs.com/pgjett" target="_blank">
+            Cnblogs
+        </a></div> <div class="foot-meta"><p>Copyright © 2020 CadeCode</p> <p>
+            Theme
+            <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
+            powered by
+            <a href="https://www.vuepress.cn/" target="_blank">VuePress</a></p> <p id="/post/_507-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E8%B7%B3%E8%A1%A8/" data-flag-title="数据结构-跳表" class="leancloud_visitors">
+            本页访问次数 <i class="leancloud-visitors-count">0</i></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div> <div class="loading-container"><div class="loading-box"><span>Loading</span></div></div></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.f090c6fa.js" defer></script><script src="/assets/js/50.10e9b605.js" defer></script>
+<!--webpack externals-->
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+</body>
+</html>
