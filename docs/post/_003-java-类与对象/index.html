@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Java 类与对象 | CadeCode</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/meta/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="https://cadecode.info/ /rss.xml" title=" RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://cadecode.info/ /feed.atom" title=" Atom Feed">
+    <link rel="alternate" type="application/json" href="https://cadecode.info/ /feed.json" title=" JSON Feed">
+    <meta name="description" content="Java 数据类型、修饰符、方法、变量、内部类等基础知识">
+    <link rel="preload" href="/assets/css/1.styles.fc2ef69e.css" as="style"><link rel="preload" href="/assets/js/app.f090c6fa.js" as="script"><link rel="preload" href="/assets/js/7.9925e482.js" as="script"><link rel="prefetch" href="/assets/js/10.89af0a9b.js"><link rel="prefetch" href="/assets/js/11.02f9083c.js"><link rel="prefetch" href="/assets/js/12.251fc3f9.js"><link rel="prefetch" href="/assets/js/13.42bb7c81.js"><link rel="prefetch" href="/assets/js/14.62d5be11.js"><link rel="prefetch" href="/assets/js/15.892c92c8.js"><link rel="prefetch" href="/assets/js/16.3a0188a2.js"><link rel="prefetch" href="/assets/js/17.2efe4132.js"><link rel="prefetch" href="/assets/js/18.173c115d.js"><link rel="prefetch" href="/assets/js/19.03dfd8f7.js"><link rel="prefetch" href="/assets/js/2.97208efe.js"><link rel="prefetch" href="/assets/js/20.030c5a59.js"><link rel="prefetch" href="/assets/js/21.07694793.js"><link rel="prefetch" href="/assets/js/22.e01966c1.js"><link rel="prefetch" href="/assets/js/23.34ac6a36.js"><link rel="prefetch" href="/assets/js/24.0d2ebfdf.js"><link rel="prefetch" href="/assets/js/25.b1e440c5.js"><link rel="prefetch" href="/assets/js/26.f1cdc267.js"><link rel="prefetch" href="/assets/js/27.30083c19.js"><link rel="prefetch" href="/assets/js/28.7a0b71b0.js"><link rel="prefetch" href="/assets/js/29.5466f138.js"><link rel="prefetch" href="/assets/js/3.20b74c66.js"><link rel="prefetch" href="/assets/js/30.a454ad56.js"><link rel="prefetch" href="/assets/js/31.0b525909.js"><link rel="prefetch" href="/assets/js/32.da70c8fe.js"><link rel="prefetch" href="/assets/js/33.a14d6197.js"><link rel="prefetch" href="/assets/js/34.06f01f08.js"><link rel="prefetch" href="/assets/js/35.08cf558b.js"><link rel="prefetch" href="/assets/js/36.7a188bb2.js"><link rel="prefetch" href="/assets/js/37.c7701102.js"><link rel="prefetch" href="/assets/js/38.01151a84.js"><link rel="prefetch" href="/assets/js/39.a634b0f7.js"><link rel="prefetch" href="/assets/js/4.3ae04e58.js"><link rel="prefetch" href="/assets/js/40.5daa7f23.js"><link rel="prefetch" href="/assets/js/41.c1864f3f.js"><link rel="prefetch" href="/assets/js/42.a397be76.js"><link rel="prefetch" href="/assets/js/43.a8655a0e.js"><link rel="prefetch" href="/assets/js/44.8b390ee4.js"><link rel="prefetch" href="/assets/js/45.de78e5e5.js"><link rel="prefetch" href="/assets/js/46.53c93afb.js"><link rel="prefetch" href="/assets/js/47.9b24f7b3.js"><link rel="prefetch" href="/assets/js/48.03927eb8.js"><link rel="prefetch" href="/assets/js/49.e08edab2.js"><link rel="prefetch" href="/assets/js/5.8478d9c8.js"><link rel="prefetch" href="/assets/js/50.10e9b605.js"><link rel="prefetch" href="/assets/js/6.1f9cc124.js"><link rel="prefetch" href="/assets/js/8.4b4198a3.js"><link rel="prefetch" href="/assets/js/9.7e095b0d.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.fc2ef69e.css">
+    <!--webpack externals css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container head-hide"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+                            Index
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
+                            Search
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-info"></i>
+                            About
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-link"></i>
+                            Links
+                        </li></ul></div> <div class="el-col el-col-24 el-col-xs-24 el-col-sm-0"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" aria-haspopup="true" class="head-menu-sub el-submenu"><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">Menu<i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-s-home"></i>
+                                Index
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-search"></i>
+                                Search
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-info"></i>
+                                About
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-link"></i>
+                                Links
+                            </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">Java 类与对象</div> <div class="post-tag"><a href="/search/Java"><i class="el-icon-paperclip"></i>
+            Java
+        </a></div> <div class="post-desc">Java 数据类型、修饰符、方法、变量、内部类等基础知识</div> <div class="markdown-content J_markdownContent content__default"><h1 id="java-类与对象"><a href="#java-类与对象" class="header-anchor">#</a> Java 类与对象</h1> <h2 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h2> <blockquote><p>变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间</p> <p>内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据</p></blockquote> <h3 id="基本数据类型"><a href="#基本数据类型" class="header-anchor">#</a> 基本数据类型</h3> <ol><li>java 中有 8 种基本数据类型，其中 4 个整型、2 个浮点型、字符型、布尔型</li> <li>每种基本数据类型都有数据范围约束和缺省值</li></ol> <h3 id="引用数据类型"><a href="#引用数据类型" class="header-anchor">#</a> 引用数据类型</h3> <ol><li>引用类型指向一个对象，指向对象的变量是引用变量</li> <li>引用变量在声明时被指定为一个特定的类型</li> <li>java 中 String，数组，对象都是引用数据类型</li> <li>所有的引用类型默认值位 null</li> <li>一个引用变量可以用来引用任何与之兼容的类型</li></ol> <h3 id="枚举类型"><a href="#枚举类型" class="header-anchor">#</a> 枚举类型</h3> <ol><li><p>枚举 enum 是一种特殊的类，使用枚举可以很方便的定义常量</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Season</span> <span class="token punctuation">{</span>
+	SPRING<span class="token punctuation">,</span>SUMMER<span class="token punctuation">,</span>AUTUMN<span class="token punctuation">,</span>WINTER
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>常用的场合就是 switch 语句中，使用枚举来进行判断</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Season</span> season <span class="token operator">=</span> <span class="token class-name">Season</span><span class="token punctuation">.</span>SPRING<span class="token punctuation">;</span><span class="token comment">//枚举类名.变量名</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>season<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> SPRING<span class="token operator">:</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;春天&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> SUMMER<span class="token operator">:</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;夏天&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> AUTUMN<span class="token operator">:</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;秋天&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> WINTER<span class="token operator">:</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;冬天&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>可以使用 foreach 遍历枚举</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Season</span> s <span class="token operator">:</span> <span class="token class-name">Season</span><span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ol> <h2 id="修饰符"><a href="#修饰符" class="header-anchor">#</a> 修饰符</h2> <h3 id="访问控制"><a href="#访问控制" class="header-anchor">#</a> 访问控制</h3> <ol><li>public
+<ul><li>对所有类可见</li> <li>使用对象：类、接口、变量、方法</li></ul></li> <li>protected
+<ul><li>在同一包中，被声明为 protected 的变量、方法和构造器能被同一个包中的任何其他类访问</li> <li>子类与基类不在同一包中，子类实例可以访问从基类继承而来的 protected 方法，不能使用基类实例访问 protected 方法</li> <li>使用对象：变量、方法、内部类</li></ul></li> <li>缺省
+<ul><li>在同一包内可见，不使用任何修饰符</li> <li>使用对象：类、接口、变量、方法</li></ul></li> <li>private
+<ul><li>在同一类内可见</li> <li>使用对象：变量、方法、内部类</li></ul></li></ol> <h3 id="其他修饰符"><a href="#其他修饰符" class="header-anchor">#</a> 其他修饰符</h3> <ol><li>final
+<ul><li>用来修饰类、方法和变量</li> <li>final 修饰的类不能够被继承</li> <li>修饰的方法不能被继承类重新定义</li> <li>修饰的变量为常量，不可通过重新赋值修改。</li></ul></li> <li>static
+<ul><li>用来修饰类方法和类变量</li> <li>修饰内部类，称为静态内部类</li></ul></li> <li>abstract
+<ul><li>用来创建抽象类和抽象方法</li> <li>接口及其方法默认为 public abstract</li></ul></li></ol> <h2 id="方法"><a href="#方法" class="header-anchor">#</a> 方法</h2> <h3 id="构造方法"><a href="#构造方法" class="header-anchor">#</a> 构造方法</h3> <ol><li>作用：构造方法是在对象被创建时初始化对象成员的方法</li> <li>名称与类名相同，不能有返回值和 void，因为返回值就是该类本身</li> <li>没有定义构造方法，会默认拥有无参构造，如果定义了构造方法，则不会拥有默认构造方法</li> <li>在继承中
+<ul><li>父类没有定义构造方法或定义了无参数的构造方法，子类不须要定义构造方法</li> <li>父类只有带参数的构造方法时，子类也不能有无参构造，必须定义带参构造，且要在第一行通过 super 显式调用父类构造方法</li></ul></li></ol> <h3 id="类方法"><a href="#类方法" class="header-anchor">#</a> 类方法</h3> <ol><li><p>类方法，即静态方法，使用 static 声明</p></li> <li><p>独立于对象，属于类，使用类名.方法名来调用</p></li> <li><p>静态方法不能使用类的非静态变量，不能不通过对象直接调用非静态方法</p> <blockquote><p>静态方法在类加载被声明，这时对象还未实例化，不能在静态方法中使用实例对象的属性</p></blockquote></li> <li><p>静态方法不能被继承，子类可以声明同名静态变量，但与父类互不影响，称为隐藏</p></li> <li><p>抽象方法不能是静态的，无论是抽象类还是接口</p> <blockquote><p>抽象方法的目的是重写方法，定义成静态方法就不能被重写</p> <p>抽象方法没有方法体，所以静态抽象方法没有意义</p> <p>抽象类可以有静态非抽象方法</p> <p>jdk8 中，接口可以声明静态非抽象方法</p></blockquote></li></ol> <h3 id="对象方法"><a href="#对象方法" class="header-anchor">#</a> 对象方法</h3> <ol><li>对象方法，即非静态方法</li> <li>实例化对象后，通过对象名.方法名来调用</li> <li>非静态方法可以直接调用非静态方法和静态方法</li> <li>非静态方法中使用 this 表示当前对象</li></ol> <h2 id="变量"><a href="#变量" class="header-anchor">#</a> 变量</h2> <blockquote><p>用来命名一个数据的标识符</p> <p>成员变量，是全局变量，也叫字段</p></blockquote> <h3 id="类变量"><a href="#类变量" class="header-anchor">#</a> 类变量</h3> <ol><li>类变量，即静态变量，使用 static 声明</li> <li>独立于对象，属于类，通过类名.变量名来访问</li></ol> <h3 id="对象变量"><a href="#对象变量" class="header-anchor">#</a> 对象变量</h3> <ol><li>对象变量，即非静态变量</li> <li>实例化对象后，通过对象名.变量名来调用</li></ol> <h3 id="局部变量"><a href="#局部变量" class="header-anchor">#</a> 局部变量</h3> <ol><li>局部变量，即临时变量，如方法内部声明的变量、方法的参数</li> <li>局部变量存放在栈中，方法结束后局部变量占用的内存将被释放</li> <li>必须手动赋值初始化，否则报错</li> <li>局部变量不能使用 static 和访问修饰符</li></ol> <h2 id="内部类"><a href="#内部类" class="header-anchor">#</a> 内部类</h2> <h3 id="非静态内部类"><a href="#非静态内部类" class="header-anchor">#</a> 非静态内部类</h3> <ol><li><p>非静态内部类直接定义在外部类里面</p></li> <li><p>非静态内部类，是属于对象的，只有一个外部类对象存在的时候，才有意义</p></li> <li><p>非静态内部类可以访问外部类的静态成员和非静态成员</p></li> <li><p>创建非静态内部类对象通过<code>new Outer().new Inner()</code>或<code>this.new Inner()</code>，this 可以省略</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Outer</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> s<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">outMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 省略了 this</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">Inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">outStaticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">Inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 外部类实例对象.new 内部类（）</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">Inner</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">inMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">outMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 访问外部私有方法</span>
+            <span class="token function">outStaticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 访问外部静态方法</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 访问外部静态变量</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 访问外部非静态变量</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ol> <h3 id="静态内部类"><a href="#静态内部类" class="header-anchor">#</a> 静态内部类</h3> <ol><li>静态内部类使用 static 修饰</li> <li>静态内部类是属于类的</li> <li>静态内部类不可以访问外部类非静态变量和非静态方法</li> <li>静态内部类可以访问外部类的静态成员</li> <li>不需要一个外部类的实例为基础，可以直接实例化</li></ol> <h3 id="匿名内部类"><a href="#匿名内部类" class="header-anchor">#</a> 匿名内部类</h3> <ol><li><p>通常情况下，要使用一个接口或者抽象类，必须创建一个子类</p></li> <li><p>为了快速使用，直接实例化一个抽象类，并实现其抽象方法，这个类没有命名，称为匿名内部类</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Outer</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">inMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// overwrite</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Inner</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">inMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>匿名内部类可以方便的访问局部变量，局部变量要声明成 final，jdk8 中如果省略会自动隐式声明为 final</p> <blockquote><p>声明成 final，则匿名内部类中不能再对局部变量赋值</p> <p>被内部类访问的局部变量会被拷贝一份到内部类中，若局部变量不是 final 的，其值可以被修改，就会出现数据不同步的问题</p></blockquote></li></ol> <h3 id="本地类"><a href="#本地类" class="header-anchor">#</a> 本地类</h3> <ol><li><p>内部类必须声明在成员的位置，即与属性和方法平等的位置</p></li> <li><p>本地类和匿名类一样，直接声明在代码块里面，可以是主方法，for 循环里等等地方</p></li> <li><p>与匿名类的区别在于，本地类有了自定义的类名</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Outer</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token keyword">extends</span> <span class="token class-name">Inner</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">inMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// overwrite</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Inner</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">inMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div> <div class="comment-container"><div class="comment-title"><i class="el-icon-s-comment"></i>
+        Comment here, be cool~
+    </div> <div class="J_comment"></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.info/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
+            Github
+        </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
+            Email
+        </a><a href="https://www.cnblogs.com/pgjett" target="_blank">
+            Cnblogs
+        </a></div> <div class="foot-meta"><p>Copyright © 2020 CadeCode</p> <p>
+            Theme
+            <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
+            powered by
+            <a href="https://www.vuepress.cn/" target="_blank">VuePress</a></p> <p id="/post/_003-java-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" data-flag-title="Java 类与对象" class="leancloud_visitors">
+            本页访问次数 <i class="leancloud-visitors-count">0</i></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div> <div class="loading-container"><div class="loading-box"><span>Loading</span></div></div></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.f090c6fa.js" defer></script><script src="/assets/js/7.9925e482.js" defer></script>
+<!--webpack externals-->
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+</body>
+</html>

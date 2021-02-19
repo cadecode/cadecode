@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript 闭包 | CadeCode</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/meta/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="https://cadecode.info/ /rss.xml" title=" RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://cadecode.info/ /feed.atom" title=" Atom Feed">
+    <link rel="alternate" type="application/json" href="https://cadecode.info/ /feed.json" title=" JSON Feed">
+    <meta name="description" content="闭包是将函数内部和函数外部连接起来的桥梁，JavaScript 中一个内部函数被返回到内部使用，就会产生闭包，预编译和作用域链原理帮助我们理解闭包、更好的编码">
+    <link rel="preload" href="/assets/css/1.styles.fc2ef69e.css" as="style"><link rel="preload" href="/assets/js/app.f090c6fa.js" as="script"><link rel="preload" href="/assets/js/26.f1cdc267.js" as="script"><link rel="prefetch" href="/assets/js/10.89af0a9b.js"><link rel="prefetch" href="/assets/js/11.02f9083c.js"><link rel="prefetch" href="/assets/js/12.251fc3f9.js"><link rel="prefetch" href="/assets/js/13.42bb7c81.js"><link rel="prefetch" href="/assets/js/14.62d5be11.js"><link rel="prefetch" href="/assets/js/15.892c92c8.js"><link rel="prefetch" href="/assets/js/16.3a0188a2.js"><link rel="prefetch" href="/assets/js/17.2efe4132.js"><link rel="prefetch" href="/assets/js/18.173c115d.js"><link rel="prefetch" href="/assets/js/19.03dfd8f7.js"><link rel="prefetch" href="/assets/js/2.97208efe.js"><link rel="prefetch" href="/assets/js/20.030c5a59.js"><link rel="prefetch" href="/assets/js/21.07694793.js"><link rel="prefetch" href="/assets/js/22.e01966c1.js"><link rel="prefetch" href="/assets/js/23.34ac6a36.js"><link rel="prefetch" href="/assets/js/24.0d2ebfdf.js"><link rel="prefetch" href="/assets/js/25.b1e440c5.js"><link rel="prefetch" href="/assets/js/27.30083c19.js"><link rel="prefetch" href="/assets/js/28.7a0b71b0.js"><link rel="prefetch" href="/assets/js/29.5466f138.js"><link rel="prefetch" href="/assets/js/3.20b74c66.js"><link rel="prefetch" href="/assets/js/30.a454ad56.js"><link rel="prefetch" href="/assets/js/31.0b525909.js"><link rel="prefetch" href="/assets/js/32.da70c8fe.js"><link rel="prefetch" href="/assets/js/33.a14d6197.js"><link rel="prefetch" href="/assets/js/34.06f01f08.js"><link rel="prefetch" href="/assets/js/35.08cf558b.js"><link rel="prefetch" href="/assets/js/36.7a188bb2.js"><link rel="prefetch" href="/assets/js/37.c7701102.js"><link rel="prefetch" href="/assets/js/38.01151a84.js"><link rel="prefetch" href="/assets/js/39.a634b0f7.js"><link rel="prefetch" href="/assets/js/4.3ae04e58.js"><link rel="prefetch" href="/assets/js/40.5daa7f23.js"><link rel="prefetch" href="/assets/js/41.c1864f3f.js"><link rel="prefetch" href="/assets/js/42.a397be76.js"><link rel="prefetch" href="/assets/js/43.a8655a0e.js"><link rel="prefetch" href="/assets/js/44.8b390ee4.js"><link rel="prefetch" href="/assets/js/45.de78e5e5.js"><link rel="prefetch" href="/assets/js/46.53c93afb.js"><link rel="prefetch" href="/assets/js/47.9b24f7b3.js"><link rel="prefetch" href="/assets/js/48.03927eb8.js"><link rel="prefetch" href="/assets/js/49.e08edab2.js"><link rel="prefetch" href="/assets/js/5.8478d9c8.js"><link rel="prefetch" href="/assets/js/50.10e9b605.js"><link rel="prefetch" href="/assets/js/6.1f9cc124.js"><link rel="prefetch" href="/assets/js/7.9925e482.js"><link rel="prefetch" href="/assets/js/8.4b4198a3.js"><link rel="prefetch" href="/assets/js/9.7e095b0d.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.fc2ef69e.css">
+    <!--webpack externals css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+</head>
+<body>
+<div id="app" data-server-rendered="true"><div class="global-container"><div class="head-container head-hide"><div class="head-content clearfix"><div class="head-logo"><a href="/"><img src="/meta/logo.png"> <!----></a></div> <div class="head-links"><div class="el-row"><div class="el-col el-col-24 el-col-xs-0 el-col-sm-24"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-s-home"></i>
+                            Index
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-search"></i>
+                            Search
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-info"></i>
+                            About
+                        </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;"><i class="el-icon-link"></i>
+                            Links
+                        </li></ul></div> <div class="el-col el-col-24 el-col-xs-24 el-col-sm-0"><ul role="menubar" class="head-menu el-menu--horizontal el-menu" style="background-color:;"><li role="menuitem" aria-haspopup="true" class="head-menu-sub el-submenu"><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">Menu<i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-s-home"></i>
+                                Index
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-search"></i>
+                                Search
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-info"></i>
+                                About
+                            </li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;"><i class="el-icon-link"></i>
+                                Links
+                            </li></ul></div></li></ul></div></div></div></div></div> <div class="post-container component-content component-hide"><div class="post-title">JavaScript 闭包</div> <div class="post-tag"><a href="/search/JavaScript"><i class="el-icon-paperclip"></i>
+            JavaScript
+        </a></div> <div class="post-desc">闭包是将函数内部和函数外部连接起来的桥梁，JavaScript 中一个内部函数被返回到内部使用，就会产生闭包，预编译和作用域链原理帮助我们理解闭包、更好的编码</div> <div class="markdown-content J_markdownContent content__default"><h1 id="javascript-闭包"><a href="#javascript-闭包" class="header-anchor">#</a> JavaScript 闭包</h1> <h2 id="闭包问题引入"><a href="#闭包问题引入" class="header-anchor">#</a> 闭包问题引入</h2> <ol><li>JavaScript 预编译和作用域链知识告诉我们，一个函数在声明时，生成一个叫 [[scope]] 的类数组的属性，从 0 位往后，由内到外的存储外层函数的执行期上下文和全局执行期上下文，即 AO 和 GO</li> <li>函数访问一个声明时，会从 [[scope]] 0 位开始寻找，即先找自身范围内，再看外层函数，最后看全局上下文</li> <li>内部函数被返回到外部使用，就会产生闭包，闭包会保持作用域链不释放，可能导致内存泄漏或过载</li></ol> <h2 id="闭包代码示例"><a href="#闭包代码示例" class="header-anchor">#</a> 闭包代码示例</h2> <ol><li><p>内部函数保持外部函数的 AO</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> test2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// (1)</span>
+<span class="token keyword">var</span> test3 <span class="token operator">=</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// 全局预编译</span>
+<span class="token comment">// -&gt; GO{c: undefined, test3: undefinedd, test1: test1(){}}</span>
+<span class="token comment">// -&gt; test1.SCOPE = [</span>
+<span class="token comment">//					GO{c: undefined, test3: undefinedd, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 全局执行</span>
+<span class="token comment">// 执行 (1)</span>
+<span class="token comment">// -&gt; GO{c: 3, test: undefined, test1: test1(){}}</span>
+<span class="token comment">// -&gt; test1.SCOPE = [</span>
+<span class="token comment">//					GO{c: 3, test3: undefined, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 执行 test1()，函数 test1 预编译</span>
+<span class="token comment">// -&gt; test1.SCOPE = [</span>
+<span class="token comment">//					test1_AO{a: undefined, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test3: undefined, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; test2.SCOPE = [</span>
+<span class="token comment">//					test1_AO{a: undefined, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test: undefined, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 函数 test1 执行</span>
+<span class="token comment">// -&gt; test1.SCOPE = [</span>
+<span class="token comment">//					test1_AO{a: 1, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test3: undefined, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; test2.SCOPE = [</span>
+<span class="token comment">//					test1_AO{a: 1, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test: undefined, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 函数 test1 执行完毕，test1_AO 被销毁</span>
+<span class="token comment">// 但 test2.SCOPE 中保持了 test1_AO，这个 test1_AO 将与 test1 再无关系</span>
+<span class="token comment">// test2 被返回到外部，用 test3 接收</span>
+<span class="token comment">// -&gt; GO{c: 3, test3: test2(){}, test1: test1(){}}</span>
+<span class="token comment">// -&gt; test1.SCOPE = [</span>
+<span class="token comment">//					GO{c: 3, test3: test2(){}, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 执行 test3()，即 test2()，test2 预编译</span>
+<span class="token comment">// -&gt; test2.SCOPE = [</span>
+<span class="token comment">//					test2_AO{b: undefined},</span>
+<span class="token comment">//					test1_AO{a: 1, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test3: test2(){}, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 函数 test2 预编译</span>
+<span class="token comment">// -&gt; test2.SCOPE = [</span>
+<span class="token comment">//					test2_AO{b: 2},</span>
+<span class="token comment">//					test1_AO{a: 1, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test3: test2(){}, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 函数 test2 执行，修改 b，a 的值，打印 4</span>
+<span class="token comment">// -&gt; test2.SCOPE = [</span>
+<span class="token comment">//					test2_AO{b: 2},</span>
+<span class="token comment">//					test1_AO{a: 4, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test3: test2(){}, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// 函数 test2 执行完毕，test2_AO 销毁</span>
+<span class="token comment">// -&gt; test2.SCOPE = [</span>
+<span class="token comment">//					test1_AO{a: 4, test2: test2(){}},</span>
+<span class="token comment">//					GO{c: 3, test3: test2(){}, test1: test1(){}}</span>
+<span class="token comment">//			]</span>
+</code></pre></div></li> <li><p>同级内部函数共享外部函数的 AO</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        num <span class="token operator">++</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">minus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        num <span class="token operator">--</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span>  <span class="token punctuation">[</span>plus<span class="token punctuation">,</span> minus<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印 11 10 9</span>
+<span class="token comment">// 分析过程</span>
+<span class="token comment">// GO{c: undefined, cal: cal(){}}</span>
+<span class="token comment">// -&gt; cal.SCOPE = [</span>
+<span class="token comment">//					cal.AO{num: undefined, plus: plus(){}, minus: minus()},</span>
+<span class="token comment">//		  			GO{c: undefined, cal: cal(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; cal.SCOPE = [</span>
+<span class="token comment">//					cal.AO{num: 10, plus: plus(){}, minus: minus()},</span>
+<span class="token comment">//		  			GO{c: undefined, cal: cal(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; GO{c: [plus, minus], cal: cal(){}}</span>
+<span class="token comment">//    cal.SCOPE = [</span>
+<span class="token comment">//		  			GO{c: [plus, minus], cal: cal(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; plus.SCOPE = [</span>
+<span class="token comment">//					plus.AO{},</span>
+<span class="token comment">//					cal.AO{num: 10, plus: plus(){}, minus: minus()},</span>
+<span class="token comment">//		  			GO{c: [plus, minus], cal: cal(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; plus.SCOPE = [</span>
+<span class="token comment">//					plus.AO{},</span>
+<span class="token comment">//					cal.AO{num: 11, plus: plus(){}, minus: minus()},</span>
+<span class="token comment">//		  			GO{c: [plus, minus], cal: cal(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; minus.SCOPE = [</span>
+<span class="token comment">//					minus.AO{},</span>
+<span class="token comment">//					cal.AO{num: 10, plus: plus(){}, minus: minus()},</span>
+<span class="token comment">//		  			GO{c: [plus, minus], cal: cal(){}}</span>
+<span class="token comment">//			]</span>
+<span class="token comment">// -&gt; minus.SCOPE = [</span>
+<span class="token comment">//					minus.AO{},</span>
+<span class="token comment">//					cal.AO{num: 9, plus: plus(){}, minus: minus()},</span>
+<span class="token comment">//		  			GO{c: [plus, minus], cal: cal(){}}</span>
+<span class="token comment">//			]</span>
+</code></pre></div></li></ol> <h2 id="循环中的闭包"><a href="#循环中的闭包" class="header-anchor">#</a> 循环中的闭包</h2> <ol><li><p>循环生成的内部函数，共享外部函数的 AO</p> <p>循环完毕后，内部函数装在数组中被抛出，其中每个函数的 [[scope]] 中都保持了 test 函数的 AO</p> <p>并且这个 AO 是共享的，在这个 AO 中，保存着 i = 10；</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 放在 for 外效果一样</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> fnArr <span class="token operator">=</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 发现打印出的都是 10</span>
+<span class="token comment">// test_AO{arr: [...], i: 10}</span>
+</code></pre></div></li> <li><p>使用立即执行函数解决循环闭包</p> <p>立即执行函数直接将参数传入到内部，也就是说内部的函数保持了各自外层的自执行函数的 AO，这些 AO 保存的 j 是不同的</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">j</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        	arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> fnArr <span class="token operator">=</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fnArr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印出 0 1 2 3</span>
+</code></pre></div></li></ol> <h2 id="闭包的缓存特性"><a href="#闭包的缓存特性" class="header-anchor">#</a> 闭包的缓存特性</h2> <ol><li><p>闭包中内部函数共享外部函数的 AO，就可以共享其局部变量</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">myClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> students <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token function-variable function">join</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            students<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">out</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> idx <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>idx <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                students<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>idx<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">show</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>students<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token function">myClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;张三&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;李四&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">out</span><span class="token punctuation">(</span><span class="token string">&quot;李四&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [&quot;张三&quot;]</span>
+<span class="token comment">// [&quot;张三&quot;, &quot;李四&quot;]</span>
+<span class="token comment">// [&quot;张三&quot;]</span>
+</code></pre></div></li></ol></div> <div class="catalog-container" style="display:none;"><!----> <div class="catalog-open"><i class="el-icon-s-operation"></i></div></div> <div class="comment-container"><div class="comment-title"><i class="el-icon-s-comment"></i>
+        Comment here, be cool~
+    </div> <div class="J_comment"></div></div></div> <div class="foot-container"><div class="foot-links"><a href="https://cadecode.info/rss.xml" target="_blank">Rss</a> <a href="https://github.com/cadecode" target="_blank">
+            Github
+        </a><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=eBsZHB0bFxwdOB4XABUZERRWGxcV" target="_blank">
+            Email
+        </a><a href="https://www.cnblogs.com/pgjett" target="_blank">
+            Cnblogs
+        </a></div> <div class="foot-meta"><p>Copyright © 2020 CadeCode</p> <p>
+            Theme
+            <a href="https://github.com/cadecode/vuepress-theme-2zh" target="_blank">2zh</a>
+            powered by
+            <a href="https://www.vuepress.cn/" target="_blank">VuePress</a></p> <p id="/post/_305-javascript-%E9%97%AD%E5%8C%85/" data-flag-title="JavaScript 闭包" class="leancloud_visitors">
+            本页访问次数 <i class="leancloud-visitors-count">0</i></p></div></div> <div class="backtop-container" style="display:none;"><i class="el-icon-caret-top"></i></div> <div class="loading-container"><div class="loading-box"><span>Loading</span></div></div></div><div class="global-ui"></div></div>
+<script src="/assets/js/app.f090c6fa.js" defer></script><script src="/assets/js/26.f1cdc267.js" defer></script>
+<!--webpack externals-->
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+</body>
+</html>
