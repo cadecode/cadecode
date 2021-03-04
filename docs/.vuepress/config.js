@@ -13,7 +13,7 @@ module.exports = {
     themeConfig: {
 		logo: ['image', '/meta/logo.png'],
         pagination: 12,
-        domain: 'https://cadecode.info/ ',
+        domain: 'https://cadecode.top/ ',
         notice: [
             {
                 text: 'vuepress 博客主题 2zh 开源地址',
