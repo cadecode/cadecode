@@ -442,17 +442,7 @@ tag: [Oracle, Database]
    >
    > 若 start 为负数，则从后往前查找，但返回值还是从前往后数，返回 0 表示没有查到
 
-3. 日期
 
-   SYSDATE：获取当前时间
-
-   ```sql
-   SELECT SYSDATE FROM DUAL
-   ```
-
-   ADD_MONTHS(d,n)：d 指定日期，n 表示要加的月数量，可为负数
-
-   LAST_DAY(d)：获取指定时间当月的最后一天
 
 4. 格式化
 
@@ -478,7 +468,74 @@ tag: [Oracle, Database]
    > - mi：获取分种
    > - ss：获取秒
 
-5. 数字
+5. 日期
+
+      SYSDATE：获取当前时间
+
+      ADD_MONTHS(d,n)：d 指定日期，n 表示要加的月数量，可为负数
+
+      LAST_DAY(d)：获取指定时间当月的最后一天
+
+      NEXT_DAY(d, '星期一')：获取下一周的周一
+
+      TRUNC(d[, fmt])：截取时间，常用来获取时间范围的第一天
+
+      > TRUNC(SYSDATE, 'yy') 本年第一天
+      >
+      > TRUNC(SYSDATE, 'q') 本季度第一天
+      >
+      > TRUNC(SYSDATE, 'mm') 本月第一天
+      >
+      > TRUNC(SYSDATE, 'd') 本周第一天，周日开始
+
+      举例：
+
+      - 获取最近 7 天（包括当天）
+
+        ```sql
+        SELECT 
+        	TO_CHAR(SYSDATE - 6, 'yyyy-mm-dd hh24:mi:ss') 
+        FROM 
+        	dual;
+        ```
+
+      - 获取最近 4 周（包括当前周）
+
+        ```sql
+        SELECT 
+        	TO_CHAR(TRUNC(SYSDATE - 21, 'd') + 1, 'yyyy-mm-dd hh24:mi:ss') 
+        FROM 
+        	dual;
+        ```
+
+      - 获取最近 3 个月（包括当前月）
+
+        ```sql
+        SELECT 
+        	TO_CHAR(TRUNC(ADD_MONTHS(SYSDATE, -2), 'mm'), 'yyyy-mm-dd hh24:mi:ss') 
+        FROM 
+        	dual;
+        ```
+
+   - 获取当前季度第一天
+
+     ```sql
+     SELECT 
+     	TO_CHAR(TRUNC(SYSDATE, 'q'), 'yyyy-mm-dd hh24:mi:ss') 
+     FROM 
+     	dual;
+     ```
+
+   - 获取上个季度第一天
+
+     ```java
+     SELECT 
+     	TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE, 'q'), -3), 'yyyy-mm-dd hh24:mi:ss') 
+     FROM 
+     	dual;
+     ```
+
+6. 数字
 
    ABS：求绝对值
 
@@ -488,7 +545,7 @@ tag: [Oracle, Database]
 
    ROUND(x, y)：x 在第 y 位四舍五入
 
-6. 判断
+7. 判断
 
    NVL(x, v)：x 为空，返回 v，否则返回 x
 
@@ -514,9 +571,9 @@ tag: [Oracle, Database]
    ```
 
    CASE WHEN：类似于 switch-case，比 DECODE 复杂且灵活，在其他数据库中也有该函数
-   
+
    上面示例用 case when 实现：
-   
+
    ```sql
    select t.id,
           t.name,
@@ -528,6 +585,6 @@ tag: [Oracle, Database]
           END) sex
      from student t
    ```
-   
+
    
 
