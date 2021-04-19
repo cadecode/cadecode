@@ -5,7 +5,6 @@ date: 2021/2/26
 description: SpringBoot 中 @ControllerAdvice 注解提供了全局异常处理的方法，还可以通过封装接口返回内容及 ResponseBodyAdvice 接口来统一返回格式
 tag: [SpringBoot, Spring, Java Framework]
 
-
 ---
 
 # SpringBoot 全局异常处理

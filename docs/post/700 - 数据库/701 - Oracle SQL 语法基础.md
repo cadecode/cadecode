@@ -100,6 +100,61 @@ tag: [Oracle, Database]
    GRANT DBA TO 用户名
    ```
 
+8. 创建数据表
+
+   ```sql
+   CREATE TABLE USER(
+   	ID NUMBER,
+       NAME VARCHAR2(32),
+       AGE NUMBER,
+       BIRTH DATE
+   )
+   ```
+   
+   > 几种字符串类型：
+   >
+   > - CHAR(n) 
+   >
+   >   长度固定，不足自动补空格，汉字占 2 字节，字母 1 字节，n 为字节数
+   >
+   > - VARCHAR(n)
+   >
+   >   可变长度，汉字占 2 字节，字母 1 字节，n 为字节数
+   >
+   > - VARCHAR2(n)  
+   >
+   >   非工业标准，保证版本兼容，占用与字符集相关，空串处理为 null，n 为字节数，最大 4000
+   >
+   > - NVARCHAR(n)
+   >
+   >   可变长度，Unicode 编码，n 为字符数
+   >
+   > - NVARCHAR2
+   >
+   >   汉字和字母统一占用两个字节
+
+9. 设置自增 ID 
+
+   用来获取 ID 的自增序列
+
+   ```sql
+   CREATE SEQUENCE SQ_USER_ID
+   MINVALUE 1 MAXVALUE 99999999
+   INCREMENT BY 1 START WITH 1
+   ```
+
+   自动填充 ID 的触发器
+
+   ```sql
+   CREATE OR REPLACE TRIGGER USER
+       BEFORE INSERT
+       ON USER
+       FOR EACH ROW
+   BEGIN
+       SELECT SQ_USER_ID.NEXTVAL INTO :NEW.ID FROM DUAL;
+   END;
+   ```
+
 ## 增删改查
 
 1. insert
