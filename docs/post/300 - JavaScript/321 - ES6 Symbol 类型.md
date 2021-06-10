@@ -22,7 +22,7 @@ tag: [ES6, JavaScript]
    // symbol
    ```
 
-# Symbol
+## Symbol
 
 1. 使用 Symbol() 产生唯一值
 
