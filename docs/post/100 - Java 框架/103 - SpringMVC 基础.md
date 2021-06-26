@@ -3,7 +3,7 @@
 title: SpringMVC 基础
 date: 2020/11/11
 description: SpringMVC 是轻量级的 Web MVC 框架，基于 servlet 与 Spring 实现，具有强大的功能性和可扩展性
-tag: [Spring, Java Framework]
+tag: [Spring, Java 框架]
 
 ---
 
@@ -173,7 +173,7 @@ tag: [Spring, Java Framework]
    ```java
    @Controller
    public class HelloController {
-
+   
        // 匹配请求路径
        // 类似：@GetMapping、@PostMapping...
        @RequestMapping("/hello")
@@ -185,7 +185,6 @@ tag: [Spring, Java Framework]
        }
    }
    ```
-   
 
 ## 接受请求
 
