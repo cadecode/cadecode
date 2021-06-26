@@ -3,7 +3,7 @@
 title: MyBatis 基础
 date: 2020/7/3
 description: MyBatis 是一款优秀的持久层框架，支持自定义 SQL、存储过程以及高级映射，配合 Spring 家族框架使用是当前流行的持久化方案
-tag: [MyBatis, Java Framework]
+tag: [MyBatis, Java 框架]
 
 ---
 
@@ -30,7 +30,6 @@ tag: [MyBatis, Java Framework]
 3. 地址
 
    中文简介：https://mybatis.org/mybatis-3/zh/index.html
-   
 
 GitHub：https://github.com/mybatis
 

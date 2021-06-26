@@ -3,7 +3,7 @@
 title: SpringBoot 启动原理
 date: 2021/2/1
 description: SpringBoot 是由 Pivotal 团队提供的全新框架，默认集成了许多框架的配置，用以简化新 Spring 应用的初始搭建以及开发过程
-tag: [SpringBoot, Spring, Java Framework]
+tag: [SpringBoot, Spring, Java 框架]
 
 ---
 
@@ -12,7 +12,7 @@ tag: [SpringBoot, Spring, Java Framework]
 
 ## 启动类
 
-1. SpringBoot 应用有一个主入口，即 main 方法，其调用 SpringAppkuction.run 方法启动程序
+1. SpringBoot 应用有一个主入口，即 main 方法，其调用 SpringAppliction.run 方法启动程序
 
 2. @SpringBootApplication 注解：
 

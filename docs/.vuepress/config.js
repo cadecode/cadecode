@@ -36,7 +36,6 @@ module.exports = {
             {text: 'Github', url: 'https://github.com/cadecode'},
             {text: 'Email', url: 'http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=eBsZHB0bFxwdOB4XABUZERRWGxcV'},
             {text: 'Cnblogs', url: 'https://www.cnblogs.com/pgjett'}
-        ],
-        comment: ['7BbFtdvB6AE9MpkU6UAGJJeA-gzGzoHsz', 'dBFpAzDm2MTQgnCKYlMu6Qdw']
+        ]
     }
 }

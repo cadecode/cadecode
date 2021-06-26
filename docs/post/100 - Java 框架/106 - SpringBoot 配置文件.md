@@ -3,7 +3,7 @@
 title: SpringBoot 配置文件
 date: 2021/2/9
 description: SpringBoot 配置文件的使用及多环境下的配置
-tag: [SpringBoot, Spring, Java Framework]
+tag: [SpringBoot, Spring, Java 框架]
 
 ---
 

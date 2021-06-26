@@ -13,8 +13,8 @@ permalink: /:slug
 ```javascript
 const me = {
     name: 'Cade',
-    work: 'programmer',
-    use: ['Java', 'JavaScript', 'Vue', 'Node', '...', 'Love'],
+    work: 'Java 工程师 + 前端爱好者',
+    use: ['Java', 'SpringBoot', 'JavaScript', 'Vue', '...'],
     say: 'Embrace change, stay curious!'
 }
 ```

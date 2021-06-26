@@ -3,7 +3,7 @@
 title: Spring 基础
 date: 2020/7/5
 description: Spring 轻量级的控制反转和面向切面的容器框架，其丰富的框架级开箱即用。对速度、简单性和生产力的关注使得它成为世界上最受欢迎的 Java 框架
-tag: [Spring, Java Framework]
+tag: [Spring, Java 框架]
 ---
 
 # Spring 基础
