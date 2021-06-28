@@ -3,7 +3,7 @@
 
 title: JavaScript 原型与继承
 date: 2020/3/21
-description: JavaScript 中函数原型是实现继承的基础。prototype、construct、原型链以及基于原型链的继承是面向对象的重要内容
+description: 本文介绍 JavaScript 中 prototype、construct、__proto__、原型链的含义，以及如何基于函数原型实现继承
 tag: [JavaScript, 前端基础]
 
 ---

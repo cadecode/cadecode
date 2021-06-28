@@ -2,7 +2,7 @@
 
 title: JavaScript 日期与计时器
 date: 2020/3/31
-description: JavaScript 中日期和计时器是常用的工具方法，本文主要介绍构造函数 Date 的使用和时间戳的概念，以及设置计时器和清除计时器的方法
+description: 本文介绍 JavaScript 中日期类构造函数 Date 的使用和时间戳的概念，以及设置计时器和清除计时器的方法
 tag: [JavaScript, 前端基础]
 
 ---
@@ -120,7 +120,7 @@ tag: [JavaScript, 前端基础]
 
 ## 定时任务
 
-1. 描述
+1. 功能
 
    等待条件满足时执行任务，设定时间内条件未满足则执行回调函数
 
@@ -136,24 +136,24 @@ tag: [JavaScript, 前端基础]
 
    ```javascript
    function timer(re, fn, space, wait, back) {
-   				if (re()) {
-   					fn();
-   				} else {
-   					var interval = setInterval(function() {
-   						if (re()) {
-   							fn();
-   							clearInterval(interval);
-   							interval = null;
-   						}
-   					}, space || 100);
-   					setTimeout(function() {
-   						if (interval) {
-   							clearInterval(interval);
-   							interval = null;
-   							back && back();
-   						}
-   					}, wait || 3000);
-   				}
-   			}
+       if (re()) {
+           fn();
+       } else {
+           var interval = setInterval(function() {
+               if (re()) {
+                   fn();
+                   clearInterval(interval);
+                   interval = null;
+               }
+           }, space || 100);
+           setTimeout(function() {
+               if (interval) {
+                   clearInterval(interval);
+                   interval = null;
+                   back && back();
+               }
+           }, wait || 3000);
+       }
+   }
    ```
 

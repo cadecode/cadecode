@@ -420,7 +420,7 @@ public class App {
    maven 命令，通过 -P 指定 `@profileActive@`
 
    ```
-   mvn clean package -D maven.test.skip=true -P dev
+   mvn clean package -Dmaven.test.skip=true -P dev
    ```
 
 3. 在程序中获取 profile 配置

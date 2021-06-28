@@ -3,7 +3,7 @@
 
 title: JavaScript 对象基础
 date: 2020/3/20
-description: JavaScript 对象的基本形式、对象的创建方式、构造函数、包装类等
+description: 本文介绍 JavaScript 中对象的基本格式、对象的创建方式、构造函数的原理、包装类、方法链式调用以及属性的枚举
 tag: [JavaScript, 前端基础]
 
 ---
@@ -321,7 +321,7 @@ sched.marning().noon().afternoon();
 ```
 
 
-## 对象枚举
+## 对象属性枚举
 
 1. for in 遍历对象属性
 

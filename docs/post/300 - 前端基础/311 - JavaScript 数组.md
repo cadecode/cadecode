@@ -2,7 +2,7 @@
 
 title: JavaScript 数组
 date: 2020/3/23
-description: JavaScript 数组的声明以及常用的数组操作方法 push、pop、shift、unshift、slice、splice 等的使用
+description: 本文介绍 JavaScript 数组的声明以及常用的数组操作方法 push、pop、shift、unshift、slice、splice 等的使用
 tag: [JavaScript, 前端基础]
 
 ---

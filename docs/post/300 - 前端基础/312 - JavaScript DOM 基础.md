@@ -2,7 +2,7 @@
 
 title: JavaScript DOM 基础
 date: 2020/3/30
-description: DOM 即文档对象模型，是操作 HTML/XML 文档的一套方法。通过 DOM 操作节点，使页面发生改变，是动态文档技术的核心内容
+description: 本文介绍 JavaScript DOM 的含义、元素和节点的概念、以及使用 DOM API 遍历元素或节点、操作 DOM 树的方法等
 tag: [JavaScript, 前端基础]
 
 ---

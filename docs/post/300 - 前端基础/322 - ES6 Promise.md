@@ -226,14 +226,18 @@ tag: [ES6, JavaScript, 前端基础]
 
 ## async 与 await
 
-1. async 将当前函数标记为与作用域内其他函数为异步关系，返回一个 pending 的 Promise 对象
+1. async 将当前函数标记为与作用域内其他函数为异步关系
+
+   - 如果函数返回一个 Promise 对象，则返回的结果就是这个 Promise 对象
+   - 如果函数返回值不是 Promise 对象，则使用 Promise.resolve 方法包装返回值后返回
+   - 如果抛出错误，则使用 Promise.reject 方法包装错误对象后返回
 
 2. await 是一个操作符，用于暂停 async 函数的执行，待 Promise 对象的结果
 
 3. 如果 await 等待的承诺被拒绝，会抛出异常，可以使用 try catch 处理
 
    ```javascript
-   function creatPromise(){
+   function creatPromise
      return new Promise((resolve, reject) => {
        setTimeout(() => {
          resolve('resolve')
