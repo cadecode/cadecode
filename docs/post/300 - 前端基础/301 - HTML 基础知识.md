@@ -1,8 +1,8 @@
 ---
 
-title: HTML 知识概要
+title: HTML 基础知识
 date: 2020/3/1
-description: HTML 基础知识概要
+description: 本文介绍 HTML 的基础知识，如概念、版本区别、常用标签的含义和使用、表单控件的使用以及 HTML 元素的分类
 tag: [HTML/CSS, 前端基础]
 
 ---
