@@ -205,17 +205,16 @@ tag: [Spring, Java 框架]
 
    defaultValue 用于在没有解析到对应数据时赋予初值
 
-   > @RequestParam 
+   > @RequestParam 使用场景
    >
-   > ​	- 能解析查询串里的内容
+   > 可解析请求查询串内容和请求类型为 x-www-form-urlencoded 或 form-data 时的请求体内容
    >
-   > ​	- 以及请求类型为 x-www-form-urlencoded 或 form-data 时的请求体内容
-   >
-   > 指定解析键值对，不能根据请求内容绑定实体类
-   >
-   > 注意：查询串和请求体内的同名键值对会自动合并，可以用 List、数组接收
-   >
-   > 同时还可以在用一个键对应多个逗号分隔的值，来绑定到 List 或数组
+   > 1. 使用基本类型或 String 接收时，根据名称匹配键值对
+   > 2. 使用 String 接收时，如果查询串和请求体内的同名键值对会自动以逗号拼接
+   > 3. 使用 List 或数组接收时，可用一个键名对应多个逗号分隔的值，来绑定到 List 或数组
+   > 4. 使用 List 或数组接收时，如果查询串和请求体内的同名键值对会自动合并，可以用 List、数组接收
+   > 5. 使用 Map 接收时，可对查询串和请求体内的键值对生成 Map
+   > 6. 不可以使用实体类接收
 
 2. @RequestBody
 
@@ -231,11 +230,11 @@ tag: [Spring, Java 框架]
    
    > @RequestBody 只能解析请求体中的内容，且请求类型为 appliction/json
    >
-   > 使用 MappingJackson2HttpMessageConverter 进行解析和转换，支持自动绑定实体类
+   > 使用 MappingJackson2HttpMessageConverter 进行解析和转换，支持自动绑定实体类或 Map
 
-3. 什么都不加
+3. 不使用 @RequestParam 和 @RequestBody
 
-   相当于 @RequestParam 功能，但是可以根据内容转化为实体类
+   类似于 @RequestParam，可以绑定实体类，不可以接收 List、Map，一般不推荐使用
 
 ## 返回响应
 

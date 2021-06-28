@@ -3,7 +3,7 @@
 
 title: JavaScript DOM 常用尺寸
 date: 2020/4/1
-description: JavaScript 操作 DOM 时经常会用到一些尺寸，本文介绍怪异模式和标准模式下的滚动条距离、窗口尺寸、文档尺寸、元素文档坐标的兼容性写法以及窗口滚动到指定位置的方法
+description: 本文介绍 JavaScript 操作 DOM 时常用的尺寸 API，如怪异模式和标准模式下的滚动条距离、窗口尺寸、文档尺寸、元素文档坐标的兼容性写法以及窗口滚动到指定位置的方法等
 tag: [JavaScript, 前端基础]
 
 ---
@@ -184,3 +184,4 @@ tag: [JavaScript, 前端基础]
    ```
 
    
+

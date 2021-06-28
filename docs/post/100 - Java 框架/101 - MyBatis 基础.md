@@ -31,17 +31,17 @@ tag: [MyBatis, Java 框架]
 
    中文简介：https://mybatis.org/mybatis-3/zh/index.html
 
-GitHub：https://github.com/mybatis
+    GitHub：https://github.com/mybatis
 
-Maven：
+    Maven：
 
    ```xml
-<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
-<dependency>
-    <groupId>org.mybatis</groupId>
-    <artifactId>mybatis</artifactId>
-    <version>3.5.5</version>
-</dependency>
+   <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+   <dependency>
+       <groupId>org.mybatis</groupId>
+       <artifactId>mybatis</artifactId>
+       <version>3.5.5</version>
+   </dependency>
    ```
 
 ## 持久层

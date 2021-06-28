@@ -36,9 +36,7 @@ tag: [SpringBoot, Spring, Java 框架]
        <!--文件存放位置-->
        <property name="filePath" value="${user.dir}/logs" />
        <!--输出格式-->
-       <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %clr(%-5level) %cyan(%logger{50}) : %msg%n" />
-       <!-- 彩色日志渲染类 -->
-       <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+       <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{50}) : %msg%n" />
    
        <!--控制台输出日志-->
        <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
@@ -128,7 +126,11 @@ tag: [SpringBoot, Spring, Java 框架]
         <!-- SpringFramework 日志-->
        <logger name="org.springframework" level="WARN" />
    
-       <!-- mybatis 日志-->
+       <!-- mybatis 日志 -->
+       <!-- mybatis 打印 sql
+            SpringBoot 中只要配置 dao 或 mapper 包即可打印 sql
+   		 普通 SSM 项目可能需要以下配置
+   	-->
        <logger name="org.apache.ibatis" level="DEBUG" />
        <logger name="java.sql" level="DEBUG" />
    

@@ -88,9 +88,11 @@ Constructor con = uClass.getConstructor();
 //通过构造器实例化
 User u = (User) con.newInstance();
 ```
-2. `Class.newInstance()` 和 `Constructor.newInstance()`  
-Class 对象调用 newInstance() 方法只能用于不带参数的构造方法；  
-Constructor 对象调用 newINstance() 方法可以指定参数；
+2. `Class.newInstance()` 和 `Constructor.newInstance()` 
+
+  Class 对象调用 newInstance() 方法只能用于不带参数的构造方法；
+
+  Constructor 对象调用 newINstance() 方法可以指定参数
 ```java
 Constructor con =
       uClass.getConstructor(new Class[]{String.class, int.class});

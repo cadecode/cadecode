@@ -1,13 +1,13 @@
 ---
 
-title: JavaScript 封装防抖和节流函数
+title: JavaScript 防抖和节流
 date: 2020/9/1
 description: 函数防抖和节流是前端优化高频率代码的手段
-tag: [JavaScript, 前端, 经验之谈]
+tag: [JavaScript, 前端基础]
 
 ---
 
-# JavaScript 封装防抖和节流函数
+# JavaScript 防抖和节流
 
 ## 函数防抖
 
