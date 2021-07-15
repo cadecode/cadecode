@@ -1,9 +1,9 @@
 ---
 
 title: SpringBoot 集成 MyBaits
-date: 2020/6/1
-description: 
-tag: Java 框架
+date: 2021/6/1
+description: 本文介绍 SpringBoot 集成 MyBatis 的基本配置、通过 AOP 和注解动态实现切换数据源的方法，以及利用 MyBatis 拦截器打印完整可执行 SQL 的方法
+tag: [SpringBoot, Spring, MyBatis, Java 框架]
 
 ---
 
@@ -96,7 +96,7 @@ tag: Java 框架
 5. 使用 Java 类代替 yaml 文件进行配置
 
    配置数据源 DataSource
-   
+
    ```java
    @Configuration
    @MapperScan(value = {"com.example.demo.mapper"})
@@ -124,9 +124,9 @@ tag: Java 框架
        }
    }
    ```
-   
+
    配置数据源初始化 dataSourceInitializer
-   
+
    ```java
    @Bean
    public DataSourceInitializer dataSourceInitializer() {
@@ -141,9 +141,9 @@ tag: Java 框架
        return dataSourceInitializer;
    }
    ```
-   
+
    配置 MyBatis 映射文件位置和 typeAlias
-   
+
    ```java
    @Bean
    public SqlSessionFactory sqlSessionFactory() throws Exception {
@@ -240,7 +240,7 @@ tag: Java 框架
    原理：继承 AbstractRoutingDataSource，重写 determineCurrentLookupKey 方法
 
    动态数据源类：
-   
+
    ```java
    public class DynamicDataSource extends AbstractRoutingDataSource {
    
@@ -279,9 +279,9 @@ tag: Java 框架
    }
    
    ```
-   
+
    DynamicDataSourceContextHolder，用于保存和获取数据源 key
-   
+
    ```java
    public class DynamicDataSourceContextHolder {
    
@@ -339,9 +339,9 @@ tag: Java 框架
        }
    }
    ```
-   
+
    数据源配置类
-   
+
    ```java
    @Configuration
    @MapperScan(value = {"com.example.demo.mapper"})
@@ -410,9 +410,9 @@ tag: Java 框架
        }
    }
    ```
-   
+
    AOP 代理方法，执行前切换数据源，执行后恢复默认
-   
+
    ```java
    @Aspect
    // 设置 Order 使切面在 @Transactional 之前执行
