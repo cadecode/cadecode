@@ -3,7 +3,7 @@
 
 title: JavaScript DOM 样式操作
 date: 2020/4/2
-description: JavaScript 样式操作包括：通过 style 属性控制元素内联样式，通过 getComputedStyle 方法获取元素生效的样式，通过改变元素类名改变伪元素样式以通过计时器实现样式动画
+description: 本文介绍 JavaScript 的样式操作，如改变元素内联样式、使用 getComputedStyle 获取生效样式、改变伪元素样式、以及计时器实现动画
 tag: [JavaScript, 前端基础]
 
 ---

@@ -1,9 +1,8 @@
 ---
 
-
 title: JavaScript DOM 事件模型
 date: 2020/4/3
-description: JavaScript 是基于面向对象和事件驱动的一门语言，事件模型是 DOM 中至关重要的内容，理解事件驱动机制、事件反馈、事件冒泡、事件捕获以及事件委托能帮助我们更好的处理事件，写出更优的代码
+description: 本文介绍 JavaScript 中的事件驱动机制、事件反馈的几种方法、事件冒和捕获、阻止冒泡和默认事件以及事件委托
 tag: [JavaScript, 前端基础]
 
 ---

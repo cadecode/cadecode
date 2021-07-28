@@ -35,14 +35,17 @@ tag: [SpringBoot, Spring, Java 框架]
        <property name="history" value="30" />
        <!--文件存放位置-->
        <property name="filePath" value="${user.dir}/logs" />
-       <!--输出格式-->
-       <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{50}) : %msg%n" />
+      <!--带色彩的输出格式-->
+       <property name="patternWithColor"
+                 value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-15thread] %highlight(%-5level) %cyan(%logger{50}) : %msg%n" />
+       <!--不带色彩的格式，用以输出到文件-->
+       <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-15thread] %-5level %logger{50} : %msg%n" />
    
        <!--控制台输出日志-->
        <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
            <!--格式-->
            <encoder>
-               <pattern>${pattern}</pattern>
+               <pattern>${patternWithColor}</pattern>
                <charset>UTF-8</charset>
            </encoder>
        </appender>

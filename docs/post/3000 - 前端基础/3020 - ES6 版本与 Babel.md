@@ -39,7 +39,7 @@ tag: [ES6, JavaScript, 前端基础]
 
    2000，ECMAScript4.0 草案没有被通过，调整幅度太大
 
-   2007，ECMAScript4.0准备发布，依然没有通过
+   2007，ECMAScript4.0 准备发布，依然没有通过
 
    2008.7，在 3.0 基础上推出 ECMAScript3.1，更名为 ECMAScript5
 

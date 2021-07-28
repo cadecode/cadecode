@@ -96,7 +96,7 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
 5. 使用 Java 类代替 yaml 文件进行配置
 
    配置数据源 DataSource
-
+   
    ```java
    @Configuration
    @MapperScan(value = {"com.example.demo.mapper"})
@@ -124,9 +124,9 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
        }
    }
    ```
-
+   
    配置数据源初始化 dataSourceInitializer
-
+   
    ```java
    @Bean
    public DataSourceInitializer dataSourceInitializer() {
@@ -141,9 +141,9 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
        return dataSourceInitializer;
    }
    ```
-
+   
    配置 MyBatis 映射文件位置和 typeAlias
-
+   
    ```java
    @Bean
    public SqlSessionFactory sqlSessionFactory() throws Exception {
@@ -240,7 +240,7 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
    原理：继承 AbstractRoutingDataSource，重写 determineCurrentLookupKey 方法
 
    动态数据源类：
-
+   
    ```java
    public class DynamicDataSource extends AbstractRoutingDataSource {
    
@@ -279,9 +279,9 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
    }
    
    ```
-
+   
    DynamicDataSourceContextHolder，用于保存和获取数据源 key
-
+   
    ```java
    public class DynamicDataSourceContextHolder {
    
@@ -339,9 +339,9 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
        }
    }
    ```
-
+   
    数据源配置类
-
+   
    ```java
    @Configuration
    @MapperScan(value = {"com.example.demo.mapper"})
@@ -410,9 +410,9 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
        }
    }
    ```
-
+   
    AOP 代理方法，执行前切换数据源，执行后恢复默认
-
+   
    ```java
    @Aspect
    // 设置 Order 使切面在 @Transactional 之前执行
