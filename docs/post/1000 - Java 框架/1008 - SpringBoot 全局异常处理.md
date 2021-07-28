@@ -252,6 +252,8 @@ tag: [SpringBoot, Spring, Java 框架]
 
 2. 通过实现 ErrorController 接口解决
 
+   高版本的 SpringBoot 已经弃用了 getErrorPath 方法，但 ErrorController 接口还是有效的
+
    ```java
    @Controller
    public class NotFoundExceptionHandler implements ErrorController {
@@ -268,5 +270,42 @@ tag: [SpringBoot, Spring, Java 框架]
    }
    ```
 
+3. 通过实现 ErrorAttributes  接口解决
+
+   可以继承 DefaultErrorAttributes，也可直接实现 ErrorAttributes
+
+   DefaultErrorAttributes 已经对异常信息进行了封装，更加容易使用
+
+   ```java
+   @Component
+   public class SimpleExceptionHandler extends DefaultErrorAttributes {
+       private static final String STATUS_KEY = "status";
+       private static final String PATH_KEY = "path";
+       private static final String ERROR_KEY = "error";
+   
+       @Override
+       public Map<String, Object> getErrorAttributes(WebRequest webRequest, ErrorAttributeOptions options) {
+           // 获取填充好的 errorAttributes
+           Map<String, Object> errorAttributes = super.getErrorAttributes(webRequest, options);
+           // 获取状态码与路径
+           Integer status = (Integer) errorAttributes.get(STATUS_KEY);
+           String path = (String) errorAttributes.get(PATH_KEY);
+           String error = (String) errorAttributes.get(ERROR_KEY);
+           // 拼接错误信息
+           String msg = "[" + path + "]" + error;
+           // 处理 404 异常
+           if (status == HttpStatus.NOT_FOUND.value()) {
+               // return ...
+           }
+           // 处理 405 异常
+           if (status == HttpStatus.METHOD_NOT_ALLOWED.value()) {
+               // return ...
+           }
+           // return ...
+       }
+   }
+   ```
+
    
 
+   

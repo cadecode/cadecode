@@ -290,10 +290,14 @@ public class App {
    String name = bundle.getString("app.name");
    ```
 
+   > 在 SpringBoot 启动前，使用 System.setProperty 方法，可将键值对设置为全局变量，SpringBoot 也会读取该配置
+
 2. SpringBoot 提供
 
    Environment 类可读取 application.yaml 或 application.properties
 
+   > 实现 EnvironmentPostProcessor 接口，可将任意 yaml 和 properties 配置文件加载到 Environment 中
+   
    ```java
    @SpringBootTest
    class DemoApplicationTests {
@@ -310,7 +314,7 @@ public class App {
    ```
 
    YamlPropertiesFactoryBean 解析 yaml，并转换为 Properties
-
+   
    ```java
    YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
    Resource resource = new ClassPathResource("app.yaml");
@@ -321,7 +325,7 @@ public class App {
    ```
 
    YamlMapFactoryBean 解析 yaml，并转换为 Map
-
+   
    ```java
    YamlMapFactoryBean yaml = new YamlMapFactoryBean();
    yaml.setResources(new ClassPathResource("app.yaml"));
