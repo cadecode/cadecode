@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/cadecode/cadecode#readme",
   "dependencies": {
-    "@cadecode/vuepress-theme-2zh": "^1.1.1"
+    "@cadecode/vuepress-theme-2zh": "^1.1.2"
   }
 }

@@ -35,7 +35,7 @@ module.exports = {
         links: [
             {text: 'Github', url: 'https://github.com/cadecode'},
             {text: 'Email', url: 'http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=eBsZHB0bFxwdOB4XABUZERRWGxcV'},
-            {text: 'Cnblogs', url: 'https://www.cnblogs.com/pgjett'}
+            {text: 'JueJin', url: 'https://juejin.cn/user/562546315637662'}
         ]
     }
 }
