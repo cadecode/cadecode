@@ -1,6 +1,6 @@
 ---
 
-title: Java Stream API 
+title: Java 8 Stream API 
 date: 2021/7/25
 description: 本文介绍 Java 8 中新增的流操作 API，如中间操作 mp、reduce，终止操作 collect 以及分组 groupingBy 和分区 partitioningBy 等
 tag: [Java 基础，Java 8]
