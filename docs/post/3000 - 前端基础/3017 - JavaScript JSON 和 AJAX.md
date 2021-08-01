@@ -2,7 +2,7 @@
 
 title: JavaScript JSON 与 AJAX
 date: 2020/4/4
-description: JSON 是一种轻量的数据交互格式，与 AJAX 配合完成前端与服务端的信息传递，本文介绍 JSON 的使用、原生 AJAX 写法、JSONP 跨域解决方法以及 AJAX 和 JSONP 工具函数的封装
+description: 本文介绍 JSON 的概念和基本格式、JSON 与对象的转换、原生 AJAX 的使用、JSONP 解决跨域的方法以及 AJAX 和 JSONP 工具函数的封装
 tag: [JavaScript, 前端基础]
 
 ---
