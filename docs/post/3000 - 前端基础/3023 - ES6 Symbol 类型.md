@@ -2,7 +2,7 @@
 
 title: ES6 Symbol 类型
 date: 2021/6/10
-description: ES6 新增的原始数据类型 Symbol，表示独一无二的值，主要用来防止属性名的冲突
+description: 本文介绍 ES6 中新增的原始数据类型 Symbol，Symbol.for 的使用和 Symbol 的使用场景，以及内置的一些系统 Symbol
 tag: [ES6, JavaScript, 前端基础]
 
 ---

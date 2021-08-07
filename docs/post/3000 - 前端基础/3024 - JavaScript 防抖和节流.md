@@ -2,7 +2,7 @@
 
 title: JavaScript 防抖和节流
 date: 2020/9/1
-description: 函数防抖和节流是前端优化高频率代码的手段
+description: 本文介绍 JavaScript 中优化高频率代码的手段 - 函数防抖和节流，防抖函数的封装（需要立即执行和不需要两个版本版）和节流函数的封装（Date 和计时器两个版本）
 tag: [JavaScript, 前端基础]
 
 ---
@@ -41,11 +41,13 @@ tag: [JavaScript, 前端基础]
    
 2. 需要立即执行
 
+   核心是有计时器就清除，并开启新计时器
+
+   立即执行的逻辑是执行后开启一个定时器保持不可执行状态
+
    ```javascript
    /**
     * 防抖函数：每一次的高频触发只执行一次
-    * 核心是有计时器就清除，并开启新计时器
-    * 立即执行的逻辑是执行后开启一个定时器保持不可执行状态
     *
     * @param fn 目标函数
     * @param delay 延迟时间
@@ -114,11 +116,12 @@ tag: [JavaScript, 前端基础]
 
 2. 计时器实现
 
+   核心是有计时器就 return
+   
    ```javascript
    /**
     * 节流函数：高频触发时，按指定间隔执行
-    * 核心是有计时器就 return
-    *
+    * 
     * @param fn 目标函数
     * @param interval 时间间隔
     * @return {(function(): void)|*}

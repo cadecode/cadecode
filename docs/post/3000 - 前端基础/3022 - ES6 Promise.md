@@ -2,7 +2,7 @@
 
 title: ES6 Promise
 date: 2020/8/25
-description: ES6 Promise Api、Promise.all、Promise、race 以及 async/await 的使用
+description: 本文介绍 ES6 中异步 API - Promise，如 Promise 构造方法、then 方法和 catch 方法、Promise.all、Promise.race 以及 async/await 的使用
 tag: [ES6, JavaScript, 前端基础]
 
 ---
