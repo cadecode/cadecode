@@ -2,12 +2,10 @@
 
 title: ES6 版本与 Babel
 date: 2020/6/9
-description: ES6，即 ECMAScript6，版本过渡的历史及 babel 环境的搭建
+description: 本文介绍 ECMAScript6，版本历史、Babel 安装配置、在浏览器中使用 Babel，以及使用 babel-plyfill 支持 ES6 新增 API
 tag: [ES6, JavaScript, 前端基础]
 
 ---
-
-
 
 # ES6 版本与 Babel 
 
