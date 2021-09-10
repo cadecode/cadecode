@@ -2,7 +2,7 @@
 
 title: SpringBoot 邮件服务
 date: 2021/3/9
-description: SpringBoot 集成邮件服务，包括发送简单文本邮件、模板邮件、附件邮件、静态资源邮件
+description: 本文介绍 SpringBoot 如何集成邮件服务，包括发送简单文本邮件、模板邮件、附件邮件、静态资源邮件等
 tag: [SpringBoot, Spring, Java 框架]
 
 ---
