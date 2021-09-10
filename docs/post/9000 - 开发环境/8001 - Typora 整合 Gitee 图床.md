@@ -3,7 +3,7 @@
 title: Typora 整合 Gitee 图床
 date: 2021/7/21
 description: 本文介绍 Markdown 编辑器 Typora 和图片上传工具 PicGo 的使用，以及如何使用 PicGo 插件配合 Gitee 搭建免费的图床
-tag: [开发环境, Typora]
+tag: 开发环境
 
 ---
 
@@ -76,7 +76,7 @@ Typora 使用 PicGo 上传图片有多种方式，可以直接安装  PicGo 客�
 
 ## 使用命令行 PicGo
 
-有时候我们希望在别处也能通过命令行便捷的上传图片到图床中，通过 npm 安装 PicGo 是一个不错的选择。
+有时候我们希望在别处也能通过命令行便捷的上传图片到图床中，通过 npm 安装 PicGo 是一个不错的选择
 
 ```
 npm i picgo -g
@@ -103,7 +103,7 @@ picgo -h
 对于剪切板的图片，会根据时间生成文件名；对于本地图片，会使用图片文件名，可以使用 super prefix 插件进行统一配置
 
 ```
-piggo install super-prefix
+picgo install super-prefix
 ```
 
 在配置文件 config.json 中添加 super prefix 配置
