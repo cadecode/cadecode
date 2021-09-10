@@ -2,7 +2,7 @@
 
 title: SpringBoot 启动原理
 date: 2021/2/1
-description: SpringBoot 是由 Pivotal 团队提供的全新框架，默认集成了许多框架的配置，用以简化新 Spring 应用的初始搭建以及开发过程
+description: 本文介绍 SpringBoot 配置文件的使用及多环境下的配置，如 properties 和 yaml 的区别、@Value、@ConfigurationProperties 以及其他方式读取配置文件
 tag: [SpringBoot, Spring, Java 框架]
 
 ---

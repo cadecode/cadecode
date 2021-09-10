@@ -2,7 +2,7 @@
 
 title: SpringBoot 全局异常处理
 date: 2021/2/26
-description: SpringBoot 中 @ControllerAdvice 注解提供了全局异常处理的方法，还可以通过封装接口返回内容及 ResponseBodyAdvice 接口来统一返回格式
+description: 本文介绍 SpringBoot 中如何使用 @ControllerAdvice 注解实现全局异常处理（包括 404 异常），以及通过 ResponseBodyAdvice 接口统一返回格式
 tag: [SpringBoot, Spring, Java 框架]
 
 ---
