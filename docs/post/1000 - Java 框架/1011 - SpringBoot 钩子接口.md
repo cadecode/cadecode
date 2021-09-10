@@ -2,7 +2,7 @@
 
 title: SpringBoot 钩子接口
 date: 2021/3/17
-description: Spring 提供了很多扩展接口，称之为钩子，这些钩子在特定的时内被回调。众多优秀的框架也是通过扩展此类钩子来实现许多特制的功能
+description: 本文介绍 SpringBoot 提供的钩子接口，如 Aware 接口族、InitializingBean、BeanPostProcessor、BeanFactoryPostProcessor 等
 tag: [SpringBoot, Spring, Java 框架]
 
 ---

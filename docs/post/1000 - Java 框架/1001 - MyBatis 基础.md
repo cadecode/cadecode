@@ -2,7 +2,7 @@
 
 title: MyBatis 基础
 date: 2020/7/3
-description: MyBatis 是一款优秀的持久层框架，支持自定义 SQL、存储过程以及高级映射，配合 Spring 家族框架使用是当前流行的持久化方案
+description: 本文介绍持久层框架 MyBatis 的配置和使用，如配置文件、XML 映射器、生命周期、日志、分页、注解及动态 SQL 等 
 tag: [MyBatis, Java 框架]
 
 ---

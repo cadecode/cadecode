@@ -428,7 +428,7 @@ tag: [SpringBoot, Spring, MyBatis, Java 框架]
         * @param point
         * @param dataSource
         */
-       @Before("@annotation(dataSource))")
+       @Before("@annotation(dataSource)")
        public void switchDataSource(JoinPoint point, DataSource dataSource) {
            String dataSourceKey = dataSource.value();
            if (!DynamicDataSourceContextHolder.containDataSourceKey(dataSourceKey)) {

@@ -2,7 +2,7 @@
 
 title: SpringBoot 日志配置
 date: 2021/3/11
-description: logback 是 SpringBoot 默认集成和推荐的日志系统，通过 logback.xml 进行配置，结合 AOP 可以记录请求日志 
+description: 本文介绍 logback 在 SpringBoot 中的配置与使用，如 logback.xml 的常见配置，以及结合 AOP 可以接口请求日志 
 tag: [SpringBoot, Spring, Java 框架]
 
 ---

@@ -2,7 +2,7 @@
 
 title: jQuery 使用笔记
 date: 2020/2/23
-description: jQuery 是一个功能丰富、简单易学的 JS 类库，本文介绍 jQuery 选择器、属性操作、样式操作、DOM 操作、事件处理、Ajax、动画等 API 的使用的方法
+description: 本文介绍 jQuery 选择器、属性操作、样式操作、DOM 操作、事件处理、Ajax、动画等 API 的使用的方法
 tag: [jQuery, 前端框架]
 
 ---

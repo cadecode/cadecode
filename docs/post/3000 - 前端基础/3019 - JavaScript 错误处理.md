@@ -3,7 +3,7 @@
 
 title: JavaScript 错误处理
 date: 2020/6/8
-description: JavaSCript 错误类型、try catch 的是使用以及 ES5 严格模式
+description: 本文介绍 JavaSCript 中的六大错误类型及常见场景、try catch finally 的使用以及 ES5 严格模式下的禁止使用的语法和注意事项
 tag: [JavaScript, 前端基础]
 
 ---
