@@ -3,7 +3,7 @@
 title: Centos 配置 FTP 服务
 date: 2021/11/5
 description: 本文介绍 Centos7 下配置 FTP 服务的方式，包括 FTP 和 SFTP 的相关介绍，以及 FTP 和 SFTP 的安装和配置及权限设置
-tag: 开发环境
+tag: 中间件
 
 ---
 

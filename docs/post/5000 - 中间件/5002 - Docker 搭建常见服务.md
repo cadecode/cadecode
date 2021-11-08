@@ -3,7 +3,7 @@
 title: Docker 搭建常见服务
 date: 2021/11/6
 description: 本文介绍使用 Docker 搭建常见服务的方法，如 MySQL、nginx、Redis 等，包括下载镜像、如何启动、数据持久化以及自定义配置文件等
-tag: 开发环境
+tag: 中间件
 
 ---
 
