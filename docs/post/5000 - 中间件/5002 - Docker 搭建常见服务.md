@@ -186,7 +186,8 @@ tag: 中间件
    	-p 6379:6379 \
    	-v /var/docker/redis/data:/data \
    	-d redis:tag \
-   	redis-server --appendonly yes # 可在 run 命令后直接追加启动后容器要执行的命令
+   	redis-server --appendonly yes 
+   # 可在 run 命令后直接追加启动后容器要执行的命令
    ```
 
    AOF 文件名为`appendonly.aof`，默认生成到`/data`目录
@@ -219,5 +220,82 @@ tag: 中间件
    # 挂载配置文件，启动 server 时使用配置文件
    ```
    
-   
+## RabbitMQ
+
+1. 在 Docker Hub 上搜索 RabbitMQ
+
+   ![image-20211108212725487](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211108212726479.png)
+
+   拉取 RabbitMQ 镜像
+
+   ```shell
+   docker pull rabbitmq:3.8.23-management
+   ```
+
+   > 版本号中带有 management 的镜像是带有 Web 管理界面
+   >
+   > 不带 management 的镜像只能通过命令操作
+
+2. 启动 RabbitMQ 基本服务
+
+   ```shell
+   # 15672 Web 管理页面端口
+   # 5672 通信端口
+   docker run \
+   	--name rabbitmq \
+   	-p 15672:15672 \
+   	-p 5672:5672 \
+   	-d rabbitmq:3.8.23-management
+   ```
+
+   Web 管理界面默认的账户密码为 guest/guest
+
+3. 启动 RabbitMQ 并指定管理员初始账号密码
+
+   ```shell
+   # RABBITMQ_DEFAULT_USER 用户名
+   # RABBITMQ_DEFAULT_PASS 密码
+   docker run \
+   	--name rabbitmq \
+   	-p 15672:15672 \
+   	-p 5672:5672 \
+   	-e RABBITMQ_DEFAULT_USER=admin \
+   	-e RABBITMQ_DEFAULT_PASS=xxxx \
+   	-d rabbitmq:3.8.23-management
+   ```
+
+4. 启动时创建一个虚拟主机
+
+   ```shell
+   # RABBITMQ_DEFAULT_VHOST 指定虚拟主机名称
+   docker run \
+   	--name rabbitmq \
+   	-p 15672:15672 \
+   	-p 5672:5672 \
+   	-e RABBITMQ_DEFAULT_USER=admin \
+   	-e RABBITMQ_DEFAULT_PASS=xxxx \
+   	-e RABBITMQ_DEFAULT_VHOST=demoMQ \
+   	-d rabbitmq:3.8.23-management
+   ```
+
+5. 自定义 RabbitMQ 配置
+
+   默认配置文件是`/etc/rabbitmq/rabbitmq.conf`
+
+   ![image-20211108222440762](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211108222441905.png)
+
+   自定义配置文件启动
+
+   ```shell
+   docker run \
+   	--name rabbitmq \
+   	-p 15672:15672 \
+   	-p 5672:5672 \
+   	-v /var/docker/rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf \
+   	-d rabbitmq:3.8.23-management
+   ```
+
+   浏览器访问宿主机的 15672 端口，可进入登录界面，使用配置的账户登录即可
+
+   ![image-20211108223148756](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211108223149763.png)
 
