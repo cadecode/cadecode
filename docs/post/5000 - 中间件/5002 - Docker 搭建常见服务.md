@@ -39,7 +39,7 @@ tag: 中间件
    docker pull mysql:8.0.27
    ```
 
-   <img src="https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211107093259817.png" alt="image-20211107093258892"  />
+   ![image-20211107093258892](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211112222406034.png)
 
 4. MySQL 容器基本启动命令
 
