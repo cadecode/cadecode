@@ -94,15 +94,15 @@ tag: 中间件
 
    > 可通过在 /docker-entrypoint-initdb.d 下映射 SQL 脚本或 Shell 脚本文件来初始化 MySQL 数据库
 
-## nginx
+## Nginx
 
-1. 拉取 nginx 镜像
+1. 拉取 Nginx 镜像
 
    ```shell
    docker pull nginx:1.21.3
    ```
 
-2. 运行 nginx web 服务
+2. 运行 Nginx web 服务
 
    ```shell
    docker run \
@@ -112,11 +112,11 @@ tag: 中间件
    # :ro 代表只读，容器内数据改变不影响外部
    ```
 
-   作为 Web 服务器时，nginx 容器 Web 资源默认存放在容器内的`/usr/share/nginx/html`，映射到宿主机目录可用于部署前端系统
+   作为 Web 服务器时，Nginx 容器 Web 资源默认存放在容器内的`/usr/share/nginx/html`，映射到宿主机目录可用于部署前端系统
 
-3. 配置 nginx 反向代理
+3. 配置 Nginx 反向代理
 
-   nginx 容器配置文件默认存放在容器内的`/etc/nginx/nginx.conf`
+   Nginx 容器配置文件默认存放在容器内的`/etc/nginx/nginx.conf`
 
    若没有该配置文件模板，可启动一个临时容器，用`docker cp`命令复制到宿主机
 
@@ -128,7 +128,7 @@ tag: 中间件
 
    修改`nginx.conf`，添加反向代理配置如下
 
-   ```json
+   ```
    upstream myservers {
        server 192.168.1.8;
        server 192.168.1.9;
@@ -141,7 +141,7 @@ tag: 中间件
    }
    ```
 
-   启动 nginx 容器
+   启动 Nginx 容器
 
    ```shell
    docker run \
@@ -284,7 +284,7 @@ tag: 中间件
 
    ![image-20211108222440762](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211108222441905.png)
 
-   自定义配置文件启动
+   自定义配置文件启动，并持久化`/var/lib/rabbitmq`运行目录
 
    ```shell
    docker run \
@@ -292,10 +292,11 @@ tag: 中间件
    	-p 15672:15672 \
    	-p 5672:5672 \
    	-v /var/docker/rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf \
+   	-v /var/docker/rabbitmq/data:/var/lib/rabbitmq \
    	-d rabbitmq:3.8.23-management
    ```
-
+   
    浏览器访问宿主机的 15672 端口，可进入登录界面，使用配置的账户登录即可
-
-   ![image-20211108223148756](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211108223149763.png)
+   
+   ![image-20211112220802017](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211112220805558.png)
 
