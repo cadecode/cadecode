@@ -19,6 +19,8 @@ tag: [SpringBoot, Spring, Java 框架]
 
 3. 基本配置
 
+   在资源目录下创建`logback.xml`或`logback-spring.xml`，区别是后者在 SpringBoot 配置文件之后加载
+   
    ```xml
    <?xml version="1.0" encoding="utf-8" ?>
    <!--configuration

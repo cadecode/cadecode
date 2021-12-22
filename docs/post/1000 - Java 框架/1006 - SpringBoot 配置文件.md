@@ -334,6 +334,69 @@ public class App {
    String name = (String) app.get("name");
    System.out.println(name);
    ```
+   
+   Binder 类负责将对象与配置参数进行绑定，可进行类型转换，以及提供回调方法介入绑定的各个阶段进行深度定制
+   
+   ```java
+   // 绑定对象，首先要绑定配置
+   User user = Binder.get(environment)
+       // 将属性绑定到对象上
+       .bind( "custom.user", Bindable.of(User.class) )
+       // 获取实例
+       .get(); 
+   
+   // 绑定 Map
+   Map<String,Object> propMap = Binder.get(environment)
+       .bind( "custom.user",Bindable.mapOf(String.class, Object.class) ).get();
+   
+   // 绑定 List
+   List<String>r list = Binder.get(environment)
+       .bind( "custom.strings",Bindable.listOf(String.class) ).get();
+   
+   // 转换以及默认值
+   String datestr = (String) Binder.get(environment)
+       .bind( "custom.date",Bindable.of(String.class) )
+       // 转换为大写
+       .map(String::toUpperCase)
+       // 默认值
+       .orElse("bad date string");
+   
+   // 绑定过程回调函数
+   LocalDate str = Binder.get(environment)
+       .bind("custom.date", Bindable.of(LocalDate.class), new BindHandler() {
+           @Override
+           public <T> Bindable<T> onStart(ConfigurationPropertyName name, 
+                                          Bindable<T> target, BindContext context) {
+               log.info("绑定开始{}",name);
+               return target;
+           }
+   
+           @Override
+           public Object onSuccess(ConfigurationPropertyName name, 
+                                   Bindable<?> target, 
+                                   BindContext context, Object result) {
+               log.info("绑定成功{}",target.getValue());
+               return result;
+           }
+   
+           @Override
+           public Object onFailure(ConfigurationPropertyName name, 
+                                   Bindable<?> target, 
+                                   BindContext context, Exception error) throws Exception {
+               log.info("绑定失败{}",name);
+               return null;
+           }
+   
+           @Override
+           public void onFinish(ConfigurationPropertyName name, 
+                                Bindable<?> target, 
+                                BindContext context, Object result) throws Exception {
+               log.info("绑定结束{}",name);
+           }
+       }).get();
+   ```
+   
+   
 
 
 ## 多环境配置
