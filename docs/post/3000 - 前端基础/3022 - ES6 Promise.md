@@ -237,7 +237,7 @@ tag: [ES6, JavaScript, 前端基础]
 3. 如果 await 等待的承诺被拒绝，会抛出异常，可以使用 try catch 处理
 
    ```javascript
-   function creatPromise
+   function creatPromise() {
      return new Promise((resolve, reject) => {
        setTimeout(() => {
          resolve('resolve')
