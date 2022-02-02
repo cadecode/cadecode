@@ -136,7 +136,7 @@ tag: 中间件
    }
    server {
        location / {
-           proxy_pass: http://myservers/;
+           proxy_pass http://myservers/;
        }
    }
    ```
