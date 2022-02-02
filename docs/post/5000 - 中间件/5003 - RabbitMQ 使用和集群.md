@@ -249,7 +249,7 @@ channel.queueDeclare("demoQueue", false, false, false, null);
 
    在发布订阅模型中，全部消费者都可以获取相同的消息
 
-   在路由主题模型中，交换机不再将消息转发到每一个队列，而且更具路由和主题进行匹配
+   在路由主题模型中，交换机不再将消息转发到每一个队列，而且根据路由和主题进行匹配
 
    ![img](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2021/11/20211114002122113.png)
 
