@@ -1,13 +1,10 @@
 ---
-
 title: SpringMVC 基础
 date: 2020/11/11
 description: 本文介绍 SpringMVC 框架的配置和使用，如 SpingMVC 的基本处理流程、注解的使用、请求参数的传递、文件上传以及功能增强等
 tag: [Spring, Java 框架]
 
 ---
-
-
 
 # SpringMVC 基础
 
@@ -37,9 +34,9 @@ tag: [Spring, Java 框架]
 ## 基本使用
 
 1. maven 创建 webapp 程序
-
+   
    一些依赖
-
+   
    ```xml
    <dependencies>
        <dependency>
@@ -67,7 +64,7 @@ tag: [Spring, Java 框架]
    ```
 
 2. web.xml 配置
-
+   
    ```xml
    <web-app>
        <!--前端控制器-->
@@ -88,7 +85,7 @@ tag: [Spring, Java 框架]
    ```
 
 3. springmvc-servlet.xml 配置
-
+   
    ```xml
    <!--处理器映射器-->
    <!--BeanNameUrlHandlerMapping 是 SpringMVC 提供的处理器映射器的一种，按照 bean 的 name 属性匹配-->
@@ -98,13 +95,13 @@ tag: [Spring, Java 框架]
    <!--视图解析器-->
    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
        <!--将视图位置设置在 WEB-IBF 下的 jsp 目录中-->
-   	<property name="prefix" value="/WEB-INF/jsp" />
+       <property name="prefix" value="/WEB-INF/jsp" />
        <property name="suffix" value=".jsp" />
    </bean>
    ```
 
 4. HelloController.java
-
+   
    ```java
    public class HelloController implements Controller {
    
@@ -120,16 +117,16 @@ tag: [Spring, Java 框架]
    ```
 
 5. 配置处理器
-
+   
    在 spingmvc-servlet.xml 中配置
-
+   
    ```xml
    <!--处理器-->
    <bean name="/hello" class="controller.HelloController"></bean>
    ```
 
 6. 视图文件
-
+   
    在 webapp/WEB-INF 目录下，新建 jsp 目录，创建 hello.jsp
 
 7. 启动服务器，访问 /hello 进行测试，成功转发到视图 hello.jsp
@@ -137,7 +134,7 @@ tag: [Spring, Java 框架]
 ## 使用注解
 
 1. 配置开启注解
-
+   
    ```xml
    <!--开启自动扫描-->
    <context:component-scan base-package="..." />
@@ -146,30 +143,30 @@ tag: [Spring, Java 框架]
    <!--启用 MVC 注解支持，如 @RequestMapping-->
    <mvc:annotation-driven>
        <!--设置消息转化器默认编码，解决前端拿到数据乱码-->
-   	<mvc:message-converters register-defaults="true">
+       <mvc:message-converters register-defaults="true">
            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                <property name="defaultCharset" value="UTF-8" />
            </bean>
        </mvc:message-converters>
    </mvc:annotation-driven>
    ```
-
+   
    mvc:annotation-driven 帮我们注入了  DefaultAnnotationHandlerMapping 和 AnnotationMethodHandlerMapping 两个 bean
 
 2. 常用注解介绍
-
+   
    @Controller 将类标注为控制器，不用在继承 Controller 接口了
-
+   
    @RequestMapping 标注进入该控制器的匹配路径，可以用以类和方法
-
+   
    @ResponseBody 将返回内容转为 JSON 字符串，写入输入流返回给前端
-
+   
    @RequestParam 作用在方法参数中，从请求查询串中解析参数内容
-
+   
    @RequestBody 与 @RequestParam 类似，从请求体中解析参数内容
-
+   
    @RestController 拥有 @Controller 功能，并将所有方法标注为 @ResponseBody
-
+   
    ```java
    @Controller
    public class HelloController {
@@ -189,7 +186,7 @@ tag: [Spring, Java 框架]
 ## 接受请求
 
 1. @RequestParam
-
+   
    ```java
    @ResponseBody
    @RequestMapping("/hello")
@@ -198,17 +195,17 @@ tag: [Spring, Java 框架]
         return name + " " + age;
     }
    ```
-
+   
    value 用于定义有前端传来的要解析的键名
-
+   
    required 表示是否必须携带该数据，默认为 true 时，没有该数据无法正确匹配
-
+   
    defaultValue 用于在没有解析到对应数据时赋予初值
-
+   
    > @RequestParam 使用场景
-   >
+   > 
    > 可解析请求查询串内容和请求类型为 x-www-form-urlencoded 或 form-data 时的请求体内容
-   >
+   > 
    > 1. 使用基本类型或 String 接收时，根据名称匹配键值对
    > 2. 使用 String 接收时，如果查询串和请求体内的同名键值对会自动以逗号拼接
    > 3. 使用 List 或数组接收时，可用一个键名对应多个逗号分隔的值，来绑定到 List 或数组
@@ -217,7 +214,7 @@ tag: [Spring, Java 框架]
    > 6. 不可以使用实体类接收
 
 2. @RequestBody
-
+   
    ```java
    @ResponseBody
    @RequestMapping("/hello")
@@ -229,19 +226,19 @@ tag: [Spring, Java 框架]
    required 表示是否必须携带该数据，默认为 true 时，没有该数据无法正确匹配
    
    > @RequestBody 只能解析请求体中的内容，且请求类型为 appliction/json
-   >
+   > 
    > 使用 MappingJackson2HttpMessageConverter 进行解析和转换，支持自动绑定实体类或 Map
 
 3. 不使用 @RequestParam 和 @RequestBody
-
+   
    类似于 @RequestParam，可以绑定实体类，不可以接收 List、Map，一般不推荐使用
 
 ## 返回响应
 
 1. ModelAndView
-
+   
    ModelAndView 转发到 hello.jsp 并携带信息
-
+   
    ```java
    @RequestMapping("/hello")
    public ModelAndView hello() {
@@ -251,28 +248,28 @@ tag: [Spring, Java 框架]
        return modelAndView;
    }
    ```
-
+   
    ModelAndView 构造方法
-
+   
    ```java
    ModelAndView mv = new ModelAndView("redirect:/404.htm"); // 重定向
    ModelAndView mv = new ModelAndView("forward:/404.htm"); // 请求转发
    ```
-
+   
    重定向的方法还有返回 String， 如 return "redirect:/404.html"，配合在参数中接收 Model 作为参数，传递信息
-
-    ```java
+   
+   ```java
    @RequestMapping("/hello")
    public String hello(Model model) {
-       model.addAttribute("msg", "消息~");
-       return "hello";
+      model.addAttribute("msg", "消息~");
+      return "hello";
    }
-    ```
-
+   ```
+   
    Model是每次请求中都存在的默认参数，利用其 addAttribute() 方法传递内容到页面中
-
+   
    同时，我们总能够在 Controller 的方法参数中使用 HttpServletRequest 和 HttpServletResponse 对象
-
+   
    ```java
    @RequestMapping("/hello")
    public String hello( HttpServletRequest request, HttpServletResponse response) {
@@ -283,9 +280,9 @@ tag: [Spring, Java 框架]
    ```
 
 2. @ResponseBody
-
+   
    @RespnseBody 将方法结果写入字符串，返回给前端
-
+   
    ```java
    @ResponseBody
    @RequestMapping(value = "/hello")
@@ -293,11 +290,11 @@ tag: [Spring, Java 框架]
        return user;
    }
    ```
-
+   
    返回结果是一个对象会经过转换生成 JSON 格式的字符串，返回给前端
-
+   
    默认使用 Jackson 进行处理，pom 引入 Jackson 后，自动调用
-
+   
    ```xml
    <dependency>
        <groupId>com.fasterxml.jackson.core</groupId>
@@ -321,9 +318,9 @@ tag: [Spring, Java 框架]
 1. springmvc 中由 MultipartFile 接口实现文件上传
 
 2. MultipartFile 接口有两个继承实现类，CommonsMultipartFile，StandardMultipartFile
-
+   
    pom 中引入
-
+   
    ```xml
    <dependency>
        <groupId>commons-fileupload</groupId>
@@ -333,7 +330,7 @@ tag: [Spring, Java 框架]
    ```
 
 3. 在 Controller 方法参数中使用 MultipartFile 接收
-
+   
    ```java
    @ResponseBody
    @RequestMapping(value = "/ipload")
@@ -342,15 +339,15 @@ tag: [Spring, Java 框架]
        String fileName = file.getOriginalFilename();
        String path = req.getServletContext().getRealPath("/upload/");
       // 获取原文件名
-   	String fileName = file.getOriginalFilename();
-   	// 创建文件实例
-   	File filePath = new File(path, fileName);
-   	// 如果文件目录不存在，创建目录
-   	if (!filePath.getParentFile().exists()) {
-   		filePath.getParentFile().mkdirs();
-   	}
-   	// 写入文件
-   	file.transferTo(filePath);
+       String fileName = file.getOriginalFilename();
+       // 创建文件实例
+       File filePath = new File(path, fileName);
+       // 如果文件目录不存在，创建目录
+       if (!filePath.getParentFile().exists()) {
+           filePath.getParentFile().mkdirs();
+       }
+       // 写入文件
+       file.transferTo(filePath);
        return "success";
    }
    ```
@@ -358,9 +355,9 @@ tag: [Spring, Java 框架]
 ## 功能增强
 
 1. 拦截器
-
+   
    自定义拦截器 Interceptor 实现 HandlerInterceptor  接口
-
+   
    ```java
    public class MyInterceptor implements HandlerInterceptor {
        // 进入接口方法前调用
@@ -373,19 +370,19 @@ tag: [Spring, Java 框架]
            }
            return true;
        }
-   	// 接口方法执行后，渲染视图前调用
+       // 接口方法执行后，渲染视图前调用
        @Override
        public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-           
+   
        }
-   	// 视图渲染完成后调用
+       // 视图渲染完成后调用
        @Override
        public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
    
        }
    }
    ```
-
+   
    ```xml
    <!-- 配置拦截器 -->
    <mvc:interceptors>
@@ -399,11 +396,11 @@ tag: [Spring, Java 框架]
    ```
 
 2. @ControllerAdvice
-
+   
    通过 @ControllerAdvice 配合  @ExceptionHandler 可以对控制层的异常进行处理
-
+   
    @ControllerAdvice 可以指定 basePackages，防止影响全局（如 swagger 不能正常使用）
-
+   
    ```java
    @ControllerAdvice
    public class ExceptionHandler {
@@ -417,9 +414,9 @@ tag: [Spring, Java 框架]
    ```
 
 3. 继承  ResponseBodyAdvice 接口
-
+   
    对 body 进行统一处理，如返回固定格式
-
+   
    ```java
    @ControllerAdvice
    public class ResponseHandler implements ResponseBodyAdvice {
@@ -438,9 +435,9 @@ tag: [Spring, Java 框架]
    ```
 
 4. 使用 AOP
-
+   
    注解实现对接口方法的权限验证
-
+   
    ```java
    @Aspect
    @Component
@@ -458,26 +455,26 @@ tag: [Spring, Java 框架]
        }
    }
    ```
-
+   
    AOP 中获取 Method 对象和其上的注解
-
+   
    ```java
    MethodSignature signature = (MethodSignature) jp.getSignature();
    Method method = signature.getMethod();
    HasRole hasRole = method.getAnnotation(HasRole.class);
    ```
-
+   
    AOP 中获取 requset、response 对象
-
+   
    ```java
    ServletRequestAttributes attributes = 
        (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
    HttpServletRequest request = attributes.getRequest();
    HttpServletResponse response = attributes.getResponse();
    ```
-
+   
    AOP 获取任意 Bean
-
+   
    ```java
    // 方法一
    // 自动注入依赖
@@ -492,6 +489,3 @@ tag: [Spring, Java 框架]
    // WebApplicationContextUtils.getWebApplicationContext(servletContext) 获取 WebAppclicationContext
    // getBean() 获取任意 Bean
    ```
-
-   
-
