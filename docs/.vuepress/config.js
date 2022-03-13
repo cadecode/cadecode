@@ -13,7 +13,7 @@ module.exports = {
     themeConfig: {
 		logo: ['image', '/meta/logo.png'],
         pagination: 12,
-        domain: 'https://cadecode.top/ ',
+        domain: 'https://blog.cadecode.top/ ',
         notice: [
             {
                 text: 'vuepress 博客主题 2zh 开源地址',
@@ -34,7 +34,7 @@ module.exports = {
         author: 'CadeCode',
         links: [
             {text: 'Github', url: 'https://github.com/cadecode'},
-            {text: 'Email', url: 'http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=eBsZHB0bFxwdOB4XABUZERRWGxcV'},
+            {text: 'Email', url: 'https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=eBsZHB0bFxwdOB4XABUZERRWGxcV'},
             {text: 'JueJin', url: 'https://juejin.cn/user/562546315637662'}
         ]
     }
