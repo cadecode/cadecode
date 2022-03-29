@@ -7,6 +7,7 @@ module.exports = {
         }
     },
     head: [
+		['meta', { name: 'referrer', content: 'no-referrer' }],
 		['link', { rel: 'icon', href: '/meta/favicon.ico' }]
 	],
     theme: '@cadecode/vuepress-theme-2zh',
