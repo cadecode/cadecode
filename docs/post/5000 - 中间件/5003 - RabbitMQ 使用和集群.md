@@ -395,7 +395,7 @@ channel.queueDeclare("demoQueue", false, false, false, null);
     */
    ```
 
-   > 在 Spring AMQP 中，工作队列模型是公平消费的
+   > 在 Spring AMQP 中，工作队列模型是公平消费的，可以通过配置预处理个数和手动确认来实现能者多劳
 
 4. 发布订阅模型
 
