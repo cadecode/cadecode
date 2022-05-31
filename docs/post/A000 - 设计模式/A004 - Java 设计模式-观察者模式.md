@@ -120,7 +120,7 @@ tag: [设计模式, 行为型设计模式]
 
    UML
 
-   ![image-20220308214803035](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2022/03/20220308214815204.png)
+   ![image-20220308214803035](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220308214815204.png)
 
 ## 应用场景
 

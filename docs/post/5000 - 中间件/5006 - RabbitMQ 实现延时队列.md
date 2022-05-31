@@ -196,7 +196,7 @@ tag: 中间件
    rabbitmq-plugins enable rabbitmq_delayed_message_exchange
    ```
 
-   ![image-20220428180942586](https://gitee.com/cadecode/pic-bed/raw/master/blog-img/2022/04/20220428180943778.png)
+   ![image-20220428180942586](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/04/20220428180943778.png)
 
 2. 使用插件
 
