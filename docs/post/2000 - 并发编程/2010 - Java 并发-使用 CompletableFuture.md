@@ -234,7 +234,7 @@ Executors 中还有一些方法没有限制线程数量，可能导致不断创�
 
 ```java
 // 提交一个 Runnable
-FutureTask<?> f1 = threadPool.submit(new Runnable() {
+Future<?> f1 = threadPool.submit(new Runnable() {
     @Override
     public void run() {
         System.out.println("hello");
