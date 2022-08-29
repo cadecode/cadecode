@@ -146,6 +146,16 @@ tag: Java 基础
    Files.write(path, bytes, StandardOpenOption.CREATE);
    ```
 
+4. 复制文件
+
+   ```java
+   Path originPath = Paths.get("D:/a.txt");
+   Path targetPath = Paths.get("D:/b.txt");
+   Files.copy(originPath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+   ```
+
+   指定 CopyOption，如 REPLACE_EXISTING，表示替换已存在的文件
+
 ### 文件打开选项
 
 1. StandardOpenOption 用来描述一个文件的打开选项
@@ -344,7 +354,7 @@ tag: Java 基础
    // 关闭 channel
    fileChannel.close();
    ```
-   
+
    > 可以直接使用 ByteBuffer.wrap(msg.getBytes()) 来包装字节数组为一个 Buffer
 
 5. 复制数据
@@ -370,6 +380,7 @@ tag: Java 基础
    in.close();
    out.close();
    ```
+   
 
 
 ### ServerSocketChannel
