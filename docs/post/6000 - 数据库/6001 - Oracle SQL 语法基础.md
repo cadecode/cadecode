@@ -79,10 +79,14 @@ tag: [Oracle, 数据库]
    CREATE TABLESPACE 表空间名 DATAFILE 配置文件存放位置 SIZE 配置文件大小
    ```
 
-4. 指定默认表空间
+5. 指定默认表空间
 
    ```sql
-   ALTER DATABASE DEFAULT TABLESPACE 用户名;
+   # 设置指定用户的默认表空间
+   ALTER USER 用户名 DEFAULT TABLESPACE 表空间名;
+   
+   # 设置数据库的默认临时表空间
+   ALTER DATABASE DEFAULT TEMPORARY TABLESPACE temp_tbs_name;
    ```
 
 5. 查看默认表空间
@@ -366,7 +370,7 @@ tag: [Oracle, 数据库]
    > 需要注意：
    >
    > 	<> ANY 表示与结果集中任意一条记录不等就返回真
-   > 			
+   > 				
    > 	<> ALL 表示与每一条记录都不等才返回真
 
    此外，EXSITS 构用于判断子查询是否有数据返回，如果有则返回 true
