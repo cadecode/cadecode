@@ -39,15 +39,15 @@ docker run --name nginx-test \
 docker exec -it nginx-test bash
 ```
 
-安装编译需要的基本依赖库
+安装编译需要的基本依赖库，以 Debian 系统为例
 
 ```shell
-apt install build-essential libpcre3-dev zlib1g-dev
+apt install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libgd-dev
 ```
 
 > 根据要编译的模块不同，可能还需要一些额外的依赖库
 >
-> 如提供 SSL 支持的模块，可能需要安装 openssl 相关库
+> 如提供 SSL 支持的模块，需要安装 openssl 相关库
 
 查看 Nginx 当前的启用配置
 
