@@ -3,7 +3,7 @@
 title: MySQL 搭建主从复制
 date: 2022/3/13
 description: 本文介绍 MySQL 主从复制的概念，搭建主从复制的流程，BINLOG 的三种格式，GTID 复制和半同步复制
-tag: [MySQL, 数据库]
+tag: [数据库, MySQL]
 
 ---
 

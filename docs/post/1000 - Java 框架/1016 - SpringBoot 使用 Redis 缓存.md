@@ -3,7 +3,7 @@
 title: SpringBoot 使用 Redis 缓存
 date: 2022/1/12
 description: 本文介绍 SpringBoot 集成 Redis 的基本步骤，如配置 Redis 连接信息，通过 RedisTemplate 和 Cache 组件注解操作 Redis，以及如何保证缓存和数据库的一致性
-tag: [Redis, SpringBoot, Java 框架]
+tag: [Java 框架, Redis, SpringBoot, Java]
 
 ---
 

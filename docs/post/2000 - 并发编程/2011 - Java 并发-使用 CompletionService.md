@@ -3,7 +3,7 @@
 title: Java 并发-使用 CompletionService
 date: 2022/4/12
 description: 本文介绍 Java 并发编程中的 CompletionService 的使用，包括它的使用场景，如地点信息采集系统、询价系统等，以及 CompletionService 的 API 和使用示例
-tag: 并发编程
+tag: [并发编程, Java]
 
 ---
 

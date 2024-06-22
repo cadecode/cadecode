@@ -3,7 +3,7 @@
 title: Java 并发-使用 CompletableFuture
 date: 2022/1/24
 description: 本文介绍 Java 并发编程中的 CompletableFuture，如 CompletableFuture 的背景介绍、CompletableFuture 的创建、获取结果、编排执行顺序、配置线程池
-tag: 并发编程
+tag: [并发编程, Java]
 
 ---
 

@@ -3,7 +3,7 @@
 title: SpringBoot 集成 MyBatis
 date: 2021/6/1
 description: 本文介绍 SpringBoot 集成 MyBatis 的基本配置、通过 AOP 和注解动态实现切换数据源的方法，以及利用 MyBatis 拦截器打印完整可执行 SQL 的方法
-tag: [SpringBoot, Spring, MyBatis, Java 框架]
+tag: [Java 框架, SpringBoot, Spring, MyBatis, Java]
 
 ---
 

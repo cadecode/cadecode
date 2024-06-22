@@ -3,7 +3,7 @@
 title: SpringBoot 钩子接口
 date: 2021/3/17
 description: 本文介绍 SpringBoot 提供的钩子接口，如 Aware 接口族、InitializingBean、BeanPostProcessor、BeanFactoryPostProcessor 等
-tag: [SpringBoot, Spring, Java 框架]
+tag: [Java 框架, SpringBoot, Spring, Java]
 
 ---
 

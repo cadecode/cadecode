@@ -3,7 +3,7 @@
 title: Java 并发-使用 CountDownLatch
 date: 2022/1/24
 description: 本文介绍 Java 并发编程中的同步工具类，如 CountDownLatch 和 CyclicBarrier，以及它们的使用方式和基本原理 
-tag: 并发编程
+tag: [并发编程, Java]
 
 ---
 

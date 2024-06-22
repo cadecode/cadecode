@@ -3,7 +3,7 @@
 title: MyBatis 基础
 date: 2020/7/3
 description: 本文介绍持久层框架 MyBatis 的配置和使用，如配置文件、XML 映射器、生命周期、日志、分页、注解及动态 SQL 等 
-tag: [MyBatis, Java 框架]
+tag: [Java 框架, MyBatis, Java]
 
 ---
 

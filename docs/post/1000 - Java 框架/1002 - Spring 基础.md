@@ -3,7 +3,7 @@
 title: Spring 基础
 date: 2020/7/5
 description: 本文介绍 Spring 框架的配置和使用，如 IOC 和 DI 的概念、XML 和 Java 类两种配置方式、注解的使用、面向切面以及整合 MyBatis 等
-tag: [Spring, Java 框架]
+tag: [Java 框架, Spring, Java]
 ---
 
 # Spring 基础

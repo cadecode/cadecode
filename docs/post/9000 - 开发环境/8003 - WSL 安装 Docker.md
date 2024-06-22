@@ -3,7 +3,7 @@
 title: WSL 安装 Docker
 date: 2021/9/25
 description: 本文介绍 WSL 安装 Docker 的两种方式（使用 Docker 客户端和原生 Linux 安装），以及 Docker 的基本命令
-tag: 开发环境
+tag: [开发环境, wsl, docker]
 
 ---
 

@@ -3,7 +3,7 @@
 title: SpringBoot 配置文件
 date: 2021/2/9
 description: 本文介绍 SpringBoot 配置文件的使用及多环境下的配置，如 properties 和 yaml 的区别、@Value、@ConfigurationProperties 以及其他方式读取配置文件等
-tag: [SpringBoot, Spring, Java 框架]
+tag: [Java 框架, SpringBoot, Spring, Java]
 
 ---
 
@@ -525,4 +525,3 @@ public class App {
    // 环境满足时才生效
    ```
 
-   

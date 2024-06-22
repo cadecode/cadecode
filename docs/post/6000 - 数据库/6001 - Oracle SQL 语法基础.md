@@ -3,7 +3,7 @@
 title: Oracle SQL 语法基础
 date: 2021/3/9
 description: 本文介绍 Oracle 数据库相关的基本概念，建库建表、增删改查的基本写法，以及高级查询和常用工具函数
-tag: [Oracle, 数据库]
+tag: [数据库, Oracle]
 
 ---
 

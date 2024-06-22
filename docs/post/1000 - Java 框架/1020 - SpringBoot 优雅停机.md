@@ -3,7 +3,7 @@
 title: SpringBoot 优雅停机
 date: 2023/9/16
 description: 本文介绍 SpringBoot 程序优雅停机的方案，包括 web 容器、Spring 定时任务、线程池等的优雅关闭
-tag: [SpringBoot, Java 框架]
+tag: [Java 框架, SpringBoot, Java]
 
 ---
 

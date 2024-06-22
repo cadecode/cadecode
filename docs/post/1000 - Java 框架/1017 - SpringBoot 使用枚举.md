@@ -3,7 +3,7 @@
 title: SpringBoot 使用枚举
 date: 2022/6/14
 description: 本文介绍 SpringBoot 中使用枚举的方式， 包括 @RequestParam 和 @RequestBody 接收枚举、API 接口返回枚举，以及 MyBatis 映射枚举等
-tag: [SpringBoot, Java 框架]
+tag: [Java 框架, SpringBoot, Java]
 
 ---
 

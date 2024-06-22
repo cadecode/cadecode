@@ -3,7 +3,7 @@
 title: MyBaits 使用 TypeHandler
 date: 2023/5/11
 description: 本文介绍 MyBatis 在 SpringBoot 中的使用，如布尔类型和数字转换，普通对象与JSON串转换，枚举类型转换，以及 MyBatis Plus 中对 TypeHandler 的支持
-tag: [MyBatis, Java 框架]
+tag: [Java 框架, MyBatis, Java]
 
 ---
 

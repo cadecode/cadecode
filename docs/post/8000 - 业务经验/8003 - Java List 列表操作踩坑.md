@@ -3,7 +3,7 @@
 title: Java List 列表操作踩坑
 date: 2022/11/21
 description: 本文介绍 Java 中 List 操作常见的坑点，如 ArrayList 和 LinkedList 的复杂度、Arrays.asList 转换基本类型，以及 List.subList 造成 OOM 等
-tag: 业务经验
+tag: [业务经验, Java]
 
 ---
 

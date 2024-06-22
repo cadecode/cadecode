@@ -3,7 +3,7 @@
 title: SpringBoot Cache 实现二级缓存
 date: 2023/6/18
 description: 本文介绍 SpringBoot Cache 组件实现二级缓存的方式，包括 Caffeine 的介绍，Caffeine 内存淘汰策略，Caffeine 的几种缓存，以及二级缓存的实现和使用等
-tag: [Redis, Caffeine, SpringBoot, Java 框架]
+tag: [Java 框架, Redis, Caffeine, SpringBoot, Java]
 
 ---
 

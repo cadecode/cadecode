@@ -3,7 +3,7 @@
 title: SpringBoot 异步和定时任务
 date: 2021/5/10
 description: 本文介绍 SpringBoot 中原生的异步任务和定时任务的开启方法、相应的线程池实现以及线程池的配置方式等
-tag: [SpringBoot, Spring, Java 框架]
+tag: [Java 框架, SpringBoot, Spring, Java]
 
 ---
 

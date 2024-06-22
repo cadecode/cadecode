@@ -13,7 +13,7 @@ permalink: /:slug
 ```javascript
 const me = {
     name: 'Cade',
-    work: 'Java 工程师 + 前端爱好者',
+    work: 'Java and JavaScipt developer',
     use: ['Java', 'SpringBoot', 'JavaScript', 'Vue', '...'],
     say: 'Embrace change, stay curious!'
 }
@@ -29,4 +29,4 @@ const me = {
 4. mermaid 语法支持
 5. latex 公式支持
 
-开始了解如何使用 = > [Github](https://github.com/CadeCode/vuepress-theme-2zh)
+开始了解如何使用 = > [Github](https://github.com/cadecode/vuepress-theme-2zh)

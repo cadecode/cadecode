@@ -3,7 +3,7 @@
 title: SpringBoot 集成 Security
 date: 2021/11/17
 description: 本文介绍 Spring Security 的基本原理、基本使用方式和前后端分离的使用方式，如自定义权限不足的处理逻辑、自定义 JWT 过滤器、动态配置 URL 权限等
-tag: [SpringBoot, Spring, SpringSecurity, Java 框架]
+tag: [Java 框架, SpringBoot, Spring, SpringSecurity, Java]
 
 ---
 

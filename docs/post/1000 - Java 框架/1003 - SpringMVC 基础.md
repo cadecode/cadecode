@@ -2,7 +2,7 @@
 title: SpringMVC 基础
 date: 2020/11/11
 description: 本文介绍 SpringMVC 框架的配置和使用，如 SpingMVC 的基本处理流程、注解的使用、请求参数的传递、文件上传以及功能增强等
-tag: [Spring, Java 框架]
+tag: [Java 框架, Spring, Java]
 
 ---
 
