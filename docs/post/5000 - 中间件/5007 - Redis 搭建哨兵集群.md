@@ -165,7 +165,7 @@ docker run --name redis_sentinel \
 
    Jedis 是 Redis Java 客户端中的老牌库
 
-   Jedis 提供了一个 哨兵构造方法：
+   Jedis 提供了一个哨兵构造方法：
 
    ```java
    public JedisSentinelPool(String masterName, 

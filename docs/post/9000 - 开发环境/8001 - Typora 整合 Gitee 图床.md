@@ -3,7 +3,7 @@
 title: Typora 整合 Gitee 图床
 date: 2021/7/21
 description: 本文介绍 Markdown 编辑器 Typora 和图片上传工具 PicGo 的使用，以及如何使用 PicGo 插件配合 Gitee 搭建免费的图床
-tag: [开发环境, markdown]
+tag: [开发环境, markdown, 生产力工具]
 
 ---
 
