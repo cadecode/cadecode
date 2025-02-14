@@ -37,7 +37,7 @@ tag: [开发环境, wsl, docker]
 
 2. 启动 Docker Desktop for Windows，进入设置，启用基于 WSL2 的引擎，开启 WSL Linux 系统集成
 
-   ![img](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102203738772.webp)
+   ![img](https://pic-bed.cadeli.top/2021/11/20211102203738772.webp)
 
 3. 重启 Docker desktop for Windows 后，即可在 WSL2 命令行使用 docker 命令
 4. 客户端安装的实质：将 windows 模式下的 docker 对应 docker.sock 挂载到 WSL2 里的 Linux 机器，在此 Linux 机器下执行 docker 命令，实质为客户端通过挂载的 docker.sock 文件与 windows 下 dockerd 服务端进程通信
@@ -56,11 +56,11 @@ tag: [开发环境, wsl, docker]
 
    官方推荐使用客户端，这里继续等待即可开始安装
 
-   ![image-20211102205116080](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102205117007.png)
+   ![image-20211102205116080](https://pic-bed.cadeli.top/2021/11/20211102205117007.png)
 
    安装完成后测试启动
 
-   ![image-20211102205314045](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102205314935.png)
+   ![image-20211102205314045](https://pic-bed.cadeli.top/2021/11/20211102205314935.png)
 
 ## Docker 常见命令
 
@@ -72,7 +72,7 @@ tag: [开发环境, wsl, docker]
    docker search <镜像名>
    ```
 
-   ![image-20211102205948923](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102205949869.png)
+   ![image-20211102205948923](https://pic-bed.cadeli.top/2021/11/20211102205949869.png)
 
 2. 拉取镜像
 
@@ -82,7 +82,7 @@ tag: [开发环境, wsl, docker]
 
    latest 代表最新版，可在 [dockerhub](https://hub.docker.com/) 搜索镜像
 
-   ![image-20211102210242774](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102210243695.png)
+   ![image-20211102210242774](https://pic-bed.cadeli.top/2021/11/20211102210243695.png)
 
 3. 列出镜像
 
@@ -122,7 +122,7 @@ tag: [开发环境, wsl, docker]
 
    创建文件夹`/opt/docker/nginx/data`，添加一个 index.html，映射到`/usr/share/nginx/html`
 
-   ![image-20211102214036215](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102214037212.png)
+   ![image-20211102214036215](https://pic-bed.cadeli.top/2021/11/20211102214037212.png)
 
    启动成功，打开浏览器访问 8001 即可查看 index.html
 
@@ -136,7 +136,7 @@ tag: [开发环境, wsl, docker]
    # --tail=N 仅列出最新 N 条容器日志
    ```
 
-   ![image-20211102215738869](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102215739833.png)
+   ![image-20211102215738869](https://pic-bed.cadeli.top/2021/11/20211102215739833.png)
 
 4. 停止容器
 
@@ -167,6 +167,6 @@ tag: [开发环境, wsl, docker]
    # -t 分配一个伪终端
    ```
    
-   ![image-20211102221616213](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211102221617120.png)
+   ![image-20211102221616213](https://pic-bed.cadeli.top/2021/11/20211102221617120.png)
    
    一般使用`-it`，获取伪终端和容器内输出。使用 exit 退出容器（容器保持运行）

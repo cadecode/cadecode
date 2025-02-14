@@ -59,7 +59,7 @@ Replication
 
 分区副本，为了保证可靠性，主题的每个分区都会有若干副本，分布在一些 Broker 上，在节点故障时，可以从副本中恢复数据继续提供服务。副本中会有一个是 Leader，其他副本是 Follower
 
-![image-20240313171713790](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2024%2F03%2F13%2F20240313171715896.png)
+![image-20240313171713790](https://pic-bed.cadeli.top/2024%2F03%2F13%2F20240313171715896.png)
 
 > 从上图中可见
 >

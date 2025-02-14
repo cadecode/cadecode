@@ -19,7 +19,7 @@ tag: [容器化与运维, docker]
 
 4. Docker Hub 官网镜像中带有`Offical Image`标志的，为官方发布，更加安全可靠
 
-   ![image-20211106212051836](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211106212053399.png)
+   ![image-20211106212051836](https://pic-bed.cadeli.top/2021/11/20211106212053399.png)
 
    
 
@@ -27,11 +27,11 @@ tag: [容器化与运维, docker]
 
 1. 打开 Docker Hub 官网，搜索 MySQL 镜像，推荐选择带有`Offical Image`标志的
 
-   ![image-20211107092359150](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211107092400356.png)
+   ![image-20211107092359150](https://pic-bed.cadeli.top/2021/11/20211107092400356.png)
 
 2. 在`Description`中可查看描述文档，在`Tags`中可查看版本号
 
-   ![image-20211107092753989](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211107092754855.png)
+   ![image-20211107092753989](https://pic-bed.cadeli.top/2021/11/20211107092754855.png)
 
 3. 拉取镜像
 
@@ -39,7 +39,7 @@ tag: [容器化与运维, docker]
    docker pull mysql:8.0.27
    ```
 
-   ![image-20211107093258892](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211112222406034.png)
+   ![image-20211107093258892](https://pic-bed.cadeli.top/2021/11/20211112222406034.png)
 
 4. MySQL 容器基本启动命令
 
@@ -84,7 +84,7 @@ tag: [容器化与运维, docker]
    	-d mysql:tag
    ```
 
-   ![image-20211107102440620](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211107102441512.png)
+   ![image-20211107102440620](https://pic-bed.cadeli.top/2021/11/20211107102441512.png)
 
 7. MySQL 容器常见启动环境变量
 
@@ -224,7 +224,7 @@ tag: [容器化与运维, docker]
 
 1. 在 Docker Hub 上搜索 RabbitMQ
 
-   ![image-20211108212725487](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211108212726479.png)
+   ![image-20211108212725487](https://pic-bed.cadeli.top/2021/11/20211108212726479.png)
 
    拉取 RabbitMQ 镜像
 
@@ -282,7 +282,7 @@ tag: [容器化与运维, docker]
 
    默认配置文件是`/etc/rabbitmq/rabbitmq.conf`
 
-   ![image-20211108222440762](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211108222441905.png)
+   ![image-20211108222440762](https://pic-bed.cadeli.top/2021/11/20211108222441905.png)
 
    自定义配置文件启动，并持久化`/var/lib/rabbitmq`运行目录
 
@@ -298,5 +298,5 @@ tag: [容器化与运维, docker]
    
    浏览器访问宿主机的 15672 端口，可进入登录界面，使用配置的账户登录即可
    
-   ![image-20211112220802017](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211112220805558.png)
+   ![image-20211112220802017](https://pic-bed.cadeli.top/2021/11/20211112220805558.png)
 

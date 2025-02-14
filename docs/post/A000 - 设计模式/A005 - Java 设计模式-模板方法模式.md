@@ -140,7 +140,7 @@ tag: [设计模式, Java, 行为型设计模式]
 
    UML
 
-   ![image-20220309214024276](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220309214036432.png)
+   ![image-20220309214024276](https://pic-bed.cadeli.top/2022/03/20220309214036432.png)
 
 ## 应用场景
 

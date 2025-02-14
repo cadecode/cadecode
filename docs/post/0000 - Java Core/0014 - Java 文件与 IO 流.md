@@ -273,7 +273,7 @@ tag: [Java Core, Java]
 
    辅助字符，如 emoji 表情符号，是不可以赋值给 char 的，只能使用 String 来存放，String 底层会使用两个 char 去存放
 
-   ![image-20220606215844799](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/06/06/20220606215851048.png)
+   ![image-20220606215844799](https://pic-bed.cadeli.top/2022/06/06/20220606215851048.png)
 
    如何正确获取字符串的字符数？
 

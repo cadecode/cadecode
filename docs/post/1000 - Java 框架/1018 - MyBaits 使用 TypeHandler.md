@@ -21,7 +21,7 @@ tag: [Java 框架, MyBatis, Java]
 
    MyBatis 默认已有的类型处理器
 
-   ![image-20230511155342664](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2023/05/11/20230511155410183.png)
+   ![image-20230511155342664](https://pic-bed.cadeli.top/2023/05/11/20230511155410183.png)
 
    对于已有类型处理器不能满足需求时，MyBatis 提供了 TypeHandler 接口以及 BaseTypeHandler 抽象类以供实现来处理不支持的或非标准的类型，如：
 

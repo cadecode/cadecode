@@ -27,7 +27,7 @@ tag: [Java 框架, SpringBoot, Spring, SpringSecurity, Java]
 
    在 Filter 组成的链条中，逐步完成认证和授权，发现异常则抛给异常处理器处理
 
-   ![img](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/12/20211202100244805.png)
+   ![img](https://pic-bed.cadeli.top/2021/12/20211202100244805.png)
 
 2. 过滤器链中的核心概念
 
@@ -70,7 +70,7 @@ tag: [Java 框架, SpringBoot, Spring, SpringSecurity, Java]
 
    引入依赖后，不做任何配置，Spring Security 会自动生效，请求将跳转登录页面
 
-   ![image-20211130233524244](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211130233527052.png)
+   ![image-20211130233524244](https://pic-bed.cadeli.top/2021/11/20211130233527052.png)
 
    默认用户名、密码和权限可在 application.yaml 中配置
 
@@ -437,11 +437,11 @@ Spring Security 的过滤器链中包含了许多过滤器，其中 FilterSecuri
 
 beforeInvocation 方法
 
-![image-20211205132642235](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/12/20211205132643984.png)
+![image-20211205132642235](https://pic-bed.cadeli.top/2021/12/20211205132643984.png)
 
 attemptAuthorization
 
-![image-20211205132656201](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/12/20211205132657143.png)
+![image-20211205132656201](https://pic-bed.cadeli.top/2021/12/20211205132657143.png)
 
 从源码可以看出，动态配置 URL 权限有两种途径
 

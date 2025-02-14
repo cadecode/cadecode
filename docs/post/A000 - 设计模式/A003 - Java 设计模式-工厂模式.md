@@ -63,7 +63,7 @@ tag: [设计模式, Java, 创建型设计模式]
 
    UML
 
-   ![image-20220302132711201](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220302132726365.png)
+   ![image-20220302132711201](https://pic-bed.cadeli.top/2022/03/20220302132726365.png)
 
 4. 应用场景
 
@@ -100,7 +100,7 @@ tag: [设计模式, Java, 创建型设计模式]
 
    UML
 
-   ![image-20220302132743048](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220302132744940.png)
+   ![image-20220302132743048](https://pic-bed.cadeli.top/2022/03/20220302132744940.png)
 
 4. 应用场景
 
@@ -167,7 +167,7 @@ tag: [设计模式, Java, 创建型设计模式]
 
    UML
 
-   ![image-20220302132802242](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220302132804088.png)
+   ![image-20220302132802242](https://pic-bed.cadeli.top/2022/03/20220302132804088.png)
 
 4. 应用场景
 

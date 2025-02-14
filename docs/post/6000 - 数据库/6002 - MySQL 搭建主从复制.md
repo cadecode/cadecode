@@ -21,7 +21,7 @@ tag: [数据库, MySQL]
 
    从库 IO 线程接收文件内容并解析到 relaylog 中，由 SQL 线程执行数据重放
 
-   ![image-20220321171209778](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220321171213949.png)
+   ![image-20220321171209778](https://pic-bed.cadeli.top/2022/03/20220321171213949.png)
 
 ## 搭建主从复制
 
@@ -59,7 +59,7 @@ tag: [数据库, MySQL]
 
    进入容器，测试登录 MySQL
 
-   ![image-20220321175306789](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220321175308518.png)
+   ![image-20220321175306789](https://pic-bed.cadeli.top/2022/03/20220321175308518.png)
 
 2. 修改 MySQL 配置文件
 
@@ -104,7 +104,7 @@ tag: [数据库, MySQL]
    FLUSH PRIVILEGES;  
    ```
 
-   ![image-20220322223423897](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220322223427401.png)
+   ![image-20220322223423897](https://pic-bed.cadeli.top/2022/03/20220322223427401.png)
 
 4. 查询主库状态
 
@@ -112,7 +112,7 @@ tag: [数据库, MySQL]
    show master status;
    ```
 
-   ![image-20220329193742439](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220329193746126.png)
+   ![image-20220329193742439](https://pic-bed.cadeli.top/2022/03/20220329193746126.png)
 
    记下文件名和 Position
 
@@ -144,15 +144,15 @@ tag: [数据库, MySQL]
 
    出现两个 YES 代表主从复制启动成功
 
-   ![image-20220329194607459](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220329194608848.png)
+   ![image-20220329194607459](https://pic-bed.cadeli.top/2022/03/20220329194608848.png)
 
 6. 主库添加数据测试
 
-   ![image-20220322232414594](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220322232417010.png)
+   ![image-20220322232414594](https://pic-bed.cadeli.top/2022/03/20220322232417010.png)
 
    从库查询
 
-   ![image-20220322232453131](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220322232455420.png)
+   ![image-20220322232453131](https://pic-bed.cadeli.top/2022/03/20220322232455420.png)
 
 ## BINLOG 格式
 
@@ -222,7 +222,7 @@ tag: [数据库, MySQL]
    
    从库启动 slave 后，在主库查看 slave 列表，判断是否配置成功
    
-   ![image-20220403154251238](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/04/20220403154255603.png)
+   ![image-20220403154251238](https://pic-bed.cadeli.top/2022/04/20220403154255603.png)
 
 ## 半同步复制
 

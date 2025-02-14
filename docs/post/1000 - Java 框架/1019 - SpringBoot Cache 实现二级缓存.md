@@ -21,7 +21,7 @@ tag: [Java 框架, Redis, Caffeine, SpringBoot, Java]
 
 3. 二级缓存的访问流程
 
-   ![image-20230618110334830](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2023/06/18/20230618110352319.png)
+   ![image-20230618110334830](https://pic-bed.cadeli.top/2023/06/18/20230618110352319.png)
 
 4. 二级缓存的优势与问题
 
@@ -92,7 +92,7 @@ tag: [Java 框架, Redis, Caffeine, SpringBoot, Java]
 
    SpEL 支持的表达式
 
-   ![image-20230618142309771](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2023/06/18/20230618142312530.png)
+   ![image-20230618142309771](https://pic-bed.cadeli.top/2023/06/18/20230618142312530.png)
 
 ## 本地缓存 Caffeine
 

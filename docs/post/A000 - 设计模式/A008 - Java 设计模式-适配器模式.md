@@ -103,7 +103,7 @@ tag: [设计模式, Java, 结构型设计模式]
 
    UML
 
-   ![image-20220316213235032](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/03/20220316213238576.png)
+   ![image-20220316213235032](https://pic-bed.cadeli.top/2022/03/20220316213238576.png)
 
 ## 应用场景
 

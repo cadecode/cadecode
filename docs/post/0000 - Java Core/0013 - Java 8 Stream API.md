@@ -153,7 +153,7 @@ tag: [Java Core, Java, Java 8]
 
 Stream 常用 API：
 
-![image-20210729215659491](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/07/20210729215701567.png)
+![image-20210729215659491](https://pic-bed.cadeli.top/2021/07/20210729215701567.png)
 
 以下为测试用实体类，代码省略了 getter、settter 和构造方法
 
@@ -345,7 +345,7 @@ findAny：返回任意一项的 Optional 包装，串行流一般返回第一个
 
 重载方法有三个，截图来自 IDEA 参数提示：
 
-![reduce 重载方法](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/07/20210731185545800.png)
+![reduce 重载方法](https://pic-bed.cadeli.top/2021/07/20210731185545800.png)
 
 ```java
 // 一个参数
@@ -397,7 +397,7 @@ collect 需要接收一个收集器 Collector 对象作为参数，JDK 内置的
 
 collect 常用 API：
 
-![image-20210801115310365](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/08/20210801115311924.png)
+![image-20210801115310365](https://pic-bed.cadeli.top/2021/08/20210801115311924.png)
 
 导出流为集合：
 
@@ -454,7 +454,7 @@ orders.stream()
 
 重载方法有三个，截图来自 IDEA 参数提示：
 
-![image-20210801124509215](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/08/20210801124510151.png)
+![image-20210801124509215](https://pic-bed.cadeli.top/2021/08/20210801124510151.png)
 
 一个参数，等同于第二个参数为 Collectors.toList，即键值为 List 类型
 

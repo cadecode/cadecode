@@ -80,7 +80,7 @@ tag: [Java 框架, Java, 依赖管理]
 
    输出内容如图
 
-   ![image-20221009151413901](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/10/09/20221009151418936.png)
+   ![image-20221009151413901](https://pic-bed.cadeli.top/2022/10/09/20221009151418936.png)
 
    MANIFEST.MF 内容示例如下
 
@@ -131,7 +131,7 @@ tag: [Java 框架, Java, 依赖管理]
 
    将依赖的第三方 jar 中的 class 文件配合主类一起打进 jar 包，不需要额外指定 ClassPath，因为所有的 class 文件及其包结构都被放在 jar 包的顶层，即 META-INF 的同级目录
 
-   ![image-20221009171738963](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/10/09/20221009171741317.png)
+   ![image-20221009171738963](https://pic-bed.cadeli.top/2022/10/09/20221009171741317.png)
 
 ## maven-shade-plugin
 
@@ -195,7 +195,7 @@ tag: [Java 框架, Java, 依赖管理]
 
    spring-boot-maven-plugin 是 Spring Boot 提供的 Maven 打包插件，会把项目 class 文件放到 BOOT-INF 下的 classes 目录，第三方 jar 包放在 BOOT-INF 下的 lib 目录
 
-   ![image-20221010130841594](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/10/10/20221010130843655.png)
+   ![image-20221010130841594](https://pic-bed.cadeli.top/2022/10/10/20221010130843655.png)
 
    MANIFEST.MF 内容如下
 

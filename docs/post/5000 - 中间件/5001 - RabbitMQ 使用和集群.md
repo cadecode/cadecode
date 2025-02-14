@@ -13,7 +13,7 @@ tag: [中间件, RabbitMQ, 集群]
 
 1. MQ：Message Queue，消息队列。生产者生产消息存放到队列里，消费者监听队列内容，伺机消费消息
 
-   ![image-20211110212039640](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211110212040687.png)
+   ![image-20211110212039640](https://pic-bed.cadeli.top/2021/11/20211110212040687.png)
 
 2. 优点：MQ 中消息的生产和消费是异步的，生产者与消费者无侵入、低耦合
 
@@ -34,7 +34,7 @@ tag: [中间件, RabbitMQ, 集群]
 
 1. RabbitMQ 官网：[https://www.rabbitmq.com/](https://www.rabbitmq.com/)
 
-   ![image-20211110222608877](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211110222609963.png)
+   ![image-20211110222608877](https://pic-bed.cadeli.top/2021/11/20211110222609963.png)
 
 2. RabbitMQ 的优点
 
@@ -73,11 +73,11 @@ tag: [中间件, RabbitMQ, 集群]
 
    如添加一个虚拟主机
 
-   ![image-20211110224645528](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211110224646556.png)
+   ![image-20211110224645528](https://pic-bed.cadeli.top/2021/11/20211110224646556.png)
 
    如添加一个用户，可以设置用户对虚拟主机的访问权限
 
-   ![image-20211110223853339](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211110223854349.png)
+   ![image-20211110223853339](https://pic-bed.cadeli.top/2021/11/20211110223854349.png)
 
 ## RabbitMQ 使用
 
@@ -105,7 +105,7 @@ Channel channel = connection.createChannel();
 
 ### 创建队列
 
-![image-20211113163953778](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211113163956144.png)
+![image-20211113163953778](https://pic-bed.cadeli.top/2021/11/20211113163956144.png)
 
 ```java
 channel.queueDeclare("demoQueue", false, false, false, null);
@@ -124,11 +124,11 @@ channel.queueDeclare("demoQueue", false, false, false, null);
 
    使用一个消息队列，有一个或多个消费者，各消费者获取不同的消息进行消费
 
-   ![img](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211113164740706.png)
+   ![img](https://pic-bed.cadeli.top/2021/11/20211113164740706.png)
 
 2. 发布消息
 
-   ![image-20211113170015290](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211113170016331.png)
+   ![image-20211113170015290](https://pic-bed.cadeli.top/2021/11/20211113170016331.png)
 
    ```java
    channel.basicPublish("", "demoQueue", null, "demo queue".getBytes());
@@ -148,7 +148,7 @@ channel.queueDeclare("demoQueue", false, false, false, null);
 
 3. 消费消息
 
-   ![image-20211113172941017](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211113172942062.png)
+   ![image-20211113172941017](https://pic-bed.cadeli.top/2021/11/20211113172942062.png)
 
    ```java
    // 绑定和生产者相同的队列
@@ -206,7 +206,7 @@ channel.queueDeclare("demoQueue", false, false, false, null);
 
    每个消费者都有自己的队列，每个队列都要绑定到交换机，生产者将消息发送到交换机，由交换机进行分配
 
-   ![img](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211113202800606.png)
+   ![img](https://pic-bed.cadeli.top/2021/11/20211113202800606.png)
 
 2. 发布消息
 
@@ -251,7 +251,7 @@ channel.queueDeclare("demoQueue", false, false, false, null);
 
    在路由主题模型中，交换机不再将消息转发到每一个队列，而且根据路由和主题进行匹配
 
-   ![img](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211114002122113.png)
+   ![img](https://pic-bed.cadeli.top/2021/11/20211114002122113.png)
 
 2. 发布消息
 
@@ -584,7 +584,7 @@ channel.queueDeclare("demoQueue", false, false, false, null);
    rabbitmqctl join_cluster --ram rabbit@rabbitmq1
    ```
 
-   ![image-20211114151829556](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211114151831796.png)
+   ![image-20211114151829556](https://pic-bed.cadeli.top/2021/11/20211114151831796.png)
 
    配置策略，指定虚拟主机为 clusterMQ
 
@@ -593,5 +593,5 @@ channel.queueDeclare("demoQueue", false, false, false, null);
    # 使用 "^" 表示对所有队列进行镜像
    ```
 
-   ![image-20211114154952146](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2021/11/20211114154954088.png)
+   ![image-20211114154952146](https://pic-bed.cadeli.top/2021/11/20211114154954088.png)
 

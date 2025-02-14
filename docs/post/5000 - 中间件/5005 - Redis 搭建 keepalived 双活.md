@@ -109,7 +109,7 @@ tag: [中间件, Redis, 集群]
    docker network inspect bridge | grep -A4 centos_
    ```
 
-   ![image-20220702131305673](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702131311657.png)
+   ![image-20220702131305673](https://pic-bed.cadeli.top/2022/07/02/20220702131311657.png)
 
    进入容器
 
@@ -186,11 +186,11 @@ tag: [中间件, Redis, 集群]
 
    主节点添加一条测试数据
 
-   ![image-20220702160028311](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702160031416.png)
+   ![image-20220702160028311](https://pic-bed.cadeli.top/2022/07/02/20220702160031416.png)
 
    从节点查看数据是否同步
 
-   ![image-20220702160149773](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702160152355.png)
+   ![image-20220702160149773](https://pic-bed.cadeli.top/2022/07/02/20220702160152355.png)
 
 5. 安装 keepalived
 
@@ -353,7 +353,7 @@ tag: [中间件, Redis, 集群]
 
 1. 测试 Redis 主从复制
 
-   ![image-20220702234102316](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702234108102.png)
+   ![image-20220702234102316](https://pic-bed.cadeli.top/2022/07/02/20220702234108102.png)
 
 2. 启动 keepalived
 
@@ -368,24 +368,24 @@ tag: [中间件, Redis, 集群]
    /sbin/keepalived -f /etc/keepalived/keepalived.conf -l -n
    ```
 
-   ![image-20220702234318358](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702234321098.png)
+   ![image-20220702234318358](https://pic-bed.cadeli.top/2022/07/02/20220702234321098.png)
 
 2. 测试故障转移
 
    通过 Redis cli 连接虚拟 IP，可以正常执行命令
 
-   ![image-20220702234745083](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702234750166.png)
+   ![image-20220702234745083](https://pic-bed.cadeli.top/2022/07/02/20220702234750166.png)
 
    kill 掉主节点的 Redis 进程
 
-   ![image-20220702234957384](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702235000122.png)
+   ![image-20220702234957384](https://pic-bed.cadeli.top/2022/07/02/20220702235000122.png)
 
    观察主节点 keepalived 日志
 
-   ![image-20220702235104170](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702235106917.png)
+   ![image-20220702235104170](https://pic-bed.cadeli.top/2022/07/02/20220702235106917.png)
 
    直连原来的从节点测试写入
 
-   ![image-20220702235304986](https://pic-bed-1258841963.cos.ap-nanjing.myqcloud.com/2022/07/02/20220702235307562.png)
+   ![image-20220702235304986](https://pic-bed.cadeli.top/2022/07/02/20220702235307562.png)
 
    172.18.0.5 上可以执行写入命令，说明该节点已经成功切换为主节点
