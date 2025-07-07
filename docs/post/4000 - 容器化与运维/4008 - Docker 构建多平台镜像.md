@@ -88,7 +88,7 @@ docker run --rm --privileged tonistiigi/binfmt:latest --install all
 
 ```shell
 docker buildx create --name mybuilder --driver docker-container
-docker buildx user mybuilder
+docker buildx use mybuilder
 ```
 
 执行 buildx build
